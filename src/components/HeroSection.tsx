@@ -8,8 +8,9 @@ const HeroSection = () => {
     }
   };
 
+  // MUDANÇA AQUI: Troquei "gradient-hero" por "bg-orange-50" para dar o tom bege/creme
   return (
-    <section className="gradient-hero py-12 md:py-20">
+    <section className="bg-orange-50 py-12 md:py-20">
       <div className="container">
         {/* Text Content */}
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
@@ -25,7 +26,7 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* Hero Image - ATUALIZADO COM O BANNER RETANGULAR */}
+        {/* Hero Image - BANNER RETANGULAR */}
         <div className="relative max-w-5xl mx-auto animate-fade-in-up animation-delay-200">
           <div className="relative rounded-2xl overflow-hidden shadow-card">
             <img
