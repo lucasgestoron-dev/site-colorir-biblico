@@ -32,14 +32,15 @@ const FaqSection = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto grid gap-6">
+        {/* AQUI ESTÁ A MUDANÇA: Grid com 2 colunas (md:grid-cols-2) */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow"
+              className="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow h-full"
             >
               <div className="flex gap-4 items-start">
-                <div className="bg-primary/10 p-2 rounded-lg mt-1">
+                <div className="bg-primary/10 p-2 rounded-lg mt-1 shrink-0">
                   <HelpCircle className="w-5 h-5 text-primary" />
                 </div>
                 <div>
