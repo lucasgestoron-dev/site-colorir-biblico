@@ -2,7 +2,7 @@ import { Shield, Zap, CheckCircle2, Lock, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CtaSection = () => {
-  // 🟢 CONFIGURADO: Seu link real da Cakto inserido abaixo
+  // 🟢 ALTERADO: Link real da sua conta Cakto inserido abaixo
   const checkoutLink = "https://pay.cakto.com.br/fmajp36_722955"; 
 
   return (
@@ -14,7 +14,7 @@ const CtaSection = () => {
       <div className="container relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           
-          {/* CALIBRAGEM: Escassez por Vagas (Substitui o Cronômetro) */}
+          {/* Escassez por Vagas */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500 text-white text-xs md:text-sm font-black mb-6 border-2 border-white/20 animate-pulse">
             <Users className="w-4 h-4" />
             <span>RESTAM APENAS 14 VAGAS COM ESTE DESCONTO</span>
@@ -28,7 +28,7 @@ const CtaSection = () => {
             Libere agora os <span className="text-yellow-400 font-bold">20 desenhos exclusivos</span> e comece a criar memórias hoje mesmo.
           </p>
 
-          {/* Bloco de Preço Blindado */}
+          {/* Bloco de Preço */}
           <div className="mb-10 bg-white p-8 rounded-3xl border-4 border-yellow-400 shadow-2xl inline-block w-full max-w-sm transform -rotate-1">
             <div className="flex items-center justify-center gap-3 mb-2">
               <span className="text-xl text-slate-400 line-through font-bold">
@@ -46,7 +46,7 @@ const CtaSection = () => {
             </p>
           </div>
 
-          {/* CTA Sincronizado e VERDE (Alta Conversão) */}
+          {/* Botão de Compra com seu Link da Cakto */}
           <div className="mb-8">
             <a href={checkoutLink} target="_blank" rel="noopener noreferrer">
               <Button
@@ -62,7 +62,7 @@ const CtaSection = () => {
             </div>
           </div>
 
-          {/* Garantia Expandida */}
+          {/* Garantia */}
           <div className="mt-12 p-6 bg-white/10 rounded-2xl border-2 border-dashed border-white/30 max-w-lg mx-auto backdrop-blur-md">
             <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
               <div className="bg-white p-3 rounded-full shadow-lg">
@@ -77,7 +77,7 @@ const CtaSection = () => {
             </div>
           </div>
 
-          {/* Trust Badges */}
+          {/* Badges de Confiança */}
           <div className="flex flex-wrap items-center justify-center gap-6 mt-12 opacity-80">
             <div className="flex items-center gap-2">
               <Zap className="w-5 h-5 text-yellow-400 fill-current" />
