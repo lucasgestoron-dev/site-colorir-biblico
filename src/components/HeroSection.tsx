@@ -1,6 +1,9 @@
 import { Star, CheckCircle } from "lucide-react";
 
 const HeroSection = () => {
+  // 🟢 AJUSTADO: Seu link real da Cakto inserido abaixo
+  const checkoutLink = "https://pay.cakto.com.br/fmajp36_722955";
+
   return (
     <section className="bg-orange-50 pt-12 md:pt-20 pb-0 overflow-hidden">
       <div className="container">
@@ -24,10 +27,12 @@ const HeroSection = () => {
             ensinar a Bíblia com diversão e propósito.
           </p>
 
-          {/* PASSO FINAL: Botão VERDE de Alta Conversão e CTA Secundário */}
+          {/* PASSO FINAL: Botão VERDE com Link Direto para Checkout */}
           <div className="animate-fade-in-up animation-delay-150 mb-12 flex flex-col items-center gap-4">
             <a 
-              href="#pricing" 
+              href={checkoutLink} 
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full md:w-auto inline-block bg-green-500 hover:bg-green-600 text-white font-black text-xl md:text-2xl px-10 py-6 rounded-full shadow-[0_8px_0_rgb(21,128,61)] hover:shadow-[0_4px_0_rgb(21,128,61)] transition-all duration-150 transform hover:translate-y-1 active:scale-95"
             >
               SIM! QUERO LIBERAR MEUS DESENHOS AGORA
