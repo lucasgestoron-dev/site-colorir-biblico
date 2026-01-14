@@ -48,25 +48,28 @@ const BenefitsSection = () => {
           </p>
         </div>
 
-        {/* Grid ajustado para 4 colunas no desktop */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
             <div
               key={benefit.title}
-              className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start text-left border border-orange-100"
+              // MUDANÇAS AQUI:
+              // 1. 'py-16 px-8': Aumentei muito o padding vertical para a caixa ficar comprida.
+              // 2. 'items-center text-center': Centralizei tudo de volta (ícone e texto).
+              // 3. 'h-full': Garante que todas tenham a mesma altura, esticando até o fundo.
+              className="bg-white py-16 px-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center border border-orange-100 h-full"
             >
-              {/* Ícone alinhado à esquerda com fundo suave */}
               <div
-                className={`w-14 h-14 rounded-2xl ${benefit.bgColor} flex items-center justify-center mb-6 shadow-sm`}
+                // O ícone agora vai centralizar automaticamente por causa do pai 'items-center'
+                className={`w-16 h-16 rounded-2xl ${benefit.bgColor} flex items-center justify-center mb-6 shadow-sm`}
               >
-                <benefit.icon className={`w-7 h-7 ${benefit.color}`} />
+                <benefit.icon className={`w-8 h-8 ${benefit.color}`} />
               </div>
               
-              <h4 className="text-xl font-bold text-slate-900 mb-3">
+              <h4 className="text-xl font-bold text-slate-900 mb-4">
                 {benefit.title}
               </h4>
               
-              <p className="text-slate-500 leading-relaxed text-sm">
+              <p className="text-slate-500 leading-relaxed text-sm flex-grow">
                 {benefit.description}
               </p>
             </div>
