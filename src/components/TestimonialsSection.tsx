@@ -33,7 +33,8 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-16 md:py-20 bg-muted/50">
+    // MUDANÇA: bg-muted/50 alterado para bg-orange-50 para unificar a paleta
+    <section className="py-16 md:py-20 bg-orange-50">
       <div className="container">
         <h3 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-4">
           O que as mamães estão dizendo 💬
@@ -46,6 +47,7 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
+              // Mantive bg-card para o card ser branco e destacar no fundo bege
               className="bg-card rounded-xl p-5 shadow-soft hover:shadow-card transition-all duration-300 flex flex-col"
             >
               {/* Header with avatar and info */}
