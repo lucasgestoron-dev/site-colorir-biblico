@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { Star, CheckCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -6,25 +6,39 @@ const HeroSection = () => {
       <div className="container">
         {/* Text Content */}
         <div className="text-center max-w-3xl mx-auto mb-8">
+          {/* PASSO FINAL: Tag de Preço Irresistível na Dobra */}
+          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full mb-6 animate-fade-in-up">
+            <CheckCircle className="w-4 h-4" />
+            <span className="text-sm font-black uppercase tracking-wider">Acesso imediato por apenas R$ 7,90</span>
+          </div>
+
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in-up">
             Desperte a{" "}
             <span className="text-primary">Criatividade</span> e a{" "}
             <span className="text-secondary">Fé</span> das Crianças
           </h2>
           
-          {/* PASSO 1: Copy mais curta e com gatilho de EXCLUSIVIDADE conforme análise */}
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in-up animation-delay-100 mb-8 max-w-2xl mx-auto">
-            20 desenhos <span className="text-slate-900 font-semibold underline decoration-primary/30">únicos e exclusivos</span> que você não encontra em outro lugar. 
-            Ensine a Bíblia de forma divertida e memorável.
+          {/* PASSO FINAL: Copy reduzida para 2 linhas (Neurociência) */}
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in-up animation-delay-100 mb-8 max-w-xl mx-auto">
+            20 desenhos <span className="text-slate-900 font-bold underline decoration-primary/30">exclusivos</span> para imprimir agora e 
+            ensinar a Bíblia com diversão e propósito.
           </p>
 
-          {/* Botão de CTA no Topo com Prova Social Integrada */}
-          <div className="animate-fade-in-up animation-delay-150 mb-12">
+          {/* PASSO FINAL: Botão VERDE de Alta Conversão e CTA Secundário */}
+          <div className="animate-fade-in-up animation-delay-150 mb-12 flex flex-col items-center gap-4">
             <a 
               href="#pricing" 
-              className="inline-block bg-accent hover:bg-accent/90 text-white font-bold text-lg md:text-xl px-8 py-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 active:scale-95"
+              className="w-full md:w-auto inline-block bg-green-500 hover:bg-green-600 text-white font-black text-xl md:text-2xl px-10 py-6 rounded-full shadow-[0_8px_0_rgb(21,128,61)] hover:shadow-[0_4px_0_rgb(21,128,61)] transition-all duration-150 transform hover:translate-y-1 active:scale-95"
             >
               SIM! QUERO LIBERAR MEUS DESENHOS AGORA
+            </a>
+            
+            {/* CTA Secundário para indecisos */}
+            <a 
+              href="#samples" 
+              className="text-muted-foreground hover:text-primary font-bold text-sm underline decoration-primary/20 transition-colors"
+            >
+              Quero ver as amostras primeiro
             </a>
 
             {/* FUSÃO: Estrelas e Número de Famílias (Prova Social) */}
@@ -39,12 +53,6 @@ const HeroSection = () => {
                 Mais de <span className="font-bold text-slate-800">2.847 famílias</span> educando com fé e diversão.
               </p>
             </div>
-
-            <p className="text-xs text-muted-foreground mt-6 flex items-center justify-center gap-2 border-t border-orange-200/50 pt-4 max-w-xs mx-auto">
-              <span>⚡ Acesso imediato via e-mail</span>
-              <span>•</span>
-              <span>🔒 Compra 100% Segura</span>
-            </p>
           </div>
         </div>
 
