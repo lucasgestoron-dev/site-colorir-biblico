@@ -1,4 +1,4 @@
-import { Shield, Zap, CheckCircle2, Lock } from "lucide-react"; 
+import { Shield, Zap, CheckCircle2, Lock, Users } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 
 const CtaSection = () => {
@@ -14,21 +14,22 @@ const CtaSection = () => {
       <div className="container relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           
-          {/* PASSO 2: Urgência Reforçada - Oferta de Lançamento */}
-          <span className="inline-block px-4 py-2 rounded-full bg-yellow-400 text-slate-900 text-xs md:text-sm font-black mb-6 border-2 border-white/20 animate-bounce">
-            🚀 OFERTA EXCLUSIVA DE LANÇAMENTO
-          </span>
+          {/* CALIBRAGEM: Escassez por Vagas (Substitui o Cronômetro) */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500 text-white text-xs md:text-sm font-black mb-6 border-2 border-white/20 animate-pulse">
+            <Users className="w-4 h-4" />
+            <span>RESTAM APENAS 14 VAGAS COM ESTE DESCONTO</span>
+          </div>
 
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-cta-foreground mb-6 leading-tight">
-            Garanta Agora os <span className="underline decoration-yellow-400">20 Desenhos Únicos</span> para o seu Pequeno!
+            Não deixe a educação do seu filho para depois!
           </h3>
 
-          <p className="text-cta-foreground/90 mb-8 text-lg font-medium">
-            Aproveite o preço promocional antes que a oferta expire.
+          <p className="text-cta-foreground/90 mb-8 text-lg font-medium max-w-lg mx-auto">
+            Libere agora os <span className="text-yellow-400 font-bold">20 desenhos exclusivos</span> e comece a criar memórias hoje mesmo.
           </p>
 
-          {/* PASSO 2: Bloco de Preço com mais Contraste */}
-          <div className="mb-10 bg-white p-8 rounded-3xl border-4 border-yellow-400 shadow-2xl inline-block w-full max-w-sm transform rotate-1 md:rotate-2">
+          {/* Bloco de Preço Blindado */}
+          <div className="mb-10 bg-white p-8 rounded-3xl border-4 border-yellow-400 shadow-2xl inline-block w-full max-w-sm transform -rotate-1">
             <div className="flex items-center justify-center gap-3 mb-2">
               <span className="text-xl text-slate-400 line-through font-bold">
                 R$ 29,90
@@ -38,14 +39,14 @@ const CtaSection = () => {
               </span>
             </div>
             <div className="text-7xl font-black text-slate-900 tracking-tighter">
-              <span className="text-3xl align-top mr-1">R$</span>7,90
+              <span className="text-3xl align-top mr-1 font-bold">R$</span>7,90
             </div>
             <p className="text-slate-500 mt-2 text-sm font-bold uppercase tracking-widest">
               Pagamento único • Acesso vitalício
             </p>
           </div>
 
-          {/* PASSO 2: CTA Sincronizado com o Hero (Alta Conversão) */}
+          {/* CTA Sincronizado e VERDE (Alta Conversão) */}
           <div className="mb-8">
             <a href={checkoutLink} target="_blank" rel="noopener noreferrer">
               <Button
@@ -61,16 +62,16 @@ const CtaSection = () => {
             </div>
           </div>
 
-          {/* PASSO 2: Garantia Expandida e com Mais Peso Visual */}
+          {/* Garantia Expandida */}
           <div className="mt-12 p-6 bg-white/10 rounded-2xl border-2 border-dashed border-white/30 max-w-lg mx-auto backdrop-blur-md">
             <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
               <div className="bg-white p-3 rounded-full shadow-lg">
                  <Shield className="w-8 h-8 text-green-500" />
               </div>
               <div>
-                <p className="font-black text-cta-foreground text-lg uppercase">Garantia de Satisfação Total</p>
+                <p className="font-black text-cta-foreground text-lg uppercase leading-none mb-1">Satisfação Garantida</p>
                 <p className="text-sm text-cta-foreground/80 leading-relaxed">
-                  Experimente por 7 dias. Se você ou seu filho não amarem os desenhos, devolvemos cada centavo. <strong>Sem perguntas, sem burocracia.</strong>
+                  Risco Zero: Se em 7 dias você não estiver satisfeito, devolvemos seu dinheiro. <strong>Simples assim.</strong>
                 </p>
               </div>
             </div>
