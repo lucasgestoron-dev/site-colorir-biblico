@@ -11,13 +11,14 @@ const HeroSection = () => {
             <span className="text-primary">Criatividade</span> e a{" "}
             <span className="text-secondary">Fé</span> das Crianças
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in-up animation-delay-100 mb-8">
-            20 desenhos bíblicos exclusivos para imprimir em casa.{" "}
-            <br className="hidden md:block" />
-            Uma forma divertida e educativa de ensinar a Bíblia.
+          
+          {/* PASSO 1: Copy mais curta e com gatilho de EXCLUSIVIDADE conforme análise */}
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in-up animation-delay-100 mb-8 max-w-2xl mx-auto">
+            20 desenhos <span className="text-slate-900 font-semibold underline decoration-primary/30">únicos e exclusivos</span> que você não encontra em outro lugar. 
+            Ensine a Bíblia de forma divertida e memorável.
           </p>
 
-          {/* NOVO: Botão de CTA no Topo com Prova Social Integrada */}
+          {/* Botão de CTA no Topo com Prova Social Integrada */}
           <div className="animate-fade-in-up animation-delay-150 mb-12">
             <a 
               href="#pricing" 
