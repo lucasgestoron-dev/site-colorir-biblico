@@ -25,8 +25,13 @@ const GallerySection = () => {
           20 desenhos exclusivos das principais histórias da Bíblia, prontos para imprimir.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
-          {samples.map((sample, index) => (
+        {/* MUDANÇAS AQUI:
+            1. md:grid-cols-4 -> Para ficar 4 lado a lado no PC.
+            2. max-w-6xl -> Aumentei a largura para caberem bem.
+        */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+          {/* .slice(0, 4) -> Pega só as 4 primeiras da lista acima */}
+          {samples.slice(0, 4).map((sample, index) => (
             <div
               key={sample.title}
               className="group relative overflow-hidden rounded-xl bg-card shadow-soft hover:shadow-card transition-all duration-300"
@@ -48,7 +53,7 @@ const GallerySection = () => {
         </div>
 
         <p className="text-center text-muted-foreground mt-8 text-sm">
-          + 14 desenhos incríveis no livro completo!
+          + 16 desenhos incríveis no livro completo!
         </p>
       </div>
     </section>
