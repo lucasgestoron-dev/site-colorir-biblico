@@ -21,7 +21,8 @@ const FaqSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    // MUDANÇA: bg-white alterado para bg-orange-50 para unificar com o resto da página
+    <section className="py-16 bg-orange-50">
       <div className="container px-4 mx-auto md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold font-fredoka text-primary mb-4">
@@ -32,12 +33,14 @@ const FaqSection = () => {
           </p>
         </div>
 
-        {/* AQUI ESTÁ A MUDANÇA: Grid com 2 colunas (md:grid-cols-2) */}
+        {/* Grid com 2 colunas mantido conforme sua solicitação */}
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow h-full"
+              // MUDANÇA: bg-gray-50 alterado para bg-white para destacar no fundo bege
+              // MUDANÇA: border-gray-100 alterado para border-orange-100 para harmonia cromática
+              className="bg-white p-6 rounded-xl border border-orange-100 hover:shadow-md transition-shadow h-full"
             >
               <div className="flex gap-4 items-start">
                 <div className="bg-primary/10 p-2 rounded-lg mt-1 shrink-0">
