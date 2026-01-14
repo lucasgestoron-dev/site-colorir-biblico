@@ -1,16 +1,9 @@
 import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
-  const scrollToNext = () => {
-    const benefitsSection = document.getElementById("benefits");
-    if (benefitsSection) {
-      benefitsSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  // MUDANÇA AQUI: Troquei "gradient-hero" por "bg-orange-50" para dar o tom bege/creme
   return (
-    <section className="bg-orange-50 py-12 md:py-20">
+    // MUDANÇA: Troquei py-20 por pb-0 para remover o espaço de baixo
+    <section className="bg-orange-50 pt-12 md:pt-20 pb-0">
       <div className="container">
         {/* Text Content */}
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
@@ -26,12 +19,12 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* Hero Image - BANNER RETANGULAR */}
+        {/* Hero Image - BANNER RETANGULAR COLADO NO BLOCO DE BAIXO */}
         <div className="relative max-w-5xl mx-auto animate-fade-in-up animation-delay-200">
-          <div className="relative rounded-2xl overflow-hidden shadow-card">
+          <div className="relative rounded-t-2xl overflow-hidden shadow-card">
             <img
               src="/hero-banner-mockup.png"
-              alt="Mockup do Livro de Colorir Bíblico em um ambiente criativo"
+              alt="Mockup do Livro de Colorir Bíblico"
               className="w-full h-auto object-cover"
             />
             {/* Decorative elements */}
@@ -40,19 +33,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="flex flex-col items-center mt-10 md:mt-14 animate-fade-in-up animation-delay-300">
-          <p className="text-muted-foreground text-sm mb-3">
-            Descubra os benefícios
-          </p>
-          <button
-            onClick={scrollToNext}
-            className="p-3 rounded-full bg-card shadow-soft hover:shadow-card transition-all duration-300 group"
-            aria-label="Rolar para baixo"
-          >
-            <ChevronDown className="w-6 h-6 text-primary animate-bounce-soft" />
-          </button>
-        </div>
+        {/* MUDANÇA: O BLOCO "SCROLL INDICATOR" FOI REMOVIDO DAQUI PORQUE ESTAVA CRIANDO O BURACO */}
       </div>
     </section>
   );
