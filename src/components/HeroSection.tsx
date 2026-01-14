@@ -25,12 +25,12 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* Hero Image */}
-        <div className="relative max-w-4xl mx-auto animate-fade-in-up animation-delay-200">
+        {/* Hero Image - ATUALIZADO COM O BANNER RETANGULAR */}
+        <div className="relative max-w-5xl mx-auto animate-fade-in-up animation-delay-200">
           <div className="relative rounded-2xl overflow-hidden shadow-card">
             <img
-              src="/menina-capa.png"
-              alt="Criança feliz mostrando seus desenhos bíblicos coloridos"
+              src="/hero-banner-mockup.png"
+              alt="Mockup do Livro de Colorir Bíblico em um ambiente criativo"
               className="w-full h-auto object-cover"
             />
             {/* Decorative elements */}
