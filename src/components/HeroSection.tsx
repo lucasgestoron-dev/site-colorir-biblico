@@ -1,5 +1,4 @@
 import { ChevronDown } from "lucide-react";
-import heroImage from "@/assets/hero-coloring-book.jpg";
 
 const HeroSection = () => {
   const scrollToNext = () => {
@@ -29,9 +28,10 @@ const HeroSection = () => {
         {/* Hero Image */}
         <div className="relative max-w-4xl mx-auto animate-fade-in-up animation-delay-200">
           <div className="relative rounded-2xl overflow-hidden shadow-card">
+            {/* AQUI ESTÁ A MUDANÇA DA FOTO 👇 */}
             <img
-              src={heroImage}
-              alt="Crianças colorindo livro bíblico com alegria"
+              src="/menina-capa.png" 
+              alt="Criança feliz mostrando seus desenhos bíblicos coloridos"
               className="w-full h-auto object-cover"
             />
             {/* Decorative elements */}
