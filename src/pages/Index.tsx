@@ -4,7 +4,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import GallerySection from "@/components/GallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CtaSection from "@/components/CtaSection";
-import FaqSection from "@/components/FaqSection"; // Adicionamos o FAQ aqui
+import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,9 +15,13 @@ const Index = () => {
         <HeroSection />
         <BenefitsSection />
         <GallerySection />
-        <TestimonialsSection />
-        <FaqSection /> {/* O FAQ vai aparecer aqui */}
+
+        {/* MUDANÇA AQUI: A Oferta (CTA) subiu para cá, logo após as amostras */}
         <CtaSection />
+        
+        {/* Os Depoimentos e o FAQ ficaram abaixo da oferta, para reforçar quem ainda não comprou */}
+        <TestimonialsSection />
+        <FaqSection />
       </main>
       <Footer />
     </div>
