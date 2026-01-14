@@ -2,8 +2,8 @@ import { Shield, Zap, CheckCircle2, Lock, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CtaSection = () => {
-  // 🔴 NÃO ESQUEÇA DE COLAR SEU LINK DO CHECKOUT AQUI
-  const checkoutLink = "https://SEU_LINK_DO_CHECKOUT_AQUI"; 
+  // 🟢 CONFIGURADO: Seu link real da Cakto inserido abaixo
+  const checkoutLink = "https://pay.cakto.com.br/fmajp36_722955"; 
 
   return (
     <section id="pricing" className="py-16 md:py-24 gradient-cta relative overflow-hidden">
