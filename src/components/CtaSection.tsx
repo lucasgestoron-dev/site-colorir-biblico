@@ -42,14 +42,14 @@ const CtaSection = () => {
           </div>
 
           {/* CTA Button com Link */}
-          <div className="mb-8">
+          <div className="mb-6">
             <a href={checkoutLink} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 className="w-full md:w-auto gradient-button text-lg md:text-xl px-10 md:px-16 py-8 rounded-full font-bold shadow-button animate-pulse-glow hover:scale-105 transition-transform duration-300 hover:shadow-2xl"
               >
                 <Download className="w-6 h-6 mr-3 stroke-[3px]" />
-                QUERO BAIXAR AGORA
+                COMPRAR AGORA
               </Button>
             </a>
             <p className="mt-3 text-xs text-cta-foreground/70">
@@ -57,32 +57,32 @@ const CtaSection = () => {
             </p>
           </div>
 
-          {/* Guarantee Box - O Matador de Objeções */}
-          <div className="mt-8 p-4 bg-white/10 rounded-xl border border-white/20 max-w-md mx-auto flex items-center gap-4 text-left">
-            <div className="bg-green-500/20 p-3 rounded-full">
-               <Shield className="w-8 h-8 text-green-300" />
+          {/* Guarantee Box - MENOR E MAIS DISCRETO */}
+          <div className="mt-6 p-3 bg-white/5 rounded-lg border border-white/10 max-w-sm mx-auto flex items-center gap-3 text-left">
+            <div className="bg-green-500/10 p-2 rounded-full shrink-0">
+               <Shield className="w-5 h-5 text-green-400" />
             </div>
             <div>
-              <p className="font-bold text-cta-foreground text-lg">Garantia de 7 Dias</p>
-              <p className="text-sm text-cta-foreground/80 leading-snug">
-                Se você não amar os desenhos, nós devolvemos 100% do seu dinheiro. Risco zero.
+              <p className="font-bold text-cta-foreground text-sm">Garantia de 7 Dias</p>
+              <p className="text-xs text-cta-foreground/60 leading-snug">
+                Não amou? Devolvemos seu dinheiro. Risco zero.
               </p>
             </div>
           </div>
 
-          {/* Trust Badges (Rodapé) */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-10 opacity-70">
-            <div className="flex items-center gap-2 text-cta-foreground">
-              <Shield className="w-4 h-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Site Seguro</span>
+          {/* Trust Badges (Rodapé) - LOGOS COLORIDAS */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-10">
+            <div className="flex items-center gap-2">
+              <Shield className="w-5 h-5 text-green-400" />
+              <span className="text-xs font-medium text-cta-foreground uppercase tracking-wider">Site Seguro</span>
             </div>
-            <div className="flex items-center gap-2 text-cta-foreground">
-              <Zap className="w-4 h-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Entrega Automática</span>
+            <div className="flex items-center gap-2">
+              <Zap className="w-5 h-5 text-yellow-400" />
+              <span className="text-xs font-medium text-cta-foreground uppercase tracking-wider">Entrega Automática</span>
             </div>
-            <div className="flex items-center gap-2 text-cta-foreground">
-              <CheckCircle2 className="w-4 h-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Satisfação Garantida</span>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-blue-400" />
+              <span className="text-xs font-medium text-cta-foreground uppercase tracking-wider">Satisfação Garantida</span>
             </div>
           </div>
 
