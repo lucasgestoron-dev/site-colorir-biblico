@@ -4,6 +4,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import GallerySection from "@/components/GallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CtaSection from "@/components/CtaSection";
+import FaqSection from "@/components/FaqSection"; // Adicionamos o FAQ aqui
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
         <BenefitsSection />
         <GallerySection />
         <TestimonialsSection />
+        <FaqSection /> {/* O FAQ vai aparecer aqui */}
         <CtaSection />
       </main>
       <Footer />
