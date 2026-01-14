@@ -35,7 +35,8 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section id="benefits" className="py-16 md:py-24 bg-white relative overflow-hidden">
+    // MUDANÇA: bg-white alterado para bg-orange-50 para seguir o padrão acolhedor
+    <section id="benefits" className="py-16 md:py-24 bg-orange-50 relative overflow-hidden">
       {/* Elementos decorativos de fundo */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-30">
         <div className="absolute top-10 left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
@@ -59,6 +60,7 @@ const BenefitsSection = () => {
           {benefits.map((benefit, index) => (
             <div
               key={benefit.title}
+              // Mantive o fundo dos cards em branco para eles "saltarem" do fundo bege, mantendo o destaque
               className={`group relative p-8 rounded-3xl bg-white border-2 ${benefit.borderColor} ${benefit.hoverBorder} shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
