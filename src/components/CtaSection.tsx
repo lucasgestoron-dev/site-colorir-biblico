@@ -1,4 +1,4 @@
-import { Shield, Zap, Download, CheckCircle2 } from "lucide-react";
+import { Shield, Zap, CheckCircle2 } from "lucide-react"; // Removi o Download daqui
 import { Button } from "@/components/ui/button";
 
 const CtaSection = () => {
@@ -48,7 +48,7 @@ const CtaSection = () => {
                 size="lg"
                 className="w-full md:w-auto gradient-button text-lg md:text-xl px-10 md:px-16 py-8 rounded-full font-bold shadow-button animate-pulse-glow hover:scale-105 transition-transform duration-300 hover:shadow-2xl"
               >
-                <Download className="w-6 h-6 mr-3 stroke-[3px]" />
+                {/* Ícone removido, texto centralizado */}
                 COMPRAR AGORA
               </Button>
             </a>
