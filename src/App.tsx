@@ -15,7 +15,12 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Rota Principal (Home) */}
           <Route path="/" element={<Index />} />
+          
+          {/* Rota Específica (Futuro padrão) */}
+          <Route path="/biblicos" element={<Index />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
