@@ -1,77 +1,48 @@
-import { Star, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+
+const checkoutLink = "https://pay.cakto.com.br/fmajp36_722955";
 
 const HeroSection = () => {
-  // 🟢 AJUSTADO: Seu link real da Cakto inserido abaixo
-  const checkoutLink = "https://pay.cakto.com.br/fmajp36_722955";
-
   return (
-    <section className="bg-orange-50 pt-12 md:pt-20 pb-0 overflow-hidden">
+    <section id="top" className="scroll-mt-20 bg-orange-50 py-8 md:py-10 lg:py-12 overflow-hidden">
       <div className="container">
-        {/* Text Content */}
-        <div className="text-center max-w-3xl mx-auto mb-8">
-          {/* PASSO FINAL: Tag de Preço Irresistível na Dobra */}
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full mb-6 animate-fade-in-up">
-            <CheckCircle className="w-4 h-4" />
-            <span className="text-sm font-black uppercase tracking-wider">Acesso imediato por apenas R$ 7,90</span>
-          </div>
-
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in-up">
-            Desperte a{" "}
-            <span className="text-primary">Criatividade</span> e a{" "}
-            <span className="text-secondary">Fé</span> das Crianças
-          </h2>
-          
-          {/* PASSO FINAL: Copy reduzida para 2 linhas (Neurociência) */}
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in-up animation-delay-100 mb-8 max-w-xl mx-auto">
-            20 desenhos <span className="text-slate-900 font-bold underline decoration-primary/30">exclusivos</span> para imprimir agora e 
-            ensinar a Bíblia com diversão e propósito.
-          </p>
-
-          {/* PASSO FINAL: Botão VERDE com Link Direto para Checkout */}
-          <div className="animate-fade-in-up animation-delay-150 mb-12 flex flex-col items-center gap-4">
-            <a 
-              href={checkoutLink} 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full md:w-auto inline-block bg-green-500 hover:bg-green-600 text-white font-black text-xl md:text-2xl px-10 py-6 rounded-full shadow-[0_8px_0_rgb(21,128,61)] hover:shadow-[0_4px_0_rgb(21,128,61)] transition-all duration-150 transform hover:translate-y-1 active:scale-95"
-            >
-              SIM! QUERO LIBERAR MEUS DESENHOS AGORA
-            </a>
-            
-            {/* CTA Secundário para indecisos */}
-            <a 
-              href="#samples" 
-              className="text-muted-foreground hover:text-primary font-bold text-sm underline decoration-primary/20 transition-colors"
-            >
-              Quero ver as amostras primeiro
-            </a>
-
-            {/* FUSÃO: Estrelas e Número de Famílias (Prova Social) */}
-            <div className="mt-4 flex flex-col items-center gap-1">
-              <div className="flex items-center gap-1 text-yellow-500">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
-                <span className="text-slate-800 font-bold ml-1 text-sm">4.9/5</span>
-              </div>
-              <p className="text-xs md:text-sm text-muted-foreground">
-                Mais de <span className="font-bold text-slate-800">2.847 famílias</span> educando com fé e diversão.
-              </p>
+        <div className="grid md:grid-cols-[1.08fr_.92fr] gap-8 md:gap-10 items-center max-w-6xl mx-auto">
+          <div className="text-center md:text-left">
+            <div className="inline-flex items-center gap-2 bg-white text-green-700 px-4 py-2 rounded-full mb-4 shadow-sm border border-green-100 animate-fade-in-up">
+              <CheckCircle2 className="w-4 h-4" />
+              <span className="text-sm font-black uppercase tracking-wider">PDF digital • pronto para imprimir</span>
             </div>
-          </div>
-        </div>
 
-        {/* Hero Image - BANNER RETANGULAR COLADO NO BLOCO DE BAIXO */}
-        <div className="relative max-w-5xl mx-auto animate-fade-in-up animation-delay-200">
-          <div className="relative rounded-t-2xl overflow-hidden shadow-card border-x-4 border-t-4 border-white">
-            <img
-              src="/hero-banner-mockup.png"
-              alt="Mockup do Livro de Colorir Bíblico"
-              className="w-full h-auto object-cover"
-            />
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -left-4 w-16 h-16 bg-secondary/20 rounded-full blur-xl" />
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl" />
+            <h1 className="text-4xl md:text-5xl lg:text-[3.35rem] font-bold text-foreground leading-[1.04] mb-4 animate-fade-in-up">
+              Uma atividade bíblica pronta para deixar as crianças <span className="text-primary">longe das telas</span>
+            </h1>
+
+            <p className="text-lg text-muted-foreground leading-relaxed animate-fade-in-up animation-delay-100 mb-5 max-w-2xl mx-auto md:mx-0">
+              Baixe, imprima e coloque os lápis na mesa. São <strong className="text-slate-900">30 desenhos bíblicos em tamanho A4</strong> para transformar histórias da Bíblia em uma atividade simples e participativa.
+            </p>
+
+            <div className="animate-fade-in-up animation-delay-200 flex flex-col items-center md:items-start gap-3">
+              <p className="inline-flex items-center gap-2 text-green-800 font-black bg-white border border-green-100 rounded-full px-4 py-2 shadow-sm">
+                <CheckCircle2 className="w-4 h-4 text-green-500" /> Pagamento único de R$ 7,90
+              </p>
+              <a href={checkoutLink} target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-black text-lg md:text-xl px-8 md:px-10 py-4 rounded-2xl border-2 border-green-400 shadow-[0_8px_0_rgb(21,128,61),0_16px_32px_-18px_rgba(21,128,61,0.8)] hover:shadow-[0_4px_0_rgb(21,128,61)] transition-all duration-150 hover:translate-y-1 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-300">
+                QUERO O PDF PARA IMPRIMIR
+                <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+              </a>
+              <a href="#samples" className="text-muted-foreground hover:text-primary font-bold text-sm underline decoration-primary/30 underline-offset-4 transition-colors">Ver páginas reais do material</a>
+            </div>
+
+          </div>
+
+          <div className="relative animate-fade-in-up animation-delay-200">
+            <div className="absolute -inset-5 bg-primary/10 rounded-[3rem] -rotate-2" aria-hidden="true" />
+            <div className="relative bg-white p-3 rounded-[2.25rem] shadow-[0_25px_65px_-28px_rgba(15,23,42,0.5)]">
+              <img src="/hero-banner-30.webp" alt="Livro digital Colorir Bíblico com 30 desenhos em uma mesa com materiais de pintura" className="w-full aspect-[4/3] object-cover rounded-[1.6rem]" fetchPriority="high" decoding="async" />
+              <div className="flex items-center justify-between gap-3 px-3 md:px-4 py-3">
+                <p className="font-black text-slate-800 text-sm md:text-base">30 histórias para escolher</p>
+                <span className="shrink-0 text-xs font-black text-primary bg-primary/10 px-3 py-1.5 rounded-full">PDF A4</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

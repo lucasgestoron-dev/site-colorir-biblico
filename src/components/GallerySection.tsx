@@ -1,76 +1,84 @@
-import sampleNoah from "@/assets/sample-noah.jpg";
-import sampleNativity from "@/assets/sample-nativity.jpg";
-import sampleDavid from "@/assets/sample-david.jpg";
-import sampleMoses from "@/assets/sample-moses.jpg";
-import sampleDaniel from "@/assets/sample-daniel.jpg";
-import sampleJonah from "@/assets/sample-jonah.jpg";
-import { Check } from "lucide-react";
+import { useEffect, useState } from "react";
+import sampleNoah from "@/assets/sample-noah-real.jpg";
+import sampleNativity from "@/assets/sample-nativity-real.jpg";
+import sampleDavid from "@/assets/sample-david-real.jpg";
+import sampleMoses from "@/assets/sample-moses-real.jpg";
+import sampleDaniel from "@/assets/sample-daniel-real.jpg";
+import sampleJonah from "@/assets/sample-jonah-real.jpg";
+import { CheckCircle2, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import Reveal from "@/components/Reveal";
 
 const samples = [
-  { src: sampleNoah, title: "Arca de Noé" },
-  { src: sampleNativity, title: "Nascimento de Jesus" },
+  { src: sampleNoah, title: "A Arca de Noé" },
+  { src: sampleMoses, title: "A Travessia do Mar Vermelho" },
   { src: sampleDavid, title: "Davi e Golias" },
-  { src: sampleMoses, title: "Moisés no Mar Vermelho" },
   { src: sampleDaniel, title: "Daniel na Cova dos Leões" },
-  { src: sampleJonah, title: "Jonas e a Baleia" },
+  { src: sampleJonah, title: "Jonas e o Grande Peixe" },
+  { src: sampleNativity, title: "O Nascimento de Jesus" },
 ];
 
 const GallerySection = () => {
+  const [selected, setSelected] = useState<number | null>(null);
+  const previous = () => setSelected((current) => current === null ? 0 : (current - 1 + samples.length) % samples.length);
+  const next = () => setSelected((current) => current === null ? 0 : (current + 1) % samples.length);
+
+  useEffect(() => {
+    if (selected === null) return;
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") setSelected((current) => current === null ? 0 : (current - 1 + samples.length) % samples.length);
+      if (event.key === "ArrowRight") setSelected((current) => current === null ? 0 : (current + 1) % samples.length);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [selected]);
+
   return (
-    // PASSO 3: Mudei para bg-slate-50 (cinza azulado bem leve) para quebrar o "liso" do bege 
-    // e dar destaque total aos desenhos brancos.
-    <section className="py-16 md:py-24 bg-slate-50 border-y border-slate-200/60">
+    <section id="samples" className="py-16 md:py-24 bg-slate-50 border-y border-slate-200/60 scroll-mt-20">
       <div className="container">
-        <div className="text-center mb-12">
-          <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold mb-4 uppercase tracking-widest">
-            Conteúdo Exclusivo
-          </span>
-          <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Dê uma espiadinha por dentro 🎨
-          </h3>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            São 20 desenhos <span className="font-bold text-slate-900">exclusivos</span>, criados com traços nítidos e ideais para a coordenação motora das crianças.
-          </p>
-        </div>
+        <Reveal className="text-center mb-12">
+          <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold mb-4 uppercase tracking-widest">Páginas reais do PDF</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Veja os desenhos antes de comprar</h2>
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">Clique em qualquer página para abrir e conferir os detalhes do material.</p>
+        </Reveal>
 
-        {/* PASSO 3: Adicionei sombras mais fortes e bordas para parecerem papéis reais */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
-          {samples.slice(0, 4).map((sample, index) => (
-            <div
-              key={sample.title}
-              className="group relative bg-white p-2 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1"
-            >
-              <div className="aspect-[3/4] overflow-hidden rounded border border-slate-100">
-                <img
-                  src={sample.src}
-                  alt={sample.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              
-              {/* Selo de "Exclusivo" em cima de cada imagem */}
-              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-1.5 rounded-full shadow-md">
-                <Check className="w-4 h-4 text-green-500" strokeWidth={3} />
-              </div>
-
-              <div className="mt-4 text-center pb-2">
-                <p className="text-slate-800 text-sm font-bold">
-                  {sample.title}
-                </p>
-              </div>
-            </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
+          {samples.map((sample, index) => (
+            <Reveal key={sample.title} delay={(index % 3) * 90}>
+              <button type="button" onClick={() => setSelected(index)} className="group relative w-full bg-white p-2.5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 md:hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/30" aria-label={`Ampliar página: ${sample.title}`}>
+                <div className="relative aspect-[210/297] overflow-hidden rounded-lg border border-slate-100 bg-white">
+                  <img src={sample.src} alt={`Página para colorir: ${sample.title}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.025]" loading="lazy" decoding="async" />
+                  <span className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all bg-white text-slate-900 rounded-full px-4 py-2 text-sm font-black shadow-xl flex items-center gap-2"><Maximize2 className="w-4 h-4" /> Ampliar</span>
+                  </span>
+                </div>
+                <span className="block py-3 px-1 text-center text-slate-800 text-sm font-bold">{sample.title}</span>
+              </button>
+            </Reveal>
           ))}
         </div>
 
-        {/* PASSO 3: Elemento de Urgência/Escassez logo abaixo das fotos */}
-        <div className="mt-16 text-center">
-          <div className="bg-white inline-block px-8 py-4 rounded-2xl shadow-sm border border-slate-200">
-            <p className="text-slate-700 font-medium">
-              👉 <span className="text-primary font-bold">+ 16 desenhos inéditos</span> no arquivo completo que você libera hoje!
-            </p>
+        <Reveal className="mt-12 text-center">
+          <div className="bg-white inline-flex items-center gap-3 px-6 md:px-8 py-4 rounded-2xl shadow-sm border border-slate-200">
+            <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
+            <p className="text-slate-700 font-medium text-left">Estes são 6 exemplos. O PDF inclui <strong className="text-primary">mais 24 desenhos bíblicos</strong>.</p>
           </div>
-        </div>
+        </Reveal>
       </div>
+
+      <Dialog open={selected !== null} onOpenChange={(open) => !open && setSelected(null)}>
+        <DialogContent className="w-[calc(100%-1.5rem)] max-w-5xl h-[92vh] p-3 md:p-5 bg-[#f8fafc] border-0 rounded-2xl flex flex-col gap-3">
+          <DialogTitle className="text-center text-base md:text-lg font-bold pr-8">{selected !== null ? samples[selected].title : "Página do material"}</DialogTitle>
+          {selected !== null && (
+            <div className="relative min-h-0 flex-1 flex items-center justify-center px-0 md:px-14">
+              <img src={samples[selected].src} alt={`Página ampliada: ${samples[selected].title}`} className="max-w-full max-h-full object-contain rounded-md shadow-xl bg-white" />
+              <button type="button" onClick={previous} className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/95 shadow-lg flex items-center justify-center text-slate-800 hover:bg-primary hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/30" aria-label="Ver desenho anterior"><ChevronLeft className="w-6 h-6" /></button>
+              <button type="button" onClick={next} className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/95 shadow-lg flex items-center justify-center text-slate-800 hover:bg-primary hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/30" aria-label="Ver próximo desenho"><ChevronRight className="w-6 h-6" /></button>
+            </div>
+          )}
+          <p className="text-center text-sm font-bold text-slate-500">{selected !== null ? `${selected + 1} de ${samples.length}` : ""}</p>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

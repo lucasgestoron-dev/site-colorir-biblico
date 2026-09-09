@@ -1,27 +1,15 @@
 const Footer = () => {
   return (
-    <footer className="py-16 bg-slate-900 text-slate-300 border-t border-slate-800">
-      <div className="container">
-        <div className="text-center">
-          {/* MUDANÇA: Removi o "font-fredoka". Agora a fonte será a padrão, mais séria. */}
-          <h3 className="text-white font-bold text-xl mb-4">
-            Desenhos Bíblicos para Colorir
-          </h3>
-          
-          <p className="text-sm max-w-sm mx-auto mb-6 opacity-80 leading-relaxed">
-            Transformando o tempo em família através da fé e da criatividade.
-          </p>
-
-          <div className="w-16 h-1 border-t-2 border-primary/30 mx-auto mb-6"></div>
-
-          <p className="text-xs font-medium uppercase tracking-widest">
-            © {new Date().getFullYear()} Desenhos Bíblicos para Colorir. Todos os direitos reservados.
-          </p>
-          
-          <p className="text-[10px] mt-4 opacity-50 uppercase tracking-tighter">
-            Produto Digital • Entrega via E-mail • Compra 100% Segura
-          </p>
-        </div>
+    <footer className="py-12 bg-slate-900 text-slate-300 border-t border-slate-800">
+      <div className="container text-center">
+        <h2 className="text-white font-bold text-xl mb-3">Colorir Bíblico</h2>
+        <p className="text-sm max-w-md mx-auto mb-6 text-slate-400">
+          30 desenhos bíblicos em PDF para imprimir e colorir com as crianças.
+        </p>
+        <p className="text-xs font-medium uppercase tracking-wider">
+          © {new Date().getFullYear()} Desenhos Infantis. Todos os direitos reservados.
+        </p>
+        <p className="text-xs mt-3 text-slate-500">Produto digital • Nenhum item físico será enviado</p>
       </div>
     </footer>
   );
