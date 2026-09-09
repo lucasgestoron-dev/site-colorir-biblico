@@ -37,7 +37,7 @@ const HeroSection = () => {
           <div className="relative animate-fade-in-up animation-delay-200">
             <div className="absolute -inset-5 bg-primary/10 rounded-[3rem] -rotate-2" aria-hidden="true" />
             <div className="relative bg-white p-3 rounded-[2.25rem] shadow-[0_25px_65px_-28px_rgba(15,23,42,0.5)]">
-              <img src="/hero-banner-30.webp" alt="Livro digital Colorir Bíblico com 30 desenhos em uma mesa com materiais de pintura" className="w-full aspect-[4/3] object-cover rounded-[1.6rem]" fetchPriority="high" decoding="async" />
+              <img src="/hero-banner-30.webp" alt="Livro digital Colorir Bíblico com 30 desenhos em uma mesa com materiais de pintura" className="w-full aspect-[4/3] object-cover rounded-[1.6rem]" decoding="async" />
               <div className="flex items-center justify-between gap-3 px-3 md:px-4 py-3">
                 <p className="font-black text-slate-800 text-sm md:text-base">30 histórias para escolher</p>
                 <span className="shrink-0 text-xs font-black text-primary bg-primary/10 px-3 py-1.5 rounded-full">PDF A4</span>

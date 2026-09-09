@@ -5,7 +5,7 @@ import sampleDavid from "@/assets/sample-david-real.jpg";
 import sampleMoses from "@/assets/sample-moses-real.jpg";
 import sampleDaniel from "@/assets/sample-daniel-real.jpg";
 import sampleJonah from "@/assets/sample-jonah-real.jpg";
-import { CheckCircle2, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import Reveal from "@/components/Reveal";
 
@@ -17,6 +17,8 @@ const samples = [
   { src: sampleJonah, title: "Jonas e o Grande Peixe" },
   { src: sampleNativity, title: "O Nascimento de Jesus" },
 ];
+
+const checkoutLink = "https://pay.cakto.com.br/fmajp36_722955";
 
 const GallerySection = () => {
   const [selected, setSelected] = useState<number | null>(null);
@@ -49,7 +51,10 @@ const GallerySection = () => {
                 <div className="relative aspect-[210/297] overflow-hidden rounded-lg border border-slate-100 bg-white">
                   <img src={sample.src} alt={`Página para colorir: ${sample.title}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.025]" loading="lazy" decoding="async" />
                   <span className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
-                    <span className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all bg-white text-slate-900 rounded-full px-4 py-2 text-sm font-black shadow-xl flex items-center gap-2"><Maximize2 className="w-4 h-4" /> Ampliar</span>
+                    <span className="hidden md:flex opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all bg-white text-slate-900 rounded-full px-4 py-2 text-sm font-black shadow-xl items-center gap-2"><Maximize2 className="w-4 h-4" /> Ampliar</span>
+                  </span>
+                  <span className="md:hidden absolute bottom-2 right-2 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-2.5 py-1.5 text-[11px] font-black text-slate-800 shadow-md border border-slate-200/80">
+                    <Maximize2 className="w-3.5 h-3.5 text-primary" /> Toque para ampliar
                   </span>
                 </div>
                 <span className="block py-3 px-1 text-center text-slate-800 text-sm font-bold">{sample.title}</span>
@@ -59,9 +64,19 @@ const GallerySection = () => {
         </div>
 
         <Reveal className="mt-12 text-center">
-          <div className="bg-white inline-flex items-center gap-3 px-6 md:px-8 py-4 rounded-2xl shadow-sm border border-slate-200">
-            <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
-            <p className="text-slate-700 font-medium text-left">Estes são 6 exemplos. O PDF inclui <strong className="text-primary">mais 24 desenhos bíblicos</strong>.</p>
+          <div className="inline-flex flex-col items-center gap-5">
+            <div className="bg-white inline-flex items-center gap-3 px-6 md:px-8 py-4 rounded-2xl shadow-sm border border-slate-200">
+              <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
+              <p className="text-slate-700 font-medium text-left">Estes são 6 exemplos. O PDF inclui <strong className="text-primary">mais 24 desenhos bíblicos</strong>.</p>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <p className="text-slate-800 font-bold">Gostou das páginas? Receba o PDF completo por R$ 7,90.</p>
+              <a href={checkoutLink} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 px-6 py-3.5 text-base font-black text-white border-2 border-green-400 shadow-[0_5px_0_rgb(21,128,61)] transition-all duration-150 hover:bg-green-600 hover:translate-y-0.5 hover:shadow-[0_3px_0_rgb(21,128,61)] active:translate-y-1 active:shadow-none focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-300">
+                QUERO OS 30 DESENHOS
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </a>
+              <p className="text-xs text-slate-500">Pagamento único • produto digital</p>
+            </div>
           </div>
         </Reveal>
       </div>
