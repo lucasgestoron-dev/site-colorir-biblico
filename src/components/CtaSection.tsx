@@ -49,7 +49,7 @@ const CtaSection = () => {
                   <Sparkles className="w-4 h-4" /> Pagamento único
                 </p>
                 <div className="text-7xl font-black text-slate-900 tracking-tighter leading-none">
-                  <span className="text-2xl align-top mr-1">R$</span>7,90
+                  <span className="text-2xl align-top mr-1">R$</span>12,90
                 </div>
                 <p className="text-slate-500 mt-2 text-sm font-semibold">30 desenhos em um único PDF</p>
                 <a
