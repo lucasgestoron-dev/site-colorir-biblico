@@ -23,7 +23,7 @@ const HeroSection = () => {
 
             <div className="animate-fade-in-up animation-delay-200 flex flex-col items-center md:items-start gap-3">
               <p className="inline-flex items-center gap-2 text-green-800 font-black bg-white border border-green-100 rounded-full px-4 py-2 shadow-sm">
-                <CheckCircle2 className="w-4 h-4 text-green-500" /> Pagamento único de R$ 7,90
+                <CheckCircle2 className="w-4 h-4 text-green-500" /> Pagamento único de R$ 12,90
               </p>
               <a href={checkoutLink} target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-black text-lg md:text-xl px-8 md:px-10 py-4 rounded-2xl border-2 border-green-400 shadow-[0_8px_0_rgb(21,128,61),0_16px_32px_-18px_rgba(21,128,61,0.8)] hover:shadow-[0_4px_0_rgb(21,128,61)] transition-all duration-150 hover:translate-y-1 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-300">
                 QUERO O PDF PARA IMPRIMIR
