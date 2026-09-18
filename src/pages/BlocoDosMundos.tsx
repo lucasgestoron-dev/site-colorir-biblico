@@ -61,119 +61,16 @@ const Workbook = ({ x, y, w, h, rotate = 0, src }: { x: number; y: number; w: nu
 
 const MiniCover = ({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) => (
   <g transform={`translate(${x} ${y}) scale(${scale})`}>
-    {/* book body / border */}
-    <rect x="-4" y="-3" width="106" height="132" rx="9" fill="#0b3156" opacity=".38" />
-    <rect x="0" y="0" width="100" height="126" rx="8" fill="#0d64a0" stroke="#ffffff" strokeWidth="3" />
-    <rect x="4" y="4" width="92" height="118" rx="6" fill="#1581bd" stroke="#0a416f" strokeWidth="1.6" />
-
-    {/* sky + block world background */}
-    <rect x="7" y="7" width="86" height="111" rx="5" fill="#45b8e8" />
-    <circle cx="20" cy="18" r="10" fill="#ffffff" opacity=".18" />
-    <circle cx="82" cy="18" r="12" fill="#ffffff" opacity=".16" />
-    <rect x="7" y="82" width="86" height="36" fill="#57ad39" />
-    <rect x="7" y="103" width="86" height="15" fill="#7a4d29" />
-    <rect x="7" y="100" width="86" height="5" fill="#3f8b2c" />
-
-    {/* small block trees */}
-    <g transform="translate(10 67) scale(.45)">
-      <rect x="23" y="54" width="18" height="48" rx="2" fill="#9a612d" />
-      <rect x="0" y="22" width="36" height="34" rx="3" fill="#57aa32" />
-      <rect x="24" y="10" width="40" height="40" rx="3" fill="#63b63a" />
-      <rect x="10" y="0" width="38" height="38" rx="3" fill="#77c74b" />
-    </g>
-    <g transform="translate(69 63) scale(.5)">
-      <rect x="23" y="54" width="18" height="48" rx="2" fill="#9a612d" />
-      <rect x="0" y="22" width="36" height="34" rx="3" fill="#57aa32" />
-      <rect x="24" y="10" width="40" height="40" rx="3" fill="#63b63a" />
-      <rect x="10" y="0" width="38" height="38" rx="3" fill="#77c74b" />
-    </g>
-
-    {/* little castle, like the reference cover */}
-    <g transform="translate(72 58)">
-      <rect x="0" y="8" width="17" height="33" rx="1" fill="#9a9da0" stroke="#60656a" strokeWidth="1.4" />
-      <rect x="-3" y="4" width="23" height="7" fill="#7b8084" />
-      <rect x="5" y="17" width="7" height="9" fill="#315f8b" />
-      <polygon points="1,4 8,-8 15,4" fill="#2389cb" />
-    </g>
-
-    {/* top yellow/blue mission ribbon */}
-    <rect x="12" y="8" width="76" height="14" rx="6" fill="#0d5d9a" stroke="#0a3b68" strokeWidth="1.6" />
-    <rect x="16" y="6" width="68" height="13" rx="6" fill="#f0b414" />
-    <text x="50" y="15.2" textAnchor="middle" fontSize="6.8" fontWeight="900" fill="#11466f">MISSÕES MATEMÁTICAS</text>
-
-    {/* red rocket / pencil-like badge from the print */}
-    <g transform="translate(44 23) rotate(-12)">
-      <path d="M0 6 C7 0 16 0 22 6 C16 12 7 12 0 6 Z" fill="#ef4c24" stroke="#a92819" strokeWidth="1.2" />
-      <circle cx="13" cy="6" r="3" fill="#ffdb3c" />
-      <path d="M2 2 L-4 -1 L-2 5 Z" fill="#f7a41f" />
-      <path d="M2 10 L-4 13 L-2 7 Z" fill="#f7a41f" />
-    </g>
-
-    {/* title: same hierarchy as screenshot */}
-    <text x="50" y="39" textAnchor="middle" fontSize="15.5" fontWeight="900" fill="#ffd222" stroke="#0a3158" strokeWidth="1.7" paintOrder="stroke">
-      MUNDO DOS
-    </text>
-    <text x="50" y="57" textAnchor="middle" fontSize="19.5" fontWeight="900" fill="#ffd222" stroke="#0a3158" strokeWidth="2" paintOrder="stroke">
-      BLOCOS
-    </text>
-    <text x="50" y="66.5" textAnchor="middle" fontSize="5.2" fontWeight="800" fill="#eaf8ff">
-      + 150 ATIVIDADES DE MATEMÁTICA
-    </text>
-
-    {/* treasure / adventure scene */}
-    <g transform="translate(37 86)">
-      <rect x="0" y="9" width="28" height="18" rx="2.5" fill="#b96820" stroke="#5d3518" strokeWidth="2" />
-      <rect x="0" y="12" width="28" height="5" fill="#df8b30" />
-      <path d="M2 9 Q14 -1 26 9 Z" fill="#c97827" stroke="#5d3518" strokeWidth="2" />
-      <rect x="11" y="15" width="6" height="8" rx="1" fill="#ebcf74" stroke="#7d6122" strokeWidth="1" />
-      <polygon points="14,-7 20,-2 18,5 14,9 10,5 8,-2" fill="#35d9ef" stroke="#0a7f9a" strokeWidth="1.5" />
-      <path d="M9 -1 L19 -1 M14 -6 L14 8" stroke="#dffcff" strokeWidth="1" opacity=".75" />
-    </g>
-
-    {/* boy adventurer */}
-    <g transform="translate(13 74) scale(.42)">
-      <rect x="18" y="13" width="68" height="66" rx="9" fill="#d98f5b" />
-      <rect x="14" y="5" width="76" height="25" rx="7" fill="#5a331f" />
-      <rect x="12" y="23" width="20" height="42" rx="4" fill="#5a331f" />
-      <rect x="72" y="22" width="20" height="38" rx="4" fill="#5a331f" />
-      <rect x="36" y="38" width="14" height="14" rx="2" fill="#fff" />
-      <rect x="58" y="38" width="14" height="14" rx="2" fill="#fff" />
-      <rect x="40" y="42" width="8" height="8" fill="#1f4053" />
-      <rect x="60" y="42" width="8" height="8" fill="#1f4053" />
-      <rect x="22" y="76" width="62" height="67" rx="11" fill="#c77a27" />
-      <rect x="17" y="84" width="14" height="45" rx="6" fill="#d98f5b" transform="rotate(15 17 84)" />
-      <rect x="78" y="84" width="14" height="45" rx="6" fill="#d98f5b" transform="rotate(-15 78 84)" />
-      <rect x="18" y="135" width="25" height="13" fill="#293f58" />
-      <rect x="63" y="135" width="25" height="13" fill="#293f58" />
-    </g>
-
-    {/* girl adventurer */}
-    <g transform="translate(68 79) scale(.34)">
-      <path d="M20 30 C5 42 3 86 18 111 L83 111 C96 78 92 42 80 29 Z" fill="#8d3d26" />
-      <rect x="18" y="13" width="68" height="66" rx="9" fill="#d98f5b" />
-      <rect x="14" y="5" width="76" height="25" rx="7" fill="#8d3d26" />
-      <rect x="12" y="23" width="20" height="42" rx="4" fill="#8d3d26" />
-      <rect x="72" y="22" width="20" height="38" rx="4" fill="#8d3d26" />
-      <rect x="36" y="38" width="14" height="14" rx="2" fill="#fff" />
-      <rect x="58" y="38" width="14" height="14" rx="2" fill="#fff" />
-      <rect x="40" y="42" width="8" height="8" fill="#1f4053" />
-      <rect x="60" y="42" width="8" height="8" fill="#1f4053" />
-      <rect x="22" y="76" width="62" height="67" rx="11" fill="#2384b8" />
-      <rect x="17" y="84" width="14" height="45" rx="6" fill="#d98f5b" transform="rotate(15 17 84)" />
-      <rect x="78" y="84" width="14" height="45" rx="6" fill="#d98f5b" transform="rotate(-15 78 84)" />
-      <rect x="18" y="135" width="25" height="13" fill="#293f58" />
-      <rect x="63" y="135" width="25" height="13" fill="#293f58" />
-    </g>
-
-    {/* foreground blocks */}
-    <rect x="8" y="107" width="13" height="11" rx="2" fill="#49aa43" />
-    <rect x="22" y="110" width="11" height="8" rx="2" fill="#f2a026" />
-    <rect x="67" y="106" width="12" height="12" rx="2" fill="#45cee1" />
-    <rect x="80" y="110" width="10" height="8" rx="2" fill="#7b60c8" />
-
-    {/* glossy edge + spine */}
-    <path d="M6 8 V117" stroke="#76d6f2" strokeWidth="2" opacity=".5" />
-    <path d="M92 10 V116" stroke="#082f54" strokeWidth="2" opacity=".35" />
+    <rect x="-3" y="-3" width="106" height="124" rx="7" fill="#0b3156" opacity=".28" />
+    <rect x="-1.5" y="-1.5" width="103" height="121" rx="6" fill="#ffffff" />
+    <image
+      href="/math/cover-mundo-dos-blocos.webp"
+      x="0"
+      y="0"
+      width="100"
+      height="118"
+      preserveAspectRatio="xMidYMid slice"
+    />
   </g>
 );
 
