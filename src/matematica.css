@@ -59,7 +59,7 @@
 .hero-trust svg { width: 15px; height: 15px; }
 .hero-product { position: absolute; z-index: 3; left: 48%; bottom: 57px; width: 300px; height: 390px; filter: drop-shadow(0 22px 20px rgba(0,44,73,.33)); }
 .paper-fan { position: absolute; inset: -10px -110px 85px -50px; }
-.paper-fan img { position: absolute; width: 150px; border: 5px solid #fff; box-shadow: 0 8px 20px rgba(0,0,0,.22); border-radius: 4px; }
+.paper-fan img { position: absolute; width: 150px; border: 1px solid #dbe8ee; box-shadow: 0 8px 20px rgba(0,0,0,.22); border-radius: 4px; }
 .paper-fan img:nth-child(1) { left: 0; top: 22px; transform: rotate(-12deg); }
 .paper-fan img:nth-child(2) { left: 105px; top: 0; transform: rotate(1deg); }
 .paper-fan img:nth-child(3) { left: 210px; top: 22px; transform: rotate(12deg); }
