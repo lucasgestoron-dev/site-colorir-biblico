@@ -144,9 +144,7 @@ function Mathematics() {
                 <img src="/matematica/atividade-2.png" alt="" />
                 <img src="/matematica/atividade-3.png" alt="" />
               </div>
-              <ProductBook />
             </div>
-            <div className="hero-sign">DESAFIOS REAIS<br /><strong>APRENDIZADO DE VERDADE</strong><br />DIVERSÃO GARANTIDA!</div>
           </div>
         </section>
 
