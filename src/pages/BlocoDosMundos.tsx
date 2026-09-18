@@ -135,15 +135,116 @@ const BlocoDosMundos = () => {
           </filter>
         </defs>
 
-        {/* HERO — exact visual reference supplied by the user */}
-        <image
-          href="/math/hero-reference.webp"
-          x="0"
-          y="0"
-          width="740"
-          height="366"
-          preserveAspectRatio="none"
-        />
+        {/* HERO */}
+        <rect x="0" y="0" width="740" height="366" fill="url(#sky)" />
+        <circle cx="68" cy="32" r="26" fill="#fff" opacity=".25" />
+        <circle cx="103" cy="28" r="20" fill="#fff" opacity=".22" />
+        <circle cx="646" cy="40" r="30" fill="#fff" opacity=".22" />
+        <circle cx="610" cy="36" r="22" fill="#fff" opacity=".22" />
+        <rect x="0" y="318" width="740" height="48" fill="#68be45" />
+        <rect x="0" y="348" width="740" height="18" fill="#7b542b" />
+        <rect x="0" y="348" width="740" height="6" fill="#4e942e" />
+
+        <Tree x={-12} y={66} scale={1.25} />
+        <Tree x={-10} y={203} scale={1.05} />
+        <Tree x={665} y={42} scale={1.3} />
+        <Tree x={640} y={228} scale={.95} />
+
+        <g transform="translate(652 123)">
+          <rect x="18" y="0" width="46" height="126" fill="#9ba0a3" stroke="#61676c" strokeWidth="4" />
+          <rect x="4" y="-15" width="74" height="20" fill="#7a7e83" stroke="#5d6267" strokeWidth="3" />
+          <rect x="29" y="28" width="24" height="30" fill="#305f8c" />
+          <rect x="29" y="77" width="24" height="34" fill="#305f8c" />
+          <polygon points="16,-15 41,-48 66,-15" fill="#2389cb" />
+          <rect x="31" y="-60" width="20" height="18" fill="#d3a135" />
+        </g>
+
+        {/* top nav */}
+        <rect x="0" y="0" width="740" height="43" fill="#ffffff" opacity=".22" />
+        <g transform="translate(88 7)">
+          <rect x="0" y="2" width="29" height="29" rx="5" fill="#f49b24" stroke="#5b3b14" strokeWidth="2" />
+          <rect x="6" y="8" width="8" height="8" fill="#55b145" />
+          <rect x="15" y="5" width="8" height="8" fill="#30c9dc" />
+          <rect x="14" y="15" width="8" height="8" fill="#7864c8" />
+          <text x="37" y="12" fontSize="8" fontWeight="900" fill="#174d77">MUNDO DOS</text>
+          <text x="37" y="24" fontSize="11" fontWeight="900" fill="#f0a400">BLOCOS</text>
+        </g>
+        <text x="207" y="25" fontSize="6.5" fontWeight="800" fill="#e7a900">Início</text>
+        <text x="245" y="25" fontSize="6.5" fontWeight="800" fill="#173b63">Como funciona</text>
+        <text x="326" y="25" fontSize="6.5" fontWeight="800" fill="#173b63">O que vai receber</text>
+        <text x="417" y="25" fontSize="6.5" fontWeight="800" fill="#173b63">Depoimentos</text>
+        <text x="486" y="25" fontSize="6.5" fontWeight="800" fill="#173b63">Perguntas frequentes</text>
+        <rect x="589" y="10" width="104" height="23" rx="12" fill="#12aa38" stroke="#77e08a" strokeWidth="1.5" filter="url(#softShadow)" />
+        <text x="641" y="25" textAnchor="middle" fontSize="6.7" fontWeight="900" fill="#fff">QUERO GARANTIR AGORA →</text>
+
+        {/* hero copy */}
+        <rect x="108" y="56" width="167" height="27" rx="8" fill="#0d66a5" stroke="#0b4f83" strokeWidth="2" filter="url(#softShadow)" />
+        <text x="191.5" y="74" textAnchor="middle" fontSize="11.5" fontWeight="900" fill="#ffd62b">• MISSÕES MATEMÁTICAS •</text>
+        <text x="84" y="112" fontSize="31" fontWeight="900" fill="#0a3e6c">MUNDO DOS</text>
+        <text x="87" y="108" fontSize="31" fontWeight="900" fill="#ffd21e" stroke="#0a3e6c" strokeWidth="2.2" paintOrder="stroke">MUNDO DOS</text>
+        <text x="76" y="150" fontSize="44" fontWeight="900" fill="#0a3e6c">BLOCOS</text>
+        <text x="79" y="145" fontSize="44" fontWeight="900" fill="#ffd21e" stroke="#0a3e6c" strokeWidth="2.6" paintOrder="stroke">BLOCOS</text>
+        <rect x="74" y="158" width="247" height="43" rx="9" fill="#115e9a" filter="url(#softShadow)" />
+        <text x="197" y="176" textAnchor="middle" fontSize="12" fontWeight="900" fill="#fff">Mais de 150 atividades de matemática</text>
+        <text x="197" y="190" textAnchor="middle" fontSize="11" fontWeight="900" fill="#fff">para o 1º ao 5º ano</text>
+        <text x="197" y="212" textAnchor="middle" fontSize="8.5" fontWeight="700" fill="#eaf8ff">Aprender matemática pode ser uma grande aventura!</text>
+
+        {[
+          [70, "+150", "atividades", "🧮"],
+          [137, "1º ao 5º", "ano", "🎒"],
+          [204, "PDF", "para imprimir", "📄"],
+          [271, "Sem tela", "e sem complicação", "⏱"],
+        ].map(([x, a, b, icon]) => (
+          <g key={String(a)} transform={`translate(${x} 223)`}>
+            <rect x="0" y="0" width="59" height="57" rx="8" fill="#fff" stroke="#d8e8ef" filter="url(#softShadow)" />
+            <text x="29.5" y="18" textAnchor="middle" fontSize="12">{icon}</text>
+            <text x="29.5" y="34" textAnchor="middle" fontSize="8.5" fontWeight="900" fill="#174c78">{a}</text>
+            <text x="29.5" y="46" textAnchor="middle" fontSize="6.7" fontWeight="800" fill="#53697c">{b}</text>
+          </g>
+        ))}
+
+        <rect x="73" y="291" width="236" height="36" rx="18" fill="#13ad38" stroke="#91ed9e" strokeWidth="2" filter="url(#shadow)" />
+        <text x="191" y="313" textAnchor="middle" fontSize="9.5" fontWeight="900" fill="#fff">QUERO GARANTIR AGORA →</text>
+        <text x="79" y="344" fontSize="6.4" fontWeight="700" fill="#fff">● Compra segura</text>
+        <text x="158" y="344" fontSize="6.4" fontWeight="700" fill="#fff">● Acesso imediato</text>
+        <text x="244" y="344" fontSize="6.4" fontWeight="700" fill="#fff">● 7 dias de garantia</text>
+
+        {/* Hero art */}
+        <Workbook x={392} y={54} w={76} h={104} rotate={-8} src="/math/page-numeros.webp" />
+        <Workbook x={445} y={47} w={78} h={106} rotate={-2} src="/math/page-adicao.webp" />
+        <Workbook x={506} y={57} w={75} h={102} rotate={7} src="/math/page-medidas.webp" />
+        <Workbook x={565} y={88} w={72} h={97} rotate={8} src="/math/page-adicao.webp" />
+        <Workbook x={360} y={95} w={74} h={101} rotate={-7} src="/math/page-medidas.webp" />
+
+        <g transform="translate(568 74) rotate(4)">
+          <rect x="0" y="0" width="114" height="69" rx="8" fill="#fff0a9" stroke="#e4b338" strokeWidth="1.5" filter="url(#softShadow)" />
+          <text x="57" y="20" textAnchor="middle" fontSize="8.2" fontWeight="900" fill="#173b63">DESAFIOS REAIS</text>
+          <text x="57" y="34" textAnchor="middle" fontSize="7.5" fontWeight="900" fill="#173b63">APRENDIZADO DE VERDADE</text>
+          <text x="57" y="49" textAnchor="middle" fontSize="7.5" fontWeight="900" fill="#173b63">DIVERSÃO GARANTIDA!</text>
+        </g>
+
+        <g transform="translate(435 132) rotate(-1)">
+          <MiniCover x={0} y={0} scale={1.28} />
+        </g>
+
+        <Kid x={338} y={214} scale={.9} />
+        <Kid x={555} y={225} scale={.73} girl />
+
+        <g transform="translate(457 273)">
+          <rect x="0" y="0" width="92" height="58" rx="5" fill="#ba6720" stroke="#5b351a" strokeWidth="4" />
+          <rect x="0" y="10" width="92" height="14" fill="#db8c34" />
+          <rect x="0" y="29" width="92" height="5" fill="#5b351a" />
+          <rect x="40" y="23" width="14" height="22" rx="2" fill="#e7ebef" stroke="#9da7af" strokeWidth="2" />
+          <polygon points="42,-19 57,-6 53,11 42,22 31,11 27,-6" fill="#33d7ee" stroke="#0a849f" strokeWidth="3" />
+          <path d="M29 -4 L55 -4 M42 -18 L42 20" stroke="#dffcff" strokeWidth="2" opacity=".8" />
+        </g>
+
+        <g transform="translate(616 224)">
+          <rect x="0" y="0" width="92" height="79" fill="#9d632f" stroke="#623c1d" strokeWidth="4" filter="url(#softShadow)" />
+          <text x="46" y="24" textAnchor="middle" fontSize="9.2" fontWeight="900" fill="#fff7d9">MATEMÁTICA</text>
+          <text x="46" y="40" textAnchor="middle" fontSize="9.2" fontWeight="900" fill="#fff7d9">TAMBÉM PODE</text>
+          <text x="46" y="56" textAnchor="middle" fontSize="9.2" fontWeight="900" fill="#fff7d9">SER DIVERTIDA!</text>
+        </g>
 
         {/* SAMPLE SECTION */}
         <rect x="0" y="366" width="740" height="255" fill="url(#lightBlue)" />
