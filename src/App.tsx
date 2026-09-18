@@ -19,12 +19,12 @@ const App = () => (
         <Routes>
           {/* Rota Principal (Home) */}
           <Route path="/" element={<Index />} />
-          
-          {/* Rota Específica (Futuro padrão) */}
+
+          {/* Produtos */}
           <Route path="/biblicos" element={<Index />} />
           <Route path="/matematica" element={<Matematica />} />
           <Route path="/bloco-dos-mundos" element={<BlocoDosMundos />} />
-          
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
