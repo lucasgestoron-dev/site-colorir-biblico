@@ -1,67 +1,115 @@
 import { useEffect } from "react";
 import {
   ArrowRight,
+  Award,
   Blocks,
   BookOpen,
   Brain,
   Calculator,
+  CalendarDays,
   CheckCircle2,
+  Download,
   FileText,
   Gamepad2,
+  Gift,
+  Heart,
+  Home,
   MessageCircle,
   Printer,
   ShieldCheck,
   Sparkles,
   Star,
   Trophy,
+  Users,
 } from "lucide-react";
 
 const checkoutReady = false;
 
-const benefits = [
+const pageSamples = [
   {
-    icon: Gamepad2,
-    title: "Menos resistência para começar",
-    text: "O universo dos blocos entra como ponte visual para deixar a atividade mais convidativa antes mesmo da primeira conta.",
+    src: "/math/page-numeros.webp",
+    label: "CONTAGEM",
+    title: "Números e sequências",
+    accent: "bg-sky-500",
   },
   {
-    icon: Brain,
-    title: "Conteúdo organizado por ano",
-    text: "Do 1º ao 5º ano, com progressão de números e operações até frações, medidas, dados, lógica e problemas.",
+    src: "/math/page-adicao.webp",
+    label: "SOMA E SUBTRAÇÃO",
+    title: "Operações e estimativas",
+    accent: "bg-orange-500",
   },
   {
-    icon: Printer,
-    title: "Pronto para imprimir",
-    text: "Escolha a página, imprima em A4 e use em casa, no reforço ou como atividade complementar.",
+    src: "/math/page-medidas.webp",
+    label: "MEDIDAS",
+    title: "Medidas, mapas e tempo",
+    accent: "bg-emerald-500",
   },
   {
-    icon: Trophy,
-    title: "Sensação de missão",
-    text: "Cada página mistura matemática de verdade com desafios, mapas, baús, cristais e construções.",
+    src: "/math/page-adicao.webp",
+    label: "PROBLEMAS",
+    title: "Problemas contextualizados",
+    accent: "bg-amber-500",
+  },
+  {
+    src: "/math/page-medidas.webp",
+    label: "DESAFIOS",
+    title: "Leitura e raciocínio",
+    accent: "bg-violet-500",
+  },
+  {
+    src: "/math/page-numeros.webp",
+    label: "LÓGICA",
+    title: "Padrões e missões",
+    accent: "bg-pink-500",
   },
 ];
 
-const practiceItems = [
-  "Números e sequências",
-  "Adição e subtração",
-  "Multiplicação e divisão",
-  "Frações e proporcionalidade",
-  "Medidas e geometria",
-  "Matemática do cotidiano",
-  "Dados, padrões e lógica",
-  "Problemas contextualizados",
+const audience = [
+  { icon: Home, text: "Pais que querem reforço em casa" },
+  { icon: Gamepad2, text: "Crianças que resistem à matemática" },
+  { icon: Blocks, text: "Crianças que gostam do universo de blocos" },
+  { icon: Users, text: "Professores e apoio escolar" },
+  { icon: CalendarDays, text: "Férias e momentos livres" },
+  { icon: Heart, text: "Famílias que buscam aprendizado leve" },
+];
+
+const receives = [
+  { icon: FileText, title: "PDF principal", text: "+ de 150 atividades" },
+  { icon: BookOpen, title: "Organizado", text: "1º ao 5º ano" },
+  { icon: CheckCircle2, title: "Gabarito", text: "Conferência facilitada" },
+  { icon: Brain, title: "Instruções", text: "Uso simples e direto" },
+  { icon: Download, title: "Acesso digital", text: "Baixe quando precisar" },
+  { icon: Printer, title: "Pronto para imprimir", text: "Formato A4" },
+];
+
+const extras = [
+  { icon: Calculator, title: "Caderno de Tabuada", text: "Revisão visual" },
+  { icon: Brain, title: "Probleminhas Extras", text: "Mais prática" },
+  { icon: Trophy, title: "Mapa de Progresso", text: "Acompanhe conquistas" },
+  { icon: Gift, title: "Cartões de Recompensa", text: "Motivação lúdica" },
+  { icon: Award, title: "Certificados", text: "Marque cada etapa" },
+  { icon: BookOpen, title: "Guia para Responsáveis", text: "Uso sem complicação" },
 ];
 
 const faqs = [
-  ["É um jogo digital?", "Não. É um material em PDF para imprimir. A estética do universo dos blocos é usada para tornar os exercícios mais interessantes visualmente."],
-  ["Para quais anos serve?", "O material principal está organizado do 1º ao 5º ano do Ensino Fundamental, com 30 atividades principais por ano."],
-  ["Preciso imprimir tudo?", "Não. Você pode escolher o ano, o conteúdo e a página que deseja trabalhar e imprimir somente o necessário."],
-  ["Vem com gabarito?", "Sim. O material prevê gabarito para facilitar a conferência das atividades."],
-  ["Posso usar em reforço escolar?", "Sim. A organização por tema e ano permite selecionar atividades pontuais para casa, reforço ou acompanhamento."],
-  ["O checkout já está ativo?", "Ainda não. A página está sendo preparada junto com a finalização do material e dos extras da oferta."],
+  ["Como recebo o material?", "O produto é digital. Depois da compra, o acesso ao PDF é liberado para download conforme as instruções do checkout."],
+  ["Posso imprimir quantas vezes quiser?", "Você pode imprimir as atividades para uso pessoal conforme as condições finais da oferta."],
+  ["Serve para qual idade?", "O material está organizado por ano escolar, do 1º ao 5º ano do Ensino Fundamental."],
+  ["O material é físico?", "Não. É um material digital em PDF, pronto para imprimir em tamanho A4."],
+  ["Como funciona a garantia?", "A política final de garantia será exibida na página e no checkout antes do lançamento da campanha."],
+  ["Vem com gabarito?", "Sim. O projeto prevê gabarito para facilitar a conferência das atividades."],
 ];
 
-const Block = ({
+const PixelTree = ({ className = "" }: { className?: string }) => (
+  <div className={`relative h-32 w-24 ${className}`} aria-hidden="true">
+    <div className="absolute bottom-0 left-1/2 h-16 w-6 -translate-x-1/2 bg-[#8c5527] shadow-[inset_-6px_0_0_#603817]" />
+    <div className="absolute left-0 top-6 h-12 w-12 rounded-[4px] bg-[#58a52f] shadow-[inset_-8px_-8px_0_#31741d,inset_6px_6px_0_#86c64d]" />
+    <div className="absolute right-0 top-4 h-12 w-12 rounded-[4px] bg-[#65b638] shadow-[inset_-8px_-8px_0_#33761f,inset_6px_6px_0_#92ce58]" />
+    <div className="absolute left-5 top-0 h-14 w-14 rounded-[4px] bg-[#5fae34] shadow-[inset_-8px_-8px_0_#34751f,inset_6px_6px_0_#95d05d]" />
+  </div>
+);
+
+const PixelBlock = ({
   className = "",
   tone = "bg-emerald-500",
 }: {
@@ -69,57 +117,69 @@ const Block = ({
   tone?: string;
 }) => (
   <span
+    className={`absolute h-9 w-9 rounded-[5px] border-2 border-black/10 shadow-[inset_5px_5px_0_rgba(255,255,255,.25),inset_-5px_-5px_0_rgba(0,0,0,.14),0_10px_16px_-10px_rgba(15,23,42,.55)] ${tone} ${className}`}
     aria-hidden="true"
-    className={`absolute h-8 w-8 rounded-[5px] border-2 border-black/10 shadow-[inset_4px_4px_0_rgba(255,255,255,.28),inset_-4px_-4px_0_rgba(0,0,0,.12),0_8px_12px_-8px_rgba(15,23,42,.55)] ${tone} ${className}`}
   />
 );
 
-const RealPage = ({
-  src,
-  title,
-  className = "",
-  eager = false,
-}: {
-  src: string;
-  title: string;
-  className?: string;
-  eager?: boolean;
-}) => (
-  <figure
-    className={`overflow-hidden rounded-[1.3rem] border-[5px] border-white bg-white shadow-[0_24px_55px_-24px_rgba(15,23,42,.5)] ${className}`}
-  >
-    <img
-      src={src}
-      alt={title}
-      className="block h-auto w-full"
-      loading={eager ? "eager" : "lazy"}
-      decoding="async"
-    />
-  </figure>
+const BlockKid = ({ className = "" }: { className?: string }) => (
+  <div className={`relative h-48 w-36 ${className}`} aria-hidden="true">
+    <div className="absolute left-7 top-1 h-24 w-24 rounded-[14px] bg-[#d99560] shadow-[inset_-10px_-8px_0_#bb6f3f]" />
+    <div className="absolute left-5 top-0 h-9 w-28 rounded-[8px] bg-[#5a301d] shadow-[inset_-8px_-6px_0_#3b1e11]" />
+    <div className="absolute left-5 top-6 h-14 w-8 bg-[#5a301d]" />
+    <div className="absolute right-5 top-6 h-11 w-7 bg-[#5a301d]" />
+    <div className="absolute left-[52px] top-11 h-5 w-5 rounded-[4px] bg-white">
+      <span className="absolute left-1 top-1 h-3 w-3 rounded-sm bg-[#263b4b]" />
+    </div>
+    <div className="absolute right-[28px] top-11 h-5 w-5 rounded-[4px] bg-white">
+      <span className="absolute left-1 top-1 h-3 w-3 rounded-sm bg-[#263b4b]" />
+    </div>
+    <div className="absolute left-[62px] top-[73px] h-2 w-8 rounded-full bg-[#7a3b2a]" />
+    <div className="absolute bottom-0 left-4 h-82 w-28 rounded-t-[20px] bg-[#2483b9] shadow-[inset_-10px_0_0_#17618c]" style={{ height: 84 }} />
+    <div className="absolute bottom-12 -left-3 h-16 w-9 rotate-[18deg] rounded-lg bg-[#d99560]" />
+    <div className="absolute bottom-12 -right-3 h-16 w-9 -rotate-[18deg] rounded-lg bg-[#d99560]" />
+    <div className="absolute bottom-[54px] -right-5 rotate-12">
+      <div
+        className="h-11 w-10 bg-cyan-300 shadow-[inset_7px_0_0_#ecfeff,inset_-7px_0_0_#0891b2,inset_0_-7px_0_#0e7490]"
+        style={{ clipPath: "polygon(50% 0, 88% 25%, 78% 78%, 50% 100%, 22% 78%, 12% 25%)" }}
+      />
+    </div>
+  </div>
 );
 
-const MessageBubble = ({
-  label,
-  children,
-  right = false,
-}: {
-  label: string;
-  children: React.ReactNode;
-  right?: boolean;
-}) => (
-  <div className={`flex ${right ? "justify-end" : "justify-start"}`}>
-    <div
-      className={`max-w-[90%] rounded-2xl p-4 shadow-sm sm:max-w-[78%] ${
-        right
-          ? "rounded-tr-sm bg-[#d9f8c9]"
-          : "rounded-tl-sm bg-white"
-      }`}
-    >
-      <p className="mb-1 text-[10px] font-black uppercase tracking-[.14em] text-slate-400">
-        {label}
+const ProductCover = ({ compact = false }: { compact?: boolean }) => (
+  <div
+    className={`relative overflow-hidden rounded-[1.8rem] border-[5px] border-white bg-gradient-to-b from-[#1f7fbd] via-[#176da8] to-[#0d426f] text-center text-white shadow-[0_28px_65px_-24px_rgba(5,43,78,.65)] ${
+      compact ? "p-4" : "p-5 sm:p-6"
+    }`}
+  >
+    <div className="absolute inset-0 opacity-15" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.7) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.7) 1px,transparent 1px)", backgroundSize: "22px 22px" }} />
+    <div className="relative">
+      <p className="text-[10px] font-black uppercase tracking-[.2em] text-yellow-200 sm:text-xs">
+        Missões Matemáticas
       </p>
-      <p className="text-sm font-semibold leading-relaxed text-slate-700">
-        {children}
+      <h3
+        className={`mt-2 font-black leading-[.88] text-yellow-300 ${compact ? "text-2xl" : "text-3xl sm:text-4xl"}`}
+        style={{
+          WebkitTextStroke: "1.5px #0a3157",
+          textShadow: "0 4px 0 #0a3157, 0 7px 0 rgba(0,0,0,.18)",
+        }}
+      >
+        MUNDO DOS
+        <br />
+        BLOCOS
+      </h3>
+      <div className="mx-auto mt-5 flex max-w-[230px] items-end justify-center gap-2">
+        <PixelBlock className="static !h-9 !w-9" tone="bg-emerald-500" />
+        <PixelBlock className="static !h-12 !w-12" tone="bg-orange-400" />
+        <PixelBlock className="static !h-10 !w-10" tone="bg-cyan-300" />
+        <PixelBlock className="static !h-8 !w-8" tone="bg-violet-500" />
+      </div>
+      <p className="mt-4 text-xs font-black text-blue-50 sm:text-sm">
+        +150 atividades • 1º ao 5º ano
+      </p>
+      <p className="mt-2 rounded-xl bg-white/12 px-3 py-2 text-[10px] font-black uppercase tracking-wide text-blue-50">
+        Aprender • resolver • avançar
       </p>
     </div>
   </div>
@@ -128,12 +188,9 @@ const MessageBubble = ({
 const Matematica = () => {
   useEffect(() => {
     const oldTitle = document.title;
-    document.title =
-      "Missões Matemáticas no Mundo dos Blocos | 1º ao 5º ano";
+    document.title = "Missões Matemáticas no Mundo dos Blocos | 1º ao 5º ano";
 
-    let meta = document.querySelector(
-      'meta[name="description"]',
-    ) as HTMLMetaElement | null;
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     const oldDescription = meta?.content;
 
     if (!meta) {
@@ -142,8 +199,7 @@ const Matematica = () => {
       document.head.appendChild(meta);
     }
 
-    meta.content =
-      "150 atividades de matemática para imprimir do 1º ao 5º ano, com missões visuais no Mundo dos Blocos e gabarito.";
+    meta.content = "Mais de 150 atividades de matemática para imprimir do 1º ao 5º ano, com missões visuais no Mundo dos Blocos e gabarito.";
 
     return () => {
       document.title = oldTitle;
@@ -152,31 +208,33 @@ const Matematica = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f7fbff] text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-blue-100 bg-white/95 backdrop-blur-xl">
-        <div className="container flex h-16 items-center justify-between gap-4">
-          <a
-            href="#top"
-            className="flex items-center gap-2.5 font-black text-[#17508f]"
-          >
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#2b8ac8] text-white shadow-[0_4px_0_#17669f]">
+    <div className="min-h-screen bg-[#f8fbff] text-slate-900">
+      <header className="sticky top-0 z-50 border-b border-blue-100/80 bg-white/95 backdrop-blur-xl">
+        <div className="container flex h-16 items-center justify-between gap-3">
+          <a href="#top" className="flex items-center gap-2.5 font-black text-[#15508c]">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[#37a3df] to-[#15649e] text-white shadow-[0_4px_0_#0d4d7d]">
               <Blocks className="h-5 w-5" />
             </span>
             <span className="leading-none">
-              <span className="block text-sm sm:text-base">
-                Mundo dos Blocos
-              </span>
-              <span className="block text-[10px] font-bold uppercase tracking-[.14em] text-slate-400">
+              <span className="block text-sm sm:text-base">Mundo dos Blocos</span>
+              <span className="block text-[9px] font-bold uppercase tracking-[.15em] text-slate-400">
                 Missões Matemáticas
               </span>
             </span>
           </a>
 
+          <nav className="hidden items-center gap-5 text-xs font-black text-slate-600 lg:flex">
+            <a href="#como-funciona" className="hover:text-[#176da8]">Como funciona</a>
+            <a href="#recebe" className="hover:text-[#176da8]">O que você recebe</a>
+            <a href="#uso" className="hover:text-[#176da8]">Como usar</a>
+            <a href="#faq" className="hover:text-[#176da8]">Perguntas frequentes</a>
+          </nav>
+
           <a
             href="#planos"
-            className="rounded-xl bg-green-500 px-4 py-2.5 text-sm font-black text-white shadow-[0_4px_0_#15803d] transition hover:translate-y-0.5 hover:shadow-[0_2px_0_#15803d]"
+            className="rounded-full bg-green-500 px-4 py-2.5 text-xs font-black text-white shadow-[0_4px_0_#15803d] transition hover:translate-y-0.5 hover:shadow-[0_2px_0_#15803d] sm:text-sm"
           >
-            VER OFERTA
+            QUERO GARANTIR
           </a>
         </div>
       </header>
@@ -184,506 +242,369 @@ const Matematica = () => {
       <main>
         <section
           id="top"
-          className="relative overflow-hidden bg-gradient-to-b from-[#49a8dc] via-[#3295d1] to-[#2679b4] pt-9 pb-16 md:pt-14 md:pb-24"
+          className="relative overflow-hidden bg-gradient-to-b from-[#74c9ee] via-[#43a8df] to-[#2d8dcc] pt-9 pb-14 md:pt-12 md:pb-20"
         >
-          <div
-            className="absolute inset-0 opacity-[.13]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,.75) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,.75) 1px,transparent 1px)",
-              backgroundSize: "34px 34px",
-            }}
-          />
-          <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-yellow-300/30 blur-3xl" />
-          <div className="absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-emerald-300/25 blur-3xl" />
-          <Block className="left-[6%] top-28 hidden rotate-12 lg:block" tone="bg-emerald-500" />
-          <Block className="left-[10%] top-44 hidden -rotate-6 lg:block" tone="bg-orange-400" />
-          <Block className="right-[9%] top-32 hidden rotate-6 lg:block" tone="bg-violet-500" />
-          <Block className="right-[14%] bottom-20 hidden -rotate-12 md:block" tone="bg-cyan-300" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#8bd46a] via-[#74c553] to-transparent" />
+          <div className="absolute inset-0 opacity-[.14]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.8) 1px,transparent 1px)", backgroundSize: "36px 36px" }} />
+          <PixelTree className="pointer-events-none absolute -left-3 bottom-10 hidden scale-125 lg:block" />
+          <PixelTree className="pointer-events-none absolute right-0 bottom-8 hidden scale-110 lg:block" />
+          <PixelBlock className="left-[12%] top-28 hidden rotate-12 md:block" tone="bg-emerald-500" />
+          <PixelBlock className="right-[12%] top-20 hidden -rotate-6 md:block" tone="bg-orange-400" />
+          <PixelBlock className="right-[6%] top-52 hidden rotate-12 lg:block" tone="bg-violet-500" />
 
           <div className="container relative">
-            <div className="mx-auto max-w-5xl text-center text-white">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/35 bg-white/15 px-4 py-2 text-xs font-black uppercase tracking-[.14em] shadow-sm backdrop-blur">
-                <Sparkles className="h-4 w-4 text-yellow-200" />
-                Material digital para imprimir
-              </span>
-
-              <h1 className="mx-auto mt-5 max-w-4xl text-4xl font-black leading-[.97] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                150 missões de matemática para seu filho{" "}
-                <span className="text-yellow-200">
-                  querer entrar no desafio
+            <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[.9fr_1.1fr]">
+              <div className="text-center lg:text-left">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/20 px-4 py-2 text-xs font-black uppercase tracking-[.14em] text-white shadow-sm backdrop-blur">
+                  <Sparkles className="h-4 w-4 text-yellow-200" />
+                  Desafios reais • diversão no papel
                 </span>
-              </h1>
 
-              <p className="mx-auto mt-6 max-w-3xl text-base font-semibold leading-relaxed text-blue-50 sm:text-lg md:text-xl">
-                Do 1º ao 5º ano, com atividades visuais, progressivas e prontas
-                para imprimir — usando o universo dos blocos como ponte para
-                tornar a prática muito mais convidativa.
-              </p>
+                <p className="mt-5 text-sm font-black uppercase tracking-[.18em] text-blue-950/80">
+                  Missões Matemáticas
+                </p>
 
-              <div className="mt-7 flex flex-wrap justify-center gap-2.5">
-                {[
-                  "30 atividades por ano",
-                  "1º ao 5º ano",
-                  "PDF A4",
-                  "Gabarito incluído",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-black text-[#19558e] shadow-md"
-                  >
-                    <CheckCircle2 className="h-4 w-4 text-green-500" />
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
+                <h1
+                  className="mt-1 text-5xl font-black leading-[.86] text-yellow-300 sm:text-6xl md:text-7xl"
+                  style={{
+                    WebkitTextStroke: "2px #0b3c68",
+                    textShadow: "0 5px 0 #0b3c68, 0 10px 16px rgba(15,23,42,.28)",
+                  }}
+                >
+                  MUNDO DOS
+                  <br />
+                  BLOCOS
+                </h1>
 
-            <div className="relative mx-auto mt-11 h-[440px] max-w-5xl sm:h-[540px] md:h-[650px]">
-              <RealPage
-                src="/math/page-adicao.webp"
-                title="Página real do PDF com atividades de adição e subtração"
-                eager
-                className="absolute left-[2%] top-16 z-10 w-[45%] -rotate-6 sm:left-[7%] md:w-[36%]"
-              />
-
-              <RealPage
-                src="/math/page-medidas.webp"
-                title="Página real do PDF com atividades de medidas, localização e tempo"
-                eager
-                className="absolute right-[2%] top-16 z-10 w-[45%] rotate-6 sm:right-[7%] md:w-[36%]"
-              />
-
-              <div className="absolute left-1/2 top-0 z-20 w-[50%] -translate-x-1/2 sm:w-[43%] md:w-[35%]">
-                <div className="rounded-[2rem] border-[6px] border-white bg-gradient-to-b from-[#1d69ad] to-[#103b6d] p-3 shadow-[0_30px_60px_-20px_rgba(4,34,72,.65)] sm:p-4">
-                  <div className="rounded-[1.5rem] border border-white/15 bg-[#2386c3] p-4 text-center text-white sm:p-5">
-                    <div className="mx-auto mb-2 grid h-20 w-20 place-items-center rounded-2xl bg-[#f2a33b] shadow-[inset_0_-7px_0_#bd6a20]">
-                      <Calculator className="h-10 w-10" />
-                    </div>
-                    <p className="text-[10px] font-black uppercase tracking-[.18em] text-yellow-100 sm:text-xs">
-                      Missões Matemáticas
-                    </p>
-                    <h2 className="mt-2 text-2xl font-black leading-none sm:text-3xl md:text-4xl">
-                      MUNDO DOS BLOCOS
-                    </h2>
-                    <p className="mt-3 text-xs font-bold text-blue-50 sm:text-sm">
-                      150 atividades • 1º ao 5º ano
-                    </p>
-                    <div className="mx-auto mt-4 grid max-w-[240px] grid-cols-5 gap-1.5">
-                      {Array.from({ length: 20 }).map((_, index) => (
-                        <span
-                          key={index}
-                          className={`aspect-square rounded-[3px] border border-white/25 ${
-                            index % 4 === 0
-                              ? "bg-emerald-400"
-                              : index % 3 === 0
-                                ? "bg-orange-400"
-                                : "bg-slate-300"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <p className="mt-4 rounded-xl bg-white/10 px-3 py-2 text-[10px] font-black uppercase tracking-wide sm:text-xs">
-                      Aprender • resolver • avançar
-                    </p>
-                  </div>
+                <div className="mx-auto mt-6 max-w-xl rounded-2xl border border-white/40 bg-[#145f98]/85 px-5 py-4 text-white shadow-xl lg:mx-0">
+                  <p className="text-xl font-black leading-tight sm:text-2xl">
+                    Mais de 150 atividades de matemática para o 1º ao 5º ano
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-blue-50 sm:text-base">
+                    Aprender matemática pode ser uma grande aventura.
+                  </p>
                 </div>
-              </div>
 
-              <div className="absolute bottom-1 left-1/2 z-30 -translate-x-1/2">
+                <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:max-w-2xl">
+                  {[
+                    ["+150", "atividades"],
+                    ["1º ao 5º", "ano"],
+                    ["PDF", "para imprimir"],
+                    ["Sem tela", "na hora da atividade"],
+                  ].map(([strong, text]) => (
+                    <div key={strong} className="rounded-2xl border border-white/45 bg-white/95 p-3 text-center shadow-lg">
+                      <p className="text-lg font-black text-[#145f98]">{strong}</p>
+                      <p className="mt-1 text-[10px] font-black uppercase tracking-wide text-slate-500">{text}</p>
+                    </div>
+                  ))}
+                </div>
+
                 <a
-                  href="#amostras"
-                  className="inline-flex items-center gap-2 rounded-xl bg-green-500 px-6 py-3.5 text-sm font-black text-white shadow-[0_5px_0_#15803d] transition hover:translate-y-0.5 hover:shadow-[0_3px_0_#15803d] sm:text-base"
+                  href="#planos"
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border-2 border-green-300 bg-green-500 px-7 py-4 text-base font-black text-white shadow-[0_6px_0_#15803d,0_16px_30px_-15px_rgba(21,128,61,.75)] transition hover:translate-y-1 hover:shadow-[0_3px_0_#15803d]"
                 >
-                  VER AS PÁGINAS REAIS <ArrowRight className="h-5 w-5" />
+                  QUERO GARANTIR AGORA <ArrowRight className="h-5 w-5" />
                 </a>
+
+                <div className="mt-4 flex flex-wrap justify-center gap-4 text-[11px] font-bold text-white/95 lg:justify-start">
+                  <span>● Compra segura</span>
+                  <span>● Acesso digital</span>
+                  <span>● Garantia planejada</span>
+                </div>
+              </div>
+
+              <div className="relative mx-auto h-[500px] w-full max-w-[620px] sm:h-[560px]">
+                <div className="absolute left-[3%] top-20 w-[39%] -rotate-6 rounded-xl border-[5px] border-white bg-white p-1 shadow-2xl">
+                  <img src="/math/page-numeros.webp" alt="Página real do material com atividades de números" className="w-full rounded-lg" loading="eager" />
+                </div>
+                <div className="absolute right-[2%] top-16 w-[39%] rotate-6 rounded-xl border-[5px] border-white bg-white p-1 shadow-2xl">
+                  <img src="/math/page-medidas.webp" alt="Página real do material com atividades de medidas" className="w-full rounded-lg" loading="eager" />
+                </div>
+                <div className="absolute left-[15%] top-6 w-[33%] -rotate-2 rounded-xl border-[5px] border-white bg-white p-1 shadow-2xl">
+                  <img src="/math/page-adicao.webp" alt="Página real do material com atividades de operações" className="w-full rounded-lg" loading="eager" />
+                </div>
+                <div className="absolute right-[14%] top-4 w-[32%] rotate-3 rounded-xl border-[5px] border-white bg-white p-1 shadow-2xl">
+                  <img src="/math/page-numeros.webp" alt="Página real do material" className="w-full rounded-lg" loading="eager" />
+                </div>
+
+                <div className="absolute left-1/2 top-20 z-20 w-[48%] -translate-x-1/2 sm:w-[44%]">
+                  <ProductCover />
+                </div>
+
+                <BlockKid className="absolute bottom-0 left-[7%] z-30 scale-[.82] sm:scale-100" />
+                <div className="absolute bottom-9 right-[4%] z-30 rounded-2xl border-4 border-[#68411f] bg-[#bd6a20] p-4 shadow-2xl">
+                  <div className="mb-2 h-2 w-20 rounded bg-[#6e3e1d]" />
+                  <div className="text-center text-xs font-black text-white">BAÚ DE MISSÕES</div>
+                </div>
+
+                <div className="absolute right-[1%] top-[46%] z-30 max-w-[180px] rotate-3 rounded-2xl border-2 border-yellow-300 bg-[#fff1a8] p-4 text-center shadow-xl">
+                  <p className="text-xs font-black leading-tight text-[#173b63]">
+                    DESAFIOS REAIS
+                    <br />
+                    APRENDIZADO DE VERDADE
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="amostras" className="bg-[#fffdf8] py-16 md:py-24">
+        <section id="amostras" className="bg-[#eef8ff] py-14 md:py-20">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
-              <span className="inline-flex rounded-full bg-yellow-100 px-4 py-2 text-xs font-black uppercase tracking-[.15em] text-amber-700">
-                Páginas reais do PDF
-              </span>
-              <h2 className="mt-4 text-3xl font-black leading-tight text-slate-900 md:text-5xl">
-                Veja exatamente o tipo de atividade que seu filho vai receber.
+              <p className="text-xs font-black uppercase tracking-[.18em] text-[#2d7eb7]">Páginas reais do material</p>
+              <h2 className="mt-2 text-3xl font-black text-[#153d66] md:text-5xl">
+                Veja como são as atividades por dentro
               </h2>
-              <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                Aqui não é mockup genérico: são páginas do próprio material,
-                com os elementos visuais integrados aos exercícios.
+              <p className="mt-3 text-base font-semibold text-slate-600">
+                Atividades criativas, com universo de blocos e exercícios que a criança realmente resolve.
               </p>
             </div>
 
-            <div className="mx-auto mt-10 grid max-w-6xl gap-8 lg:grid-cols-2">
-              <div className="rounded-[2rem] bg-white p-4 shadow-[0_24px_70px_-34px_rgba(15,23,42,.45)]">
-                <RealPage
-                  src="/math/page-adicao.webp"
-                  title="Página real: adição e subtração"
-                />
-                <div className="px-2 pb-2 pt-5">
-                  <p className="text-xs font-black uppercase tracking-[.14em] text-orange-600">
-                    Exemplo real • 3º ano
-                  </p>
-                  <h3 className="mt-1 text-xl font-black">
-                    Adição, subtração, estimativa e problema contextualizado
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                    Na mesma página, a criança encontra contas com
-                    reagrupamento, arredondamento, problemas da mina e termo
-                    desconhecido.
-                  </p>
-                </div>
-              </div>
-
-              <div className="rounded-[2rem] bg-white p-4 shadow-[0_24px_70px_-34px_rgba(15,23,42,.45)]">
-                <RealPage
-                  src="/math/page-medidas.webp"
-                  title="Página real: medidas, localização e tempo"
-                />
-                <div className="px-2 pb-2 pt-5">
-                  <p className="text-xs font-black uppercase tracking-[.14em] text-emerald-600">
-                    Exemplo real • 3º ano
-                  </p>
-                  <h3 className="mt-1 text-xl font-black">
-                    Mapa, pesos, cálculo de tempo e calendário
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                    Os elementos do universo de blocos ajudam a transformar
-                    conteúdos diferentes em pequenas missões visuais.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mx-auto mt-10 grid max-w-6xl gap-5 md:grid-cols-3">
-              <div className="rounded-[1.5rem] border border-orange-100 bg-orange-50 p-5">
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="rounded-lg bg-orange-500 px-3 py-1.5 text-xs font-black text-white">
-                    ADIÇÃO
+            <div className="mx-auto mt-9 flex max-w-7xl gap-4 overflow-x-auto pb-5 snap-x md:grid md:grid-cols-3 lg:grid-cols-6 md:overflow-visible">
+              {pageSamples.map((sample, index) => (
+                <article key={sample.label} className="min-w-[180px] snap-center rounded-[1.2rem] bg-white p-2.5 shadow-[0_16px_35px_-22px_rgba(15,23,42,.6)] md:min-w-0">
+                  <span className={`mx-auto mb-2 block w-fit rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-wide text-white ${sample.accent}`}>
+                    {sample.label}
                   </span>
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-orange-600 shadow-sm">
-                    <Calculator className="h-5 w-5" />
-                  </span>
-                </div>
-                <div className="space-y-3 text-lg font-black text-slate-800">
-                  <p>237 + 185 = ____</p>
-                  <p>364 + 278 = ____</p>
-                  <p>519 + 346 = ____</p>
-                </div>
-              </div>
-
-              <div className="rounded-[1.5rem] border border-blue-100 bg-blue-50 p-5">
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="rounded-lg bg-blue-500 px-3 py-1.5 text-xs font-black text-white">
-                    TEMPO
-                  </span>
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-blue-600 shadow-sm">
-                    <BookOpen className="h-5 w-5" />
-                  </span>
-                </div>
-                <div className="space-y-3 text-base font-black text-slate-800">
-                  <p>9h00 até 11h30: ____</p>
-                  <p>14h00 até 16h45: ____</p>
-                  <p>8h30 até 10h00: ____</p>
-                </div>
-              </div>
-
-              <div className="rounded-[1.5rem] border border-emerald-100 bg-emerald-50 p-5">
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="rounded-lg bg-emerald-500 px-3 py-1.5 text-xs font-black text-white">
-                    MEDIDAS
-                  </span>
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-emerald-600 shadow-sm">
-                    <Blocks className="h-5 w-5" />
-                  </span>
-                </div>
-                <p className="text-sm font-bold text-slate-600">
-                  madeira = 250 g • pedra = 500 g
-                </p>
-                <div className="mt-4 space-y-3 text-base font-black text-slate-800">
-                  <p>Madeira + pedra: ____ g</p>
-                  <p>2 pedras: ____ g = ____ kg</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-white py-16 md:py-24">
-          <div className="container">
-            <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
-              <div className="relative overflow-hidden rounded-[2.2rem] bg-[#eaf5ff] p-3 shadow-[0_24px_65px_-30px_rgba(15,23,42,.45)]">
-                <img
-                  src="/math/child-study.webp"
-                  alt="Criança realizando uma atividade matemática impressa"
-                  className="aspect-[16/10] w-full rounded-[1.7rem] object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/95 p-4 shadow-lg backdrop-blur">
-                  <p className="text-sm font-black text-[#19558e]">
-                    Baixe → imprima → coloque a missão na mesa
-                  </p>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-600">
-                    Uma proposta simples para estudar sem depender da tela.
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <span className="inline-flex rounded-full bg-orange-100 px-4 py-2 text-xs font-black uppercase tracking-[.15em] text-orange-700">
-                  Feito para a rotina real
-                </span>
-                <h2 className="mt-4 text-3xl font-black leading-tight md:text-5xl">
-                  O material precisa funcionar fora da tela também.
-                </h2>
-                <p className="mt-5 text-lg leading-relaxed text-slate-600">
-                  A ideia é simples: escolher uma missão, imprimir e deixar a
-                  criança resolver no papel. O visual chama para a atividade;
-                  o conteúdo mantém o foco na matemática.
-                </p>
-
-                <div className="mt-7 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-                  {["Escolha o tema", "Imprima a página", "Resolva a missão"].map(
-                    (step, index) => (
-                      <div
-                        key={step}
-                        className="rounded-2xl border border-slate-200 bg-[#fbfdff] p-4 text-center"
-                      >
-                        <span className="mx-auto grid h-9 w-9 place-items-center rounded-xl bg-[#2b8ac8] text-sm font-black text-white">
-                          {index + 1}
-                        </span>
-                        <p className="mt-3 text-sm font-black">{step}</p>
-                      </div>
-                    ),
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[#f1f9ff] py-16 md:py-24">
-          <div className="container">
-            <div className="mx-auto max-w-3xl text-center">
-              <span className="text-xs font-black uppercase tracking-[.18em] text-[#2877b4]">
-                Para diferentes momentos
-              </span>
-              <h2 className="mt-3 text-3xl font-black md:text-5xl">
-                Use do jeito que seu filho precisa hoje.
-              </h2>
-            </div>
-
-            <div className="mx-auto mt-10 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {benefits.map(({ icon: Icon, title, text }, index) => (
-                <article
-                  key={title}
-                  className={`rounded-[1.5rem] border p-5 ${
-                    [
-                      "border-orange-100 bg-orange-50",
-                      "border-emerald-100 bg-emerald-50",
-                      "border-blue-100 bg-blue-50",
-                      "border-violet-100 bg-violet-50",
-                    ][index]
-                  }`}
-                >
-                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-white text-[#256fa9] shadow-sm">
-                    <Icon className="h-5 w-5" />
+                  <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+                    <img src={sample.src} alt={sample.title} className="aspect-[210/297] w-full object-cover" loading={index < 3 ? "eager" : "lazy"} />
                   </div>
-                  <h3 className="mt-4 text-lg font-black">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                    {text}
-                  </p>
+                  <p className="mt-2 text-center text-xs font-black text-slate-700">{sample.title}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="overflow-hidden bg-[#e7f5e7] py-16 md:py-24">
+        <section id="como-funciona" className="bg-[#fffdf8] py-14 md:py-20">
           <div className="container">
-            <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[.85fr_1.15fr]">
-              <div>
-                <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[.14em] text-green-700 shadow-sm">
-                  <MessageCircle className="h-4 w-4" />
-                  Como isso pode entrar na rotina
-                </span>
-                <h2 className="mt-4 text-3xl font-black leading-tight md:text-5xl">
-                  Uma página bonita ajuda a mudar o clima da hora de estudar.
-                </h2>
-                <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                  Estes exemplos mostram situações de uso do material. Quando
-                  chegarem avaliações reais de compradores, esta área será
-                  substituída pelos próprios relatos.
-                </p>
+            <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[2rem] border border-orange-100 bg-white shadow-[0_22px_60px_-36px_rgba(15,23,42,.5)] lg:grid-cols-[.9fr_1.1fr]">
+              <div className="relative min-h-[300px] bg-[#f5ead9]">
+                <img
+                  src="/math/child-study.webp"
+                  alt="Criança realizando atividade matemática impressa"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute left-5 top-5 rounded-2xl bg-white/95 px-4 py-3 shadow-lg">
+                  <p className="font-black text-[#164a79]">Ele aprende</p>
+                  <p className="text-sm font-bold text-slate-600">se divertindo.</p>
+                </div>
               </div>
 
-              <div className="rounded-[2rem] border border-green-100 bg-[#dff1d7] p-4 shadow-[0_24px_60px_-35px_rgba(15,23,42,.45)] sm:p-6">
-                <div className="mb-4 flex items-center gap-3 rounded-2xl bg-white/90 p-3 shadow-sm">
-                  <div className="grid h-10 w-10 place-items-center rounded-full bg-green-100 font-black text-green-700">
-                    M
-                  </div>
-                  <div>
-                    <p className="font-black text-slate-900">Ideias de uso</p>
-                    <p className="text-xs text-slate-500">
-                      Exemplos ilustrativos • não são avaliações reais
-                    </p>
-                  </div>
-                </div>
+              <div className="p-7 md:p-10">
+                <h2 className="text-3xl font-black leading-tight text-[#153d66] md:text-4xl">
+                  Simples de baixar, imprimir e transformar a rotina de estudos
+                </h2>
 
-                <div className="space-y-3">
-                  <MessageBubble label="Em casa">
-                    “Eu usaria duas páginas depois da escola, principalmente
-                    quando ele já está cansado de atividade com cara de
-                    apostila.”
-                  </MessageBubble>
-                  <MessageBubble label="Reforço" right>
-                    “Escolher só o conteúdo que ele está vendo na escola e
-                    imprimir aquela missão deixaria tudo mais prático.”
-                  </MessageBubble>
-                  <MessageBubble label="Férias">
-                    “Uma missão curta por dia seria uma forma de manter a
-                    matemática presente sem transformar as férias em aula.”
-                  </MessageBubble>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {[
+                    ["1", "Baixe o PDF", "e tenha o material disponível."],
+                    ["2", "Imprima", "quando quiser, quantas páginas precisar."],
+                    ["3", "Entregue a missão", "para a criança resolver no papel."],
+                    ["4", "Veja a matemática", "ganhar uma apresentação mais convidativa."],
+                  ].map(([n, title, text]) => (
+                    <div key={n} className="rounded-2xl border border-slate-200 bg-[#fbfdff] p-4">
+                      <span className="grid h-9 w-9 place-items-center rounded-full bg-green-500 text-sm font-black text-white shadow-[0_3px_0_#15803d]">{n}</span>
+                      <p className="mt-3 font-black text-slate-900">{title}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-slate-600">{text}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#163f6d] py-14 text-white md:py-20">
-          <Block className="-left-2 top-7 hidden rotate-12 md:block" tone="bg-orange-400" />
-          <Block className="left-12 bottom-8 hidden -rotate-6 md:block" tone="bg-emerald-500" />
-          <Block className="right-10 top-8 hidden rotate-12 md:block" tone="bg-violet-500" />
-
-          <div className="container relative text-center">
-            <span className="inline-flex rounded-full bg-red-500 px-4 py-2 text-xs font-black uppercase tracking-[.14em]">
-              Menos cara de lição comum
-            </span>
-            <h2 className="mx-auto mt-4 max-w-4xl text-3xl font-black leading-tight md:text-5xl">
-              Use o interesse pelo Mundo dos Blocos como porta de entrada para
-              praticar matemática de verdade.
+        <section id="uso" className="bg-white py-14 md:py-20">
+          <div className="container">
+            <h2 className="text-center text-3xl font-black text-[#153d66] md:text-4xl">
+              Esse material é ideal para:
             </h2>
-            <a
-              href="#recebe"
-              className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 px-7 py-4 text-lg font-black text-white shadow-[0_6px_0_#15803d] transition hover:translate-y-0.5 hover:shadow-[0_3px_0_#15803d]"
-            >
-              VER O QUE VEM NO MATERIAL <ArrowRight className="h-5 w-5" />
-            </a>
+
+            <div className="mx-auto mt-8 grid max-w-6xl grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+              {audience.map(({ icon: Icon, text }, index) => (
+                <article key={text} className="rounded-2xl border border-slate-200 bg-[#fbfdff] p-4 text-center shadow-sm">
+                  <div className={`mx-auto grid h-12 w-12 place-items-center rounded-2xl ${
+                    ["bg-orange-100 text-orange-600","bg-violet-100 text-violet-600","bg-blue-100 text-blue-600","bg-emerald-100 text-emerald-600","bg-yellow-100 text-yellow-700","bg-rose-100 text-rose-600"][index]
+                  }`}>
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <p className="mt-3 text-xs font-black leading-snug text-slate-700 sm:text-sm">{text}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section id="recebe" className="bg-[#fffdf8] py-16 md:py-24">
+        <section className="relative overflow-hidden bg-gradient-to-r from-[#0f3c69] via-[#145586] to-[#0e355f] py-12 text-white md:py-16">
+          <PixelBlock className="left-[3%] top-8 hidden rotate-12 lg:block" tone="bg-emerald-500" />
+          <PixelBlock className="right-[4%] bottom-8 hidden -rotate-6 lg:block" tone="bg-cyan-300" />
+
+          <div className="container">
+            <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[1fr_.9fr]">
+              <div>
+                <h2 className="text-3xl font-black leading-tight md:text-5xl">
+                  Mais do que atividades,
+                  <br />
+                  é uma nova forma de se relacionar com a matemática.
+                </h2>
+
+                <div className="mt-6 grid gap-2 text-sm font-bold text-blue-50 sm:grid-cols-2">
+                  {[
+                    "Aumenta o interesse da criança",
+                    "Desenvolve raciocínio lógico",
+                    "Trabalha diversas habilidades",
+                    "Atividades ilustradas e envolventes",
+                    "Pronto para imprimir e usar",
+                    "Organizado por ano escolar",
+                  ].map((item) => (
+                    <p key={item} className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-400" />
+                      {item}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative mx-auto flex min-h-[230px] w-full max-w-md items-end justify-center">
+                <BlockKid className="relative z-20" />
+                <div className="absolute right-0 top-4 max-w-[160px] rotate-2 rounded-2xl border-2 border-yellow-300 bg-[#fff0a1] p-4 text-center shadow-xl">
+                  <p className="text-sm font-black leading-tight text-[#173b63]">
+                    PEQUENOS DESAFIOS,
+                    <br />
+                    GRANDES CONQUISTAS!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#fffdf8] py-14 md:py-20">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
-              <span className="text-xs font-black uppercase tracking-[.18em] text-emerald-600">
-                Tudo organizado para você
-              </span>
-              <h2 className="mt-3 text-3xl font-black md:text-5xl">
-                Um material pronto para escolher, imprimir e usar.
+              <h2 className="text-3xl font-black text-[#153d66] md:text-4xl">
+                Como isso pode entrar na rotina das mães
               </h2>
+              <p className="mt-2 text-sm font-semibold text-slate-500">
+                Exemplos ilustrativos de uso — serão substituídos por avaliações reais quando houver compradores.
+              </p>
             </div>
 
-            <div className="mx-auto mt-10 grid max-w-6xl gap-8 lg:grid-cols-[.85fr_1.15fr]">
-              <div className="relative">
-                <RealPage
-                  src="/math/page-medidas.webp"
-                  title="Exemplo real do material"
-                  className="mx-auto w-[78%] rotate-[-4deg]"
-                />
-                <RealPage
-                  src="/math/page-adicao.webp"
-                  title="Exemplo real do material"
-                  className="absolute right-0 top-10 w-[58%] rotate-[6deg]"
-                />
-                <div className="absolute bottom-3 left-0 rounded-2xl bg-[#174a82] px-5 py-4 text-white shadow-xl">
-                  <p className="text-xs font-black uppercase tracking-[.14em] text-yellow-200">
-                    PDF principal
-                  </p>
-                  <p className="mt-1 text-2xl font-black">150 atividades</p>
-                  <p className="text-sm font-bold text-blue-100">
-                    1º ao 5º ano + gabarito
-                  </p>
+            <div className="mx-auto mt-8 grid max-w-5xl gap-4 md:grid-cols-3">
+              {[
+                ["Fernanda", "Meu filho gosta desse universo. Eu usaria as missões nos dias em que ele já está cansado da tarefa comum."],
+                ["Camila", "Nas férias eu usaria uma página por vez, só para manter a matemática presente sem transformar em aula."],
+                ["Juliana", "A possibilidade de imprimir só o conteúdo que ele está estudando deixaria o reforço muito mais prático."],
+              ].map(([name, text], index) => (
+                <article key={name} className="rounded-2xl border border-green-100 bg-[#e8f6e4] p-3 shadow-sm">
+                  <div className="rounded-2xl bg-white p-4 shadow-sm">
+                    <div className="flex items-center gap-3">
+                      <div className={`grid h-10 w-10 place-items-center rounded-full text-sm font-black text-white ${["bg-rose-400","bg-sky-500","bg-violet-500"][index]}`}>
+                        {name[0]}
+                      </div>
+                      <div>
+                        <p className="font-black text-slate-800">{name}</p>
+                        <p className="text-[10px] font-bold text-green-600">exemplo de uso</p>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600">“{text}”</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="recebe" className="bg-white py-14 md:py-20">
+          <div className="container">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-black text-[#153d66] md:text-4xl">
+                Tudo o que você vai receber
+              </h2>
+              <p className="mt-2 text-sm font-semibold text-slate-500">
+                Material completo, organizado e pronto para usar.
+              </p>
+            </div>
+
+            <div className="mx-auto mt-8 grid max-w-6xl grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+              {receives.map(({ icon: Icon, title, text }) => (
+                <article key={title} className="rounded-2xl border border-slate-200 bg-[#fbfdff] p-4 text-center shadow-sm">
+                  <div className="mx-auto grid h-11 w-11 place-items-center rounded-xl bg-blue-100 text-[#176da8]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <p className="mt-3 text-sm font-black text-slate-800">{title}</p>
+                  <p className="mt-1 text-xs font-semibold text-slate-500">{text}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mx-auto mt-10 grid max-w-5xl items-center gap-8 lg:grid-cols-[.9fr_1.1fr]">
+              <div className="relative mx-auto w-full max-w-sm py-6">
+                <div className="absolute left-0 top-12 w-[45%] -rotate-6 rounded-xl border-4 border-white bg-white p-1 shadow-xl">
+                  <img src="/math/page-numeros.webp" alt="Página real do material" className="w-full rounded-lg" loading="lazy" />
+                </div>
+                <div className="absolute right-0 top-10 w-[45%] rotate-6 rounded-xl border-4 border-white bg-white p-1 shadow-xl">
+                  <img src="/math/page-adicao.webp" alt="Página real do material" className="w-full rounded-lg" loading="lazy" />
+                </div>
+                <div className="relative z-20 mx-auto w-[60%]">
+                  <ProductCover compact />
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                {practiceItems.map((item, index) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
-                  >
-                    <span
-                      className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl font-black text-white ${
-                        [
-                          "bg-blue-500",
-                          "bg-orange-500",
-                          "bg-red-500",
-                          "bg-violet-500",
-                          "bg-emerald-500",
-                          "bg-yellow-500",
-                          "bg-pink-500",
-                          "bg-cyan-600",
-                        ][index]
-                      }`}
-                    >
-                      {index + 1}
-                    </span>
-                    <span className="font-black text-slate-800">{item}</span>
-                  </div>
-                ))}
+              <div>
+                <p className="text-xs font-black uppercase tracking-[.18em] text-orange-600">Plano completo</p>
+                <h3 className="mt-2 text-3xl font-black text-[#153d66]">
+                  E não para por aí...
+                </h3>
+                <p className="mt-3 leading-relaxed text-slate-600">
+                  Além do material principal, a versão completa foi pensada para deixar a jornada mais visual, acompanhável e motivadora.
+                </p>
 
-                <div className="sm:col-span-2 rounded-[1.5rem] border border-emerald-100 bg-emerald-50 p-5">
-                  <div className="flex items-start gap-4">
-                    <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white text-emerald-600 shadow-sm">
-                      <FileText className="h-6 w-6" />
+                <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                  {extras.map(({ icon: Icon, title, text }) => (
+                    <div key={title} className="rounded-2xl border border-orange-100 bg-[#fff9ef] p-4 text-center">
+                      <div className="mx-auto grid h-10 w-10 place-items-center rounded-xl bg-white text-orange-600 shadow-sm">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <p className="mt-2 text-xs font-black text-slate-800">{title}</p>
+                      <p className="mt-1 text-[10px] font-semibold text-slate-500">{text}</p>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-black">
-                        No plano Completo, a experiência cresce
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                        Tabuada temática, problemas extras, mapa de progresso,
-                        cartões de recompensa, certificados e guia para pais
-                        entram como complementos visuais da jornada.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="planos" className="bg-white py-16 md:py-24">
-          <div className="container">
+        <section id="planos" className="relative overflow-hidden bg-gradient-to-b from-[#edf8ff] to-[#dff2ff] py-14 md:py-20">
+          <PixelTree className="pointer-events-none absolute -left-3 bottom-0 hidden lg:block" />
+          <PixelTree className="pointer-events-none absolute right-0 bottom-0 hidden lg:block" />
+
+          <div className="container relative">
             <div className="mx-auto max-w-3xl text-center">
               <span className="inline-flex rounded-full bg-red-100 px-4 py-2 text-xs font-black uppercase tracking-[.15em] text-red-600">
-                Escolha sua versão
+                Escolha a melhor opção para você
               </span>
-              <h2 className="mt-4 text-3xl font-black md:text-5xl">
-                Comece com o essencial ou leve a experiência completa.
+              <h2 className="mt-4 text-3xl font-black text-[#153d66] md:text-5xl">
+                Dois planos, a mesma base de aprendizado.
               </h2>
             </div>
 
             <div className="mx-auto mt-10 grid max-w-4xl gap-6 md:grid-cols-2">
-              <article className="relative rounded-[2rem] border-2 border-blue-100 bg-[#f8fbff] p-7 shadow-[0_22px_50px_-30px_rgba(15,23,42,.35)]">
-                <p className="text-sm font-black uppercase tracking-[.14em] text-[#2877b4]">
-                  Plano básico
-                </p>
-                <h3 className="mt-1 text-3xl font-black">Essencial</h3>
+              <article className="rounded-[2rem] border-2 border-blue-200 bg-white p-6 shadow-[0_22px_50px_-30px_rgba(15,23,42,.45)]">
+                <p className="text-center text-xs font-black uppercase tracking-[.14em] text-[#2877b4]">Plano Essencial</p>
+                <div className="mx-auto mt-4 w-36"><ProductCover compact /></div>
 
                 <ul className="mt-6 space-y-3 text-sm font-semibold text-slate-700">
                   {[
                     "150 atividades principais",
-                    "1º ao 5º ano",
-                    "30 atividades por ano",
-                    "PDF A4 para imprimir",
-                    "Gabarito",
-                    "Organização por temas",
+                    "Organizado do 1º ao 5º ano",
+                    "Gabarito completo",
+                    "Instruções de uso",
+                    "Acesso digital",
                   ].map((item) => (
                     <li key={item} className="flex gap-2">
                       <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-500" />
@@ -692,44 +613,35 @@ const Matematica = () => {
                   ))}
                 </ul>
 
-                <div className="mt-8 border-t border-slate-200 pt-6">
-                  <p className="text-sm font-bold text-slate-500">
-                    Pagamento único
-                  </p>
-                  <p className="mt-1 text-5xl font-black text-slate-900">
-                    <span className="text-xl align-top">R$</span>17,90
-                  </p>
-                </div>
+                <p className="mt-7 text-center text-sm font-bold text-slate-500">Pagamento único</p>
+                <p className="text-center text-5xl font-black text-[#153d66]">
+                  <span className="align-top text-xl">R$</span>17,90
+                </p>
 
                 <button
                   disabled={!checkoutReady}
-                  className="mt-6 w-full rounded-xl bg-green-500 px-5 py-4 font-black text-white shadow-[0_5px_0_#15803d] disabled:cursor-not-allowed disabled:opacity-70"
+                  className="mt-6 w-full rounded-full bg-green-500 px-5 py-4 font-black text-white shadow-[0_5px_0_#15803d] disabled:cursor-not-allowed disabled:opacity-80"
                 >
                   EM CONFIGURAÇÃO
                 </button>
               </article>
 
-              <article className="relative overflow-hidden rounded-[2rem] border-4 border-emerald-400 bg-gradient-to-b from-[#174a82] to-[#0e315a] p-7 text-white shadow-[0_28px_65px_-28px_rgba(15,67,115,.6)]">
-                <div className="absolute right-0 top-0 rounded-bl-2xl bg-emerald-400 px-4 py-2 text-xs font-black uppercase tracking-wider text-emerald-950">
-                  Mais completo
+              <article className="relative overflow-hidden rounded-[2rem] border-4 border-emerald-400 bg-gradient-to-b from-[#174f86] to-[#0b2e52] p-6 text-white shadow-[0_30px_65px_-25px_rgba(9,61,104,.6)]">
+                <div className="absolute right-0 top-0 rounded-bl-2xl bg-emerald-400 px-4 py-2 text-[10px] font-black uppercase tracking-wider text-emerald-950">
+                  Mais escolhido
                 </div>
-
-                <p className="text-sm font-black uppercase tracking-[.14em] text-emerald-300">
-                  Plano completo
-                </p>
-                <h3 className="mt-1 text-3xl font-black">
-                  Experiência Completa
-                </h3>
+                <p className="text-center text-xs font-black uppercase tracking-[.14em] text-emerald-300">Plano Completo</p>
+                <div className="mx-auto mt-4 w-36"><ProductCover compact /></div>
 
                 <ul className="mt-6 space-y-3 text-sm font-semibold text-blue-50">
                   {[
-                    "Tudo do plano Essencial",
-                    "Tabuada temática",
-                    "Pacote extra de problemas",
-                    "Mapa de progresso",
-                    "Cartões de recompensa",
-                    "Certificados",
-                    "Guia rápido para pais",
+                    "Tudo do Plano Essencial",
+                    "Caderno de Tabuada",
+                    "Probleminhas Extras",
+                    "Mapa de Progresso",
+                    "Cartões de Recompensa",
+                    "Certificados de Conquista",
+                    "Guia para Responsáveis",
                   ].map((item) => (
                     <li key={item} className="flex gap-2">
                       <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
@@ -738,91 +650,91 @@ const Matematica = () => {
                   ))}
                 </ul>
 
-                <div className="mt-6 border-t border-white/15 pt-6">
-                  <p className="text-sm font-bold text-blue-200">
-                    Pagamento único
-                  </p>
-                  <p className="mt-1 text-5xl font-black">
-                    <span className="text-xl align-top">R$</span>27,90
-                  </p>
-                </div>
+                <p className="mt-7 text-center text-sm font-bold text-blue-200">Pagamento único</p>
+                <p className="text-center text-5xl font-black text-emerald-300">
+                  <span className="align-top text-xl">R$</span>27,90
+                </p>
 
                 <button
                   disabled={!checkoutReady}
-                  className="mt-6 w-full rounded-xl bg-green-500 px-5 py-4 font-black text-white shadow-[0_5px_0_#15803d] disabled:cursor-not-allowed disabled:opacity-80"
+                  className="mt-6 w-full rounded-full bg-green-500 px-5 py-4 font-black text-white shadow-[0_5px_0_#15803d] disabled:cursor-not-allowed disabled:opacity-80"
                 >
                   EM CONFIGURAÇÃO
                 </button>
               </article>
             </div>
-          </div>
-        </section>
 
-        <section className="bg-[#edf8ff] py-12 md:py-16">
-          <div className="container">
-            <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 rounded-[2rem] border border-blue-100 bg-white p-7 text-center shadow-sm sm:flex-row sm:text-left md:p-9">
-              <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-blue-100 text-[#2676b5]">
-                <ShieldCheck className="h-8 w-8" />
-              </div>
-              <div>
-                <p className="text-sm font-black uppercase tracking-[.14em] text-[#2676b5]">
-                  Garantia planejada para a oferta
-                </p>
-                <h2 className="mt-1 text-2xl font-black text-slate-900">
-                  7 dias para conhecer o material com tranquilidade.
-                </h2>
-                <p className="mt-2 leading-relaxed text-slate-600">
-                  A política final será apresentada no checkout e nesta página
-                  antes da campanha entrar no ar.
-                </p>
-              </div>
+            <div className="mx-auto mt-8 grid max-w-xl grid-cols-3 gap-3 text-center">
+              {[
+                [ShieldCheck, "Compra segura"],
+                [Download, "Acesso digital"],
+                [Award, "7 dias de garantia"],
+              ].map(([Icon, text]) => {
+                const Cmp = Icon as typeof ShieldCheck;
+                return (
+                  <div key={String(text)} className="rounded-2xl bg-white/90 p-3 shadow-sm">
+                    <Cmp className="mx-auto h-5 w-5 text-[#176da8]" />
+                    <p className="mt-1 text-[10px] font-black text-slate-600 sm:text-xs">{String(text)}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        <section className="bg-white py-16 md:py-24">
+        <section id="faq" className="bg-white py-14 md:py-20">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
-              <span className="text-xs font-black uppercase tracking-[.18em] text-[#2676b5]">
+              <h2 className="text-3xl font-black text-[#153d66] md:text-4xl">
                 Perguntas frequentes
-              </span>
-              <h2 className="mt-3 text-3xl font-black md:text-5xl">
-                Antes de escolher, tire suas dúvidas.
               </h2>
             </div>
 
-            <div className="mx-auto mt-9 max-w-3xl space-y-3">
+            <div className="mx-auto mt-8 grid max-w-5xl gap-3 md:grid-cols-2">
               {faqs.map(([q, a]) => (
-                <details
-                  key={q}
-                  className="group rounded-2xl border border-slate-200 bg-[#f8fbfd] p-5 open:bg-white open:shadow-sm"
-                >
-                  <summary className="cursor-pointer list-none font-black text-slate-900">
+                <details key={q} className="group rounded-xl border border-slate-200 bg-[#f8fbfd] p-4 open:bg-white open:shadow-sm">
+                  <summary className="cursor-pointer list-none text-sm font-black text-slate-800">
                     {q}
-                    <span className="float-right text-[#2676b5] transition group-open:rotate-45">
-                      +
-                    </span>
+                    <span className="float-right text-[#2676b5] transition group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-3 pr-7 leading-relaxed text-slate-600">
-                    {a}
-                  </p>
+                  <p className="mt-3 pr-7 text-sm leading-relaxed text-slate-600">{a}</p>
                 </details>
               ))}
+            </div>
+
+            <div className="mx-auto mt-10 flex max-w-5xl flex-col items-center justify-between gap-5 rounded-[2rem] border border-blue-100 bg-[#eaf7ff] p-6 shadow-sm md:flex-row md:p-8">
+              <div className="flex items-center gap-4">
+                <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-[#2676b5] text-white shadow-[0_5px_0_#174d78]">
+                  <ShieldCheck className="h-8 w-8" />
+                </div>
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[.14em] text-[#2676b5]">Garantia planejada</p>
+                  <h3 className="mt-1 text-2xl font-black text-[#153d66]">7 dias para conhecer o material com tranquilidade.</h3>
+                </div>
+              </div>
+
+              <a
+                href="#planos"
+                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green-500 px-6 py-4 text-sm font-black text-white shadow-[0_5px_0_#15803d]"
+              >
+                QUERO GARANTIR AGORA <ArrowRight className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="bg-[#10263f] py-9 text-center text-sm text-slate-300">
-        <div className="container">
+      <footer className="relative overflow-hidden bg-[#10263f] py-10 text-sm text-slate-300">
+        <PixelTree className="pointer-events-none absolute -left-2 bottom-0 hidden scale-75 md:block" />
+        <PixelTree className="pointer-events-none absolute right-0 bottom-0 hidden scale-75 md:block" />
+        <div className="container relative text-center">
           <div className="mb-3 flex items-center justify-center gap-2 font-black text-white">
             <Blocks className="h-5 w-5" />
             Missões Matemáticas no Mundo dos Blocos
           </div>
           <p>Produto digital para imprimir • desenhosinfantis.shop</p>
           <p className="mt-2 text-xs text-slate-500">
-            Página em desenvolvimento. Informações finais de checkout e extras
-            serão confirmadas antes da campanha.
+            Página em desenvolvimento. Checkout e termos finais serão confirmados antes da campanha.
           </p>
         </div>
       </footer>
