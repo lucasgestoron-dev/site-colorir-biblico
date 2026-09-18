@@ -209,8 +209,8 @@ const Matematica = () => {
 
   return (
     <div className="min-h-screen bg-[#f8fbff] text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-blue-100/80 bg-white/95 backdrop-blur-xl">
-        <div className="container flex h-16 items-center justify-between gap-3">
+      <header className="absolute inset-x-0 top-0 z-50 border-b border-white/20 bg-white/10 backdrop-blur-sm">
+        <div className="container flex h-16 items-center justify-between gap-3 text-[#123d66]">
           <a href="#top" className="flex items-center gap-2.5 font-black text-[#15508c]">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[#37a3df] to-[#15649e] text-white shadow-[0_4px_0_#0d4d7d]">
               <Blocks className="h-5 w-5" />
@@ -242,18 +242,23 @@ const Matematica = () => {
       <main>
         <section
           id="top"
-          className="relative overflow-hidden bg-gradient-to-b from-[#74c9ee] via-[#43a8df] to-[#2d8dcc] pt-9 pb-14 md:pt-12 md:pb-20"
+          className="relative overflow-hidden bg-gradient-to-b from-[#8ad8f6] via-[#4fb4e7] to-[#2d8dcc] pt-24 pb-14 md:pt-28 md:pb-20"
         >
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#8bd46a] via-[#74c553] to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#5ba83a] via-[#78c954] to-transparent" /><div className="absolute inset-x-0 bottom-0 h-8 bg-[#6e4522] shadow-[inset_0_8px_0_#4f8f2d]" />
           <div className="absolute inset-0 opacity-[.14]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.8) 1px,transparent 1px)", backgroundSize: "36px 36px" }} />
           <PixelTree className="pointer-events-none absolute -left-3 bottom-10 hidden scale-125 lg:block" />
           <PixelTree className="pointer-events-none absolute right-0 bottom-8 hidden scale-110 lg:block" />
           <PixelBlock className="left-[12%] top-28 hidden rotate-12 md:block" tone="bg-emerald-500" />
           <PixelBlock className="right-[12%] top-20 hidden -rotate-6 md:block" tone="bg-orange-400" />
           <PixelBlock className="right-[6%] top-52 hidden rotate-12 lg:block" tone="bg-violet-500" />
+          <div className="pointer-events-none absolute right-[1.5%] bottom-24 hidden h-44 w-20 border-[5px] border-[#6d6f73] bg-[#96999d] shadow-[inset_10px_0_0_#b9bdc1,inset_-10px_0_0_#6f7377] lg:block">
+            <div className="absolute -left-3 -top-7 h-9 w-24 bg-[#7f8387] shadow-[inset_0_-7px_0_#62666a]" />
+            <div className="absolute left-5 top-8 h-10 w-8 bg-[#315d87]" />
+            <div className="absolute left-5 top-24 h-12 w-8 bg-[#315d87]" />
+          </div>
 
           <div className="container relative">
-            <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[.9fr_1.1fr]">
+            <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[.88fr_1.12fr]">
               <div className="text-center lg:text-left">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/20 px-4 py-2 text-xs font-black uppercase tracking-[.14em] text-white shadow-sm backdrop-blur">
                   <Sparkles className="h-4 w-4 text-yellow-200" />
@@ -332,12 +337,16 @@ const Matematica = () => {
                 </div>
 
                 <BlockKid className="absolute bottom-0 left-[7%] z-30 scale-[.82] sm:scale-100" />
-                <div className="absolute bottom-9 right-[4%] z-30 rounded-2xl border-4 border-[#68411f] bg-[#bd6a20] p-4 shadow-2xl">
-                  <div className="mb-2 h-2 w-20 rounded bg-[#6e3e1d]" />
-                  <div className="text-center text-xs font-black text-white">BAÚ DE MISSÕES</div>
+                <div className="absolute bottom-7 left-1/2 z-30 h-24 w-28 -translate-x-1/2 rounded-[10px] border-[6px] border-[#5b321b] bg-[#bd6a20] shadow-[inset_0_12px_0_#df8c34,inset_0_-10px_0_#8f4818,0_18px_28px_-14px_rgba(15,23,42,.7)]">
+                  <div className="absolute left-0 right-0 top-9 h-[6px] bg-[#5b321b]" />
+                  <div className="absolute left-1/2 top-7 h-9 w-5 -translate-x-1/2 rounded-sm border-2 border-[#b8bec7] bg-[#e7ebef]" />
+                </div>
+                <BlockKid className="absolute bottom-0 right-[5%] z-30 scale-[.72] sm:scale-[.88]" />
+                <div className="absolute bottom-24 right-0 z-20 max-w-[165px] rotate-1 rounded-xl border-4 border-[#6a421f] bg-[#a6652f] px-4 py-4 text-center shadow-xl">
+                  <p className="text-xs font-black leading-tight text-white">MATEMÁTICA<br/>TAMBÉM PODE<br/>SER DIVERTIDA!</p>
                 </div>
 
-                <div className="absolute right-[1%] top-[46%] z-30 max-w-[180px] rotate-3 rounded-2xl border-2 border-yellow-300 bg-[#fff1a8] p-4 text-center shadow-xl">
+                <div className="absolute right-[2%] top-[34%] z-30 max-w-[185px] rotate-3 rounded-2xl border-2 border-yellow-300 bg-[#fff1a8] p-4 text-center shadow-xl">
                   <p className="text-xs font-black leading-tight text-[#173b63]">
                     DESAFIOS REAIS
                     <br />
