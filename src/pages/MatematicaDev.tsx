@@ -4,6 +4,7 @@ import { ActivitiesReal } from "../components/matematica-real/ActivitiesReal";
 import { HowItWorksReal } from "../components/matematica-real/HowItWorksReal";
 import { AudienceReal } from "../components/matematica-real/AudienceReal";
 import { BenefitsReal } from "../components/matematica-real/BenefitsReal";
+import { TestimonialsReal } from "../components/matematica-real/TestimonialsReal";
 import { ResponsiveCanvas } from "../components/matematica-real/ResponsiveCanvas";
 
 export default function MatematicaDev() {
@@ -141,6 +142,23 @@ export default function MatematicaDev() {
             </div>
           )}
           <BenefitsReal />
+        </ResponsiveCanvas>
+
+        {/* 6. TESTIMONIALS SECTION */}
+        <ResponsiveCanvas designWidth={1480} designHeight={310}>
+          {showOverlay && (
+            <div
+              className="absolute top-0 left-0 w-[1480px] h-[310px] z-50 pointer-events-none"
+              style={{ opacity }}
+            >
+              <img
+                src="/matematica/reference-skin/06-testimonials@2x.png"
+                alt="Reference Testimonials"
+                className="w-full h-full block object-contain"
+              />
+            </div>
+          )}
+          <TestimonialsReal />
         </ResponsiveCanvas>
         
         {/* Placeholder for empty space below */}
