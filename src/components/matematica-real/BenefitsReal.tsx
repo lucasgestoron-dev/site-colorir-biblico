@@ -1,5 +1,4 @@
 import React from 'react';
-import { MissingAsset } from '../matematica/MissingAsset';
 
 const benefitsList = [
   "Aumenta o interesse da criança",
@@ -57,10 +56,11 @@ export function BenefitsReal() {
       {/* 3. RIGHT BLOCK: Slot for benefits-character.png + Text */}
       <div className="w-[450px] z-10 flex items-center justify-end gap-5">
         {/* Character Slot */}
-        <div className="w-[160px] h-[210px] flex-shrink-0">
-          <MissingAsset
-            label="benefits-character.png"
-            className="!min-h-0 !p-1 !text-[11px]"
+        <div className="w-[160px] h-[210px] flex-shrink-0 flex items-center justify-center">
+          <img
+            src="/matematica/assets/benefits/benefits-character.png"
+            alt=""
+            className="w-full h-full object-contain"
           />
         </div>
 
