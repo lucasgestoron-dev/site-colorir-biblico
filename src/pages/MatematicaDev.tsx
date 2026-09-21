@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { HeroReal } from "../components/matematica-real/HeroReal";
 import { ActivitiesReal } from "../components/matematica-real/ActivitiesReal";
 import { HowItWorksReal } from "../components/matematica-real/HowItWorksReal";
+import { AudienceReal } from "../components/matematica-real/AudienceReal";
 import { ResponsiveCanvas } from "../components/matematica-real/ResponsiveCanvas";
 
 export default function MatematicaDev() {
@@ -105,6 +106,23 @@ export default function MatematicaDev() {
             </div>
           )}
           <HowItWorksReal />
+        </ResponsiveCanvas>
+
+        {/* 4. AUDIENCE SECTION */}
+        <ResponsiveCanvas designWidth={1480} designHeight={268}>
+          {showOverlay && (
+            <div 
+              className="absolute top-0 left-0 w-[1480px] h-[268px] z-50 pointer-events-none"
+              style={{ opacity }}
+            >
+              <img 
+                src="/matematica/reference-skin/04-audience@2x.png" 
+                alt="Reference Audience" 
+                className="w-full h-full block object-contain" 
+              />
+            </div>
+          )}
+          <AudienceReal />
         </ResponsiveCanvas>
         
         {/* Placeholder for empty space below */}
