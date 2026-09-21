@@ -15,7 +15,6 @@ export function HeaderReal() {
         <a href="#" className="font-bold text-[#17314f] text-[12px] hover:text-sky-700 transition">Início</a>
         <a href="#como" className="font-bold text-[#17314f] text-[12px] hover:text-sky-700 transition">Como funciona</a>
         <a href="#receber" className="font-bold text-[#17314f] text-[12px] hover:text-sky-700 transition">O que vai receber</a>
-        <a href="#depoimentos" className="font-bold text-[#17314f] text-[12px] hover:text-sky-700 transition">Depoimentos</a>
         <a href="#faq" className="font-bold text-[#17314f] text-[12px] hover:text-sky-700 transition">Perguntas frequentes</a>
       </nav>
 
