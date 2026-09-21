@@ -35,7 +35,7 @@ export default function Matematica() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-[#f8f9fa] relative flex flex-col items-center overflow-x-hidden">
+    <div className="matematica-real w-full min-h-screen bg-[#f8f9fa] relative flex flex-col items-center overflow-x-hidden">
       <div className="w-full relative mx-auto" style={{ maxWidth: '1480px' }}>
         
         {/* 1. HERO SECTION */}
