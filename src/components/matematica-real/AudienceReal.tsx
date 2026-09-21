@@ -52,7 +52,7 @@ export function AudienceReal() {
             className="bg-white rounded-[20px] p-3.5 shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-slate-100 flex flex-col items-center justify-center text-center"
           >
             {/* Pictogram Image */}
-            <div className="w-[70px] h-[70px] mb-2 flex items-center justify-center">
+            <div className="w-[78px] h-[78px] mb-2 flex items-center justify-center">
               <img
                 src={`/matematica/assets/audience/${card.icon}`}
                 alt=""
