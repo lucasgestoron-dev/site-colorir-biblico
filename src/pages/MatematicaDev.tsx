@@ -8,6 +8,9 @@ import { TestimonialsReal } from "../components/matematica-real/TestimonialsReal
 import { IncludedMaterialsReal } from "../components/matematica-real/IncludedMaterialsReal";
 import { BonusMaterialsReal } from "../components/matematica-real/BonusMaterialsReal";
 import { PricingReal } from "../components/matematica-real/PricingReal";
+import { FaqReal } from "../components/matematica-real/FaqReal";
+import { GuaranteeReal } from "../components/matematica-real/GuaranteeReal";
+import { FooterReal } from "../components/matematica-real/FooterReal";
 import { ResponsiveCanvas } from "../components/matematica-real/ResponsiveCanvas";
 
 export default function MatematicaDev() {
@@ -214,11 +217,57 @@ export default function MatematicaDev() {
           )}
           <PricingReal />
         </ResponsiveCanvas>
-        
-        {/* Placeholder for empty space below */}
-        <div className="h-40 w-full bg-slate-100 flex items-center justify-center border-t-2 border-dashed border-slate-300 text-slate-400 font-medium">
-          (As próximas seções serão construídas aqui)
-        </div>
+
+        {/* 10. FAQ SECTION */}
+        <ResponsiveCanvas designWidth={1480} designHeight={266}>
+          {showOverlay && (
+            <div 
+              className="absolute top-0 left-0 w-[1480px] h-[266px] z-50 pointer-events-none"
+              style={{ opacity }}
+            >
+              <img 
+                src="/matematica/reference-skin/10-faq@2x.png" 
+                alt="Reference FAQ" 
+                className="w-full h-full block object-contain" 
+              />
+            </div>
+          )}
+          <FaqReal />
+        </ResponsiveCanvas>
+
+        {/* 11. GUARANTEE SECTION */}
+        <ResponsiveCanvas designWidth={1480} designHeight={150}>
+          {showOverlay && (
+            <div 
+              className="absolute top-0 left-0 w-[1480px] h-[150px] z-50 pointer-events-none"
+              style={{ opacity }}
+            >
+              <img 
+                src="/matematica/reference-skin/11-guarantee@2x.png" 
+                alt="Reference Guarantee" 
+                className="w-full h-full block object-contain" 
+              />
+            </div>
+          )}
+          <GuaranteeReal />
+        </ResponsiveCanvas>
+
+        {/* 12. FOOTER SECTION */}
+        <ResponsiveCanvas designWidth={1480} designHeight={146}>
+          {showOverlay && (
+            <div 
+              className="absolute top-0 left-0 w-[1480px] h-[146px] z-50 pointer-events-none"
+              style={{ opacity }}
+            >
+              <img 
+                src="/matematica/reference-skin/12-footer@2x.png" 
+                alt="Reference Footer" 
+                className="w-full h-full block object-contain" 
+              />
+            </div>
+          )}
+          <FooterReal />
+        </ResponsiveCanvas>
       </div>
 
     </div>
