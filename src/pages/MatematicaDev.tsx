@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HeroReal } from "../components/matematica-real/HeroReal";
+import { ActivitiesReal } from "../components/matematica-real/ActivitiesReal";
 
 export default function MatematicaDev() {
   const [opacity, setOpacity] = useState(0.5);
@@ -38,22 +39,39 @@ export default function MatematicaDev() {
       {/* REAL IMPLEMENTATION CONTAINER (1480px width) */}
       <div className="w-full relative mx-auto" style={{ maxWidth: '1480px' }}>
         
-        {/* REFERENCE OVERLAY (Directly over the 1480x726 canvas) */}
-        {showOverlay && (
-          <div 
-            className="absolute top-0 left-0 w-full h-[726px] z-40 pointer-events-none"
-            style={{ opacity }}
-          >
-            <img 
-              src="/matematica/reference-skin/01-hero@2x.png" 
-              alt="Reference Hero" 
-              className="w-full h-[726px] block object-contain" 
-            />
-          </div>
-        )}
+        {/* 1. HERO SECTION WITH OVERLAY */}
+        <div className="relative w-full">
+          {showOverlay && (
+            <div 
+              className="absolute top-0 left-0 w-full h-[726px] z-40 pointer-events-none"
+              style={{ opacity }}
+            >
+              <img 
+                src="/matematica/reference-skin/01-hero@2x.png" 
+                alt="Reference Hero" 
+                className="w-full h-[726px] block object-contain" 
+              />
+            </div>
+          )}
+          <HeroReal />
+        </div>
 
-        {/* HERO REAL (Exactly 726px total height) */}
-        <HeroReal />
+        {/* 2. ACTIVITIES SECTION WITH OVERLAY */}
+        <div className="relative w-full">
+          {showOverlay && (
+            <div 
+              className="absolute top-0 left-0 w-full h-[500px] z-40 pointer-events-none"
+              style={{ opacity }}
+            >
+              <img 
+                src="/matematica/reference-skin/02-activities@2x.png" 
+                alt="Reference Activities" 
+                className="w-full h-[500px] block object-contain" 
+              />
+            </div>
+          )}
+          <ActivitiesReal />
+        </div>
         
         {/* Placeholder for empty space below */}
         <div className="h-40 w-full bg-slate-100 flex items-center justify-center border-t-2 border-dashed border-slate-300 text-slate-400 font-medium">
