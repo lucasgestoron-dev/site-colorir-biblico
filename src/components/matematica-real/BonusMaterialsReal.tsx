@@ -3,32 +3,32 @@ import { MissingAsset } from '../matematica/MissingAsset';
 
 const bonusCards = [
   {
-    icon: "bonus-tabuada.png",
+    icon: "bonus-tabuada-cover.png",
     line1: "Caderno de",
     line2: "Tabuada Ilustrado"
   },
   {
-    icon: "bonus-probleminhas.png",
+    icon: "bonus-probleminhas-cover.png",
     line1: "Probleminhas",
     line2: "Extras"
   },
   {
-    icon: "bonus-progresso.png",
+    icon: "bonus-progresso-cover.png",
     line1: "Mapa de",
     line2: "Progresso"
   },
   {
-    icon: "bonus-recompensas.png",
+    icon: "bonus-recompensas-cover.png",
     line1: "Cartões de",
     line2: "Recompensas"
   },
   {
-    icon: "bonus-certificado.png",
+    icon: "bonus-certificado-cover.png",
     line1: "Certificado de",
     line2: "Conquistas"
   },
   {
-    icon: "bonus-guia.png",
+    icon: "bonus-guia-cover.png",
     line1: "Guia para",
     line2: "Responsáveis"
   }

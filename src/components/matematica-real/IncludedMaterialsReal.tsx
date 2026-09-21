@@ -3,32 +3,32 @@ import { MissingAsset } from '../matematica/MissingAsset';
 
 const includedCards = [
   {
-    icon: "included-pdf.png",
+    icon: "included-pdf-icon.png",
     title: "PDF principal",
     subtitle: "+ de 150 atividades"
   },
   {
-    icon: "included-organized.png",
+    icon: "included-organized-icon.png",
     title: "Organizado do",
     subtitle: "1º ao 5º ano"
   },
   {
-    icon: "included-answer-key.png",
+    icon: "included-answer-key-icon.png",
     title: "Gabarito completo",
     subtitle: ""
   },
   {
-    icon: "included-instructions.png",
+    icon: "included-instructions-icon.png",
     title: "Instruções de uso",
     subtitle: ""
   },
   {
-    icon: "included-access.png",
+    icon: "included-access-icon.png",
     title: "Acesso imediato",
     subtitle: ""
   },
   {
-    icon: "included-print.png",
+    icon: "included-print-icon.png",
     title: "Para imprimir",
     subtitle: "quando quiser"
   }

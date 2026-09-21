@@ -20,21 +20,18 @@ export function PricingReal() {
         
         {/* BLOCK A: Character & Speech Bubble */}
         <div className="w-[230px] h-full flex flex-col items-center justify-center pt-2">
-          {/* Speech Bubble */}
-          <div className="relative bg-[#faffea] text-[#0d2b56] font-extrabold text-[11px] leading-[1.3] p-3 rounded-[16px] shadow-sm border border-[#a3e635] text-center mb-3">
-            INVESTIR<br />
-            NA EDUCAÇÃO<br />
-            HOJE, CONSTRÓI<br />
-            UM FUTURO<br />
-            EXTRAORDINÁRIO!
-            {/* Bubble tail */}
-            <div className="absolute -bottom-1.5 left-12 w-3 h-3 bg-[#faffea] border-b border-r border-[#a3e635] transform rotate-45"></div>
+          {/* Speech Bubble / Badge */}
+          <div className="w-[190px] h-[75px] mb-3 flex items-center justify-center">
+            <MissingAsset
+              label="pricing-left-badge.png"
+              className="!min-h-0 !p-1 !text-[9px]"
+            />
           </div>
 
           {/* Character Asset Slot */}
           <div className="w-[180px] h-[220px] flex items-center justify-center">
             <MissingAsset
-              label="pricing-character.png"
+              label="pricing-left-character.png"
               className="!min-h-0 !p-1 !text-xs"
             />
           </div>
@@ -54,8 +51,8 @@ export function PricingReal() {
                 {/* Product Cover Slot */}
                 <div className="w-[125px] h-[175px] rounded-[10px] overflow-hidden bg-slate-50 flex-shrink-0 flex items-center justify-center">
                   <MissingAsset
-                    label="product-essential.png"
-                    className="!min-h-0 !p-1 !text-[10px]"
+                    label="pricing-essential-cover.png"
+                    className="!min-h-0 !p-1 !text-[9px]"
                   />
                 </div>
 
@@ -115,8 +112,8 @@ export function PricingReal() {
                 {/* Product Cover Slot */}
                 <div className="w-[130px] h-[180px] rounded-[10px] overflow-hidden bg-sky-950/60 flex-shrink-0 flex items-center justify-center">
                   <MissingAsset
-                    label="product-complete.png"
-                    className="!min-h-0 !p-1 !text-[10px]"
+                    label="pricing-complete-cover.png"
+                    className="!min-h-0 !p-1 !text-[9px]"
                   />
                 </div>
 
@@ -171,34 +168,37 @@ export function PricingReal() {
         </div>
 
         {/* BLOCK C: Trust items */}
-        <div className="w-[200px] h-full flex flex-col justify-center gap-6 pl-2">
+        <div className="w-[210px] h-full flex flex-col justify-center gap-6 pl-2">
           
           {/* Trust item 1 */}
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-[#fef08a] flex items-center justify-center flex-shrink-0 text-amber-800 shadow-sm border border-amber-300">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
+            <div className="w-11 h-11 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <MissingAsset
+                label="pricing-secure-icon.png"
+                className="!min-h-0 !p-0.5 !text-[8px]"
+              />
             </div>
             <span className="font-extrabold text-[#0d2b56] text-[14px]">Compra segura</span>
           </div>
 
           {/* Trust item 2 */}
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-[#bae6fd] flex items-center justify-center flex-shrink-0 text-sky-800 shadow-sm border border-sky-300">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+            <div className="w-11 h-11 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <MissingAsset
+                label="pricing-access-icon.png"
+                className="!min-h-0 !p-0.5 !text-[8px]"
+              />
             </div>
             <span className="font-extrabold text-[#0d2b56] text-[14px]">Acesso imediato</span>
           </div>
 
           {/* Trust item 3 */}
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-[#bbf7d0] flex items-center justify-center flex-shrink-0 text-green-800 shadow-sm border border-green-300">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
+            <div className="w-11 h-11 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <MissingAsset
+                label="pricing-guarantee-icon.png"
+                className="!min-h-0 !p-0.5 !text-[8px]"
+              />
             </div>
             <span className="font-extrabold text-[#0d2b56] text-[14px]">7 dias de garantia</span>
           </div>
