@@ -1,0 +1,31 @@
+{
+  "destination": "public/matematica/assets/audience/",
+  "style": "approved custom illustrated pictograms generated from the new visual direction, not the old reference",
+  "files": {
+    "audience-home.png": [
+      285,
+      255
+    ],
+    "audience-backpack.png": [
+      275,
+      280
+    ],
+    "audience-controller.png": [
+      340,
+      280
+    ],
+    "audience-chart.png": [
+      295,
+      280
+    ],
+    "audience-calendar.png": [
+      330,
+      280
+    ],
+    "audience-heart.png": [
+      300,
+      280
+    ]
+  },
+  "integration": "Replace only the six MissingAsset slots in AudienceReal.tsx; keep title/cards/text as real HTML/CSS."
+}

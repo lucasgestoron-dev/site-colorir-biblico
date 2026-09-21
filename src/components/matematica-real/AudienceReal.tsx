@@ -1,5 +1,4 @@
 import React from 'react';
-import { MissingAsset } from '../matematica/MissingAsset';
 
 const audienceCards = [
   {
@@ -52,11 +51,12 @@ export function AudienceReal() {
             key={idx}
             className="bg-white rounded-[20px] p-3.5 shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-slate-100 flex flex-col items-center justify-center text-center"
           >
-            {/* Pictogram Slot */}
+            {/* Pictogram Image */}
             <div className="w-[62px] h-[62px] mb-2.5 flex items-center justify-center">
-              <MissingAsset
-                label={card.icon}
-                className="!min-h-0 !p-0.5 !text-[9px]"
+              <img
+                src={`/matematica/assets/audience/${card.icon}`}
+                alt=""
+                className="w-full h-full object-contain"
               />
             </div>
 
