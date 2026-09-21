@@ -1,6 +1,5 @@
 import React from 'react';
 import { HeaderReal } from './HeaderReal';
-import { MissingAsset } from '../matematica/MissingAsset';
 
 const BenefitCard = ({ icon, children }: { icon: string; children: React.ReactNode }) => (
   <div className="h-full bg-white/95 text-[#17314f] font-extrabold text-[12px] leading-tight rounded-[12px] shadow-md border border-slate-100 flex flex-col items-center justify-center text-center px-2">
@@ -17,9 +16,10 @@ export function HeroReal() {
     >
       {/* Full illustrated background: sky, trees, terrain and castle */}
       <div className="absolute inset-0 z-0">
-        <MissingAsset
-          label="hero-bg.jpg (Céu, Nuvens, Terreno Voxel, Castelo)"
-          className="!min-h-0 !p-4 !text-xs opacity-70"
+        <img
+          src="/matematica/assets/hero/hero-bg.jpg"
+          alt=""
+          className="w-full h-full object-cover"
         />
       </div>
 
@@ -31,9 +31,10 @@ export function HeroReal() {
       </div>
 
       <div className="absolute z-20 left-[170px] top-[151px] w-[430px] h-[166px]">
-        <MissingAsset
-          label="hero-title-mundo-dos-blocos.png"
-          className="!min-h-0 !p-2 !text-xs"
+        <img
+          src="/matematica/assets/hero/hero-title-mundo-dos-blocos.png"
+          alt="Mundo dos Blocos"
+          className="w-full h-full object-contain"
         />
       </div>
 
@@ -69,23 +70,26 @@ export function HeroReal() {
 
       {/* RIGHT VISUAL GROUP */}
       <div className="absolute z-20 left-[650px] top-[88px] w-[615px] h-[626px]">
-        <MissingAsset
-          label="hero-composition.png (Folhas, Produto, Menino, Menina, Baú, Diamante)"
-          className="!min-h-0 !p-4 !text-sm"
+        <img
+          src="/matematica/assets/hero/hero-composition.png"
+          alt="Composição Mundo dos Blocos"
+          className="w-full h-full object-contain"
         />
       </div>
 
       <div className="absolute z-30 left-[1082px] top-[160px] w-[250px] h-[145px]">
-        <MissingAsset
-          label="hero-note.png"
-          className="!min-h-0 !p-1 !text-xs"
+        <img
+          src="/matematica/assets/hero/hero-note.png"
+          alt="Nota"
+          className="w-full h-full object-contain"
         />
       </div>
 
       <div className="absolute z-30 left-[1244px] top-[443px] w-[224px] h-[216px]">
-        <MissingAsset
-          label="hero-wood-sign.png"
-          className="!min-h-0 !p-1 !text-xs"
+        <img
+          src="/matematica/assets/hero/hero-wood-sign.png"
+          alt="Placa de Madeira"
+          className="w-full h-full object-contain"
         />
       </div>
     </section>

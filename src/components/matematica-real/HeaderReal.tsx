@@ -1,13 +1,13 @@
 import React from 'react';
-import { MissingAsset } from '../matematica/MissingAsset';
 
 export function HeaderReal() {
   return (
     <header className="absolute inset-x-0 top-0 h-[82px] z-40">
       <div className="absolute left-[176px] top-[10px] w-[185px] h-[58px]">
-        <MissingAsset
-          label="hero-brand-logo.png"
-          className="!min-h-0 !p-1 !text-[10px]"
+        <img
+          src="/matematica/assets/hero/hero-brand-logo.png"
+          alt="Mundo dos Blocos"
+          className="w-full h-full object-contain"
         />
       </div>
 

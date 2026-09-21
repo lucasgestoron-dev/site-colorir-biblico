@@ -1,0 +1,19 @@
+{
+  "destination": "public/matematica/assets/hero/",
+  "files": [
+    "hero-bg.jpg",
+    "hero-brand-logo.png",
+    "hero-composition.png",
+    "hero-note.png",
+    "hero-title-mundo-dos-blocos.png",
+    "hero-wood-sign.png"
+  ],
+  "usage": {
+    "hero-bg.jpg": "Hero background",
+    "hero-brand-logo.png": "Header brand logo",
+    "hero-composition.png": "Right-side main product/characters composition",
+    "hero-note.png": "Yellow note",
+    "hero-title-mundo-dos-blocos.png": "Large left-side title",
+    "hero-wood-sign.png": "Wood sign on right"
+  }
+}
