@@ -9,7 +9,7 @@ export default function MatematicaDev() {
     <div className="w-full min-h-screen bg-[#f8f9fa] relative flex flex-col items-center">
       
       {/* DEVELOPMENT CONTROLS */}
-      <div className="fixed top-4 left-4 z-50 bg-white p-4 rounded-xl shadow-2xl border border-slate-200 text-sm flex flex-col gap-3 w-64">
+      <div className="fixed top-4 left-4 z-50 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-2xl border border-slate-200 text-sm flex flex-col gap-3 w-64">
         <h3 className="font-bold text-slate-800 border-b pb-2">Modo Comparação</h3>
         <label className="flex items-center gap-2 cursor-pointer select-none font-medium text-slate-700">
           <input 
@@ -29,28 +29,34 @@ export default function MatematicaDev() {
               min="0" max="1" step="0.05" 
               value={opacity} 
               onChange={e => setOpacity(parseFloat(e.target.value))} 
-              className="w-full accent-sky-500"
+              className="w-full accent-sky-500 cursor-pointer"
             />
           </label>
         )}
       </div>
 
-      {/* REFERENCE OVERLAY */}
-      {showOverlay && (
-        <div 
-          className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full z-40 pointer-events-none"
-          style={{ maxWidth: '1480px', opacity }}
-        >
-          <img src="/matematica/reference-skin/01-hero@2x.png" alt="Reference Hero" className="w-full block" />
-        </div>
-      )}
-
-      {/* REAL IMPLEMENTATION */}
+      {/* REAL IMPLEMENTATION CONTAINER (1480px width) */}
       <div className="w-full relative mx-auto" style={{ maxWidth: '1480px' }}>
+        
+        {/* REFERENCE OVERLAY (Directly over the 1480x726 canvas) */}
+        {showOverlay && (
+          <div 
+            className="absolute top-0 left-0 w-full h-[726px] z-40 pointer-events-none"
+            style={{ opacity }}
+          >
+            <img 
+              src="/matematica/reference-skin/01-hero@2x.png" 
+              alt="Reference Hero" 
+              className="w-full h-[726px] block object-contain" 
+            />
+          </div>
+        )}
+
+        {/* HERO REAL (Exactly 726px total height) */}
         <HeroReal />
         
-        {/* Placeholder for empty space below if needed */}
-        <div className="h-screen w-full bg-white flex items-center justify-center border-t-4 border-dashed border-slate-200 text-slate-400 font-medium">
+        {/* Placeholder for empty space below */}
+        <div className="h-40 w-full bg-slate-100 flex items-center justify-center border-t-2 border-dashed border-slate-300 text-slate-400 font-medium">
           (As próximas seções serão construídas aqui)
         </div>
       </div>

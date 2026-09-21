@@ -4,93 +4,145 @@ import { MissingAsset } from '../matematica/MissingAsset';
 
 export function HeroReal() {
   return (
-    <div className="w-full relative flex flex-col">
+    <div 
+      className="w-full relative overflow-hidden select-none"
+      style={{ width: '100%', maxWidth: '1480px', height: '726px' }}
+    >
       
-      {/* HERO BACKGROUND - Expected to be a voxel scene (sky, clouds, voxel terrain) */}
+      {/* 1. HERO BACKGROUND SLOT */}
       <div className="absolute inset-0 z-0">
-        <MissingAsset type="image" label="hero-bg.jpg (Céu, Nuvens, Terreno Voxel, Castelo)" />
+        <MissingAsset 
+          label="hero-bg.jpg (Céu, Nuvens, Terreno Voxel, Castelo)" 
+          className="!min-h-0 !p-4 !text-xs opacity-70" 
+        />
       </div>
 
-      <div className="relative z-10 w-full flex flex-col h-full">
-        <HeaderReal />
+      {/* 2. HEADER (Inside 726px height canvas) */}
+      <HeaderReal />
 
-        <div className="flex-1 w-full flex relative pb-16 pt-10 px-12 gap-8">
-          
-          {/* LEFT COLUMN: TEXT & CTA */}
-          <div className="w-5/12 flex flex-col justify-center z-10 pl-6">
-            
-            {/* Blue badge */}
-            <div className="inline-block bg-[#0f76cd] text-white font-bold px-4 py-2 rounded-full mb-6 w-max text-sm uppercase tracking-widest shadow-md border-2 border-white/20">
-              • MISSÕES MATEMÁTICAS •
-            </div>
-            
-            {/* Logo / Graphic Title Slot */}
-            <div className="w-full h-[180px] mb-6">
-              <MissingAsset type="image" label="hero-title-mundo-dos-blocos.png" />
-            </div>
-
-            {/* Dark Blue Box */}
-            <div className="bg-[#0b294e] text-white font-bold text-xl lg:text-2xl p-4 rounded-xl shadow-lg border-2 border-sky-800 mb-6">
-              Mais de 150 atividades de matemática<br />
-              para o 1º ao 5º ano
-            </div>
-            
-            {/* Subtitle */}
-            <p className="text-2xl text-white font-medium mb-10 drop-shadow-lg">
-              Aprender matemática pode ser uma <strong className="text-yellow-400">grande aventura!</strong>
-            </p>
-            
-            {/* 4 Cards Grid */}
-            <div className="grid grid-cols-2 gap-4 mb-10">
-              <div className="bg-white/95 text-slate-800 font-bold p-3 rounded-lg shadow flex items-center gap-3">
-                <span className="text-2xl">📝</span> +150 atividades
-              </div>
-              <div className="bg-white/95 text-slate-800 font-bold p-3 rounded-lg shadow flex items-center gap-3">
-                <span className="text-2xl">🎓</span> 1º ao 5º ano
-              </div>
-              <div className="bg-white/95 text-slate-800 font-bold p-3 rounded-lg shadow flex items-center gap-3">
-                <span className="text-2xl">🖨️</span> PDF para imprimir
-              </div>
-              <div className="bg-white/95 text-slate-800 font-bold p-3 rounded-lg shadow flex items-center gap-3">
-                <span className="text-2xl">🎮</span> Sem telas e sem complicação
-              </div>
-            </div>
-            
-            {/* Main Green CTA */}
-            <a href="#planos" className="bg-[#1fc633] hover:bg-[#1bb02c] text-white font-black text-3xl py-6 px-12 rounded-full w-max shadow-[0_8px_0_#148a21] transform transition active:translate-y-[6px] active:shadow-none border-2 border-white mb-8 text-center flex items-center justify-center">
-              QUERO GARANTIR AGORA →
-            </a>
-
-            {/* Bottom Line (Seals) */}
-            <div className="flex items-center gap-6 text-white font-medium drop-shadow-md text-sm">
-              <div className="flex items-center gap-2"><span>🔒</span> Compra segura</div>
-              <div className="flex items-center gap-2"><span>⚡</span> Acesso imediato</div>
-              <div className="flex items-center gap-2"><span>🛡️</span> 7 dias de garantia</div>
-            </div>
-
-          </div>
-
-          {/* RIGHT COLUMN: MAIN COMPOSITION */}
-          <div className="w-7/12 relative flex items-center justify-center">
-            
-            {/* Note Slot */}
-            <div className="absolute top-[5%] right-[10%] w-[180px] h-[120px] z-30">
-              <MissingAsset type="image" label="hero-note.png" />
-            </div>
-
-            {/* Wood Sign Slot */}
-            <div className="absolute bottom-[15%] right-[5%] w-[180px] h-[220px] z-30">
-              <MissingAsset type="image" label="hero-wood-sign.png" />
-            </div>
-
-            {/* Main Composition Asset (Folhas, Livros, Boy, Girl, Chest, Crystal) */}
-            <div className="w-full h-[700px] z-20">
-              <MissingAsset type="image" label="hero-composition.png (Crianças, Baú, Folhas)" />
-            </div>
-
+      {/* 3. CONTENT AREA */}
+      <div className="relative z-10 w-full h-[651px]">
+        
+        {/* LEFT COLUMN: BADGE, TITLE, BOX, SUBTITLE, CARDS, CTA, SEALS */}
+        
+        {/* Badge */}
+        <div 
+          className="absolute z-20"
+          style={{ top: '15px', left: '118px' }}
+        >
+          <div className="bg-[#0f76cd] text-white font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider border border-sky-300/40 shadow-sm">
+            • MISSÕES MATEMÁTICAS •
           </div>
         </div>
+
+        {/* Title Slot */}
+        <div 
+          className="absolute z-20"
+          style={{ top: '50px', left: '118px', width: '440px', height: '125px' }}
+        >
+          <MissingAsset 
+            label="hero-title-mundo-dos-blocos.png" 
+            className="!min-h-0 !p-2 !text-xs" 
+          />
+        </div>
+
+        {/* Dark Blue Box */}
+        <div 
+          className="absolute z-20 bg-[#0b294e] text-white font-bold text-sm leading-tight p-3 rounded-xl border border-sky-700/60 shadow-md flex flex-col justify-center"
+          style={{ top: '188px', left: '118px', width: '440px', height: '54px' }}
+        >
+          <span>Mais de 150 atividades de matemática</span>
+          <span>para o 1º ao 5º ano</span>
+        </div>
+
+        {/* Subtitle */}
+        <div 
+          className="absolute z-20 text-white font-bold text-base drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
+          style={{ top: '252px', left: '118px', width: '440px' }}
+        >
+          Aprender matemática pode ser uma <span className="text-yellow-300">grande aventura!</span>
+        </div>
+
+        {/* 4 Cards Grid */}
+        <div 
+          className="absolute z-20 grid grid-cols-2 gap-3"
+          style={{ top: '290px', left: '118px', width: '440px', height: '175px' }}
+        >
+          <div className="bg-white/95 text-slate-800 font-extrabold text-xs p-3 rounded-xl shadow-md flex items-center gap-2.5 border border-slate-100">
+            <span className="text-lg">📝</span> +150 atividades
+          </div>
+          <div className="bg-white/95 text-slate-800 font-extrabold text-xs p-3 rounded-xl shadow-md flex items-center gap-2.5 border border-slate-100">
+            <span className="text-lg">🎓</span> 1º ao 5º ano
+          </div>
+          <div className="bg-white/95 text-slate-800 font-extrabold text-xs p-3 rounded-xl shadow-md flex items-center gap-2.5 border border-slate-100">
+            <span className="text-lg">🖨️</span> PDF para imprimir
+          </div>
+          <div className="bg-white/95 text-slate-800 font-extrabold text-xs p-3 rounded-xl shadow-md flex items-center gap-2.5 border border-slate-100">
+            <span className="text-lg">🎮</span> Sem telas e sem complicação
+          </div>
+        </div>
+
+        {/* Main CTA */}
+        <div 
+          className="absolute z-20"
+          style={{ top: '480px', left: '118px' }}
+        >
+          <a 
+            href="#planos" 
+            className="w-[360px] h-[78px] bg-[#1fc633] hover:bg-[#1bb02c] text-white font-black text-xl py-4 px-8 rounded-full shadow-[0_6px_0_#148a21] border-2 border-green-300 flex items-center justify-center tracking-wide transition active:translate-y-[3px]"
+          >
+            QUERO GARANTIR AGORA →
+          </a>
+        </div>
+
+        {/* Seals Line */}
+        <div 
+          className="absolute z-20 flex items-center gap-6 text-white font-bold text-xs drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+          style={{ top: '575px', left: '118px', width: '440px' }}
+        >
+          <div className="flex items-center gap-1.5"><span>🔒</span> Compra segura</div>
+          <div className="flex items-center gap-1.5"><span>⚡</span> Acesso imediato</div>
+          <div className="flex items-center gap-1.5"><span>🛡️</span> 7 dias de garantia</div>
+        </div>
+
+
+        {/* RIGHT COLUMN: NOTE, COMPOSITION, WOOD SIGN */}
+
+        {/* Yellow Note Slot */}
+        <div 
+          className="absolute z-30"
+          style={{ top: '20px', left: '1240px', width: '160px', height: '100px' }}
+        >
+          <MissingAsset 
+            label="hero-note.png" 
+            className="!min-h-0 !p-1 !text-xs" 
+          />
+        </div>
+
+        {/* Main Composition Slot */}
+        <div 
+          className="absolute z-20"
+          style={{ top: '25px', left: '620px', width: '680px', height: '580px' }}
+        >
+          <MissingAsset 
+            label="hero-composition.png (Crianças, Baú, Folhas)" 
+            className="!min-h-0 !p-4 !text-sm" 
+          />
+        </div>
+
+        {/* Wood Sign Slot */}
+        <div 
+          className="absolute z-30"
+          style={{ top: '410px', left: '1250px', width: '150px', height: '190px' }}
+        >
+          <MissingAsset 
+            label="hero-wood-sign.png" 
+            className="!min-h-0 !p-1 !text-xs" 
+          />
+        </div>
+
       </div>
+
     </div>
   );
 }
