@@ -5,6 +5,9 @@ import { HowItWorksReal } from "../components/matematica-real/HowItWorksReal";
 import { AudienceReal } from "../components/matematica-real/AudienceReal";
 import { BenefitsReal } from "../components/matematica-real/BenefitsReal";
 import { TestimonialsReal } from "../components/matematica-real/TestimonialsReal";
+import { IncludedMaterialsReal } from "../components/matematica-real/IncludedMaterialsReal";
+import { BonusMaterialsReal } from "../components/matematica-real/BonusMaterialsReal";
+import { PricingReal } from "../components/matematica-real/PricingReal";
 import { ResponsiveCanvas } from "../components/matematica-real/ResponsiveCanvas";
 
 export default function MatematicaDev() {
@@ -159,6 +162,57 @@ export default function MatematicaDev() {
             </div>
           )}
           <TestimonialsReal />
+        </ResponsiveCanvas>
+
+        {/* 7. INCLUDED MATERIALS SECTION */}
+        <ResponsiveCanvas designWidth={1480} designHeight={260}>
+          {showOverlay && (
+            <div 
+              className="absolute top-0 left-0 w-[1480px] h-[260px] z-50 pointer-events-none"
+              style={{ opacity }}
+            >
+              <img 
+                src="/matematica/reference-skin/07-included@2x.png" 
+                alt="Reference Included Materials" 
+                className="w-full h-full block object-contain" 
+              />
+            </div>
+          )}
+          <IncludedMaterialsReal />
+        </ResponsiveCanvas>
+
+        {/* 8. BONUS MATERIALS SECTION */}
+        <ResponsiveCanvas designWidth={1480} designHeight={298}>
+          {showOverlay && (
+            <div 
+              className="absolute top-0 left-0 w-[1480px] h-[298px] z-50 pointer-events-none"
+              style={{ opacity }}
+            >
+              <img 
+                src="/matematica/reference-skin/08-bonuses@2x.png" 
+                alt="Reference Bonus Materials" 
+                className="w-full h-full block object-contain" 
+              />
+            </div>
+          )}
+          <BonusMaterialsReal />
+        </ResponsiveCanvas>
+
+        {/* 9. PRICING SECTION */}
+        <ResponsiveCanvas designWidth={1480} designHeight={502}>
+          {showOverlay && (
+            <div 
+              className="absolute top-0 left-0 w-[1480px] h-[502px] z-50 pointer-events-none"
+              style={{ opacity }}
+            >
+              <img 
+                src="/matematica/reference-skin/09-pricing@2x.png" 
+                alt="Reference Pricing" 
+                className="w-full h-full block object-contain" 
+              />
+            </div>
+          )}
+          <PricingReal />
         </ResponsiveCanvas>
         
         {/* Placeholder for empty space below */}
