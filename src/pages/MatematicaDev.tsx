@@ -19,7 +19,7 @@ export default function MatematicaDev() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className="w-full min-h-screen bg-[#f8f9fa] relative flex flex-col items-center overflow-x-hidden">
+    <div className="matematica-real w-full min-h-screen bg-[#f8f9fa] relative flex flex-col items-center overflow-x-hidden">
       
       {/* DEVELOPMENT CONTROLS */}
       <div className="fixed top-3 left-3 z-50 bg-white/95 backdrop-blur-md p-2.5 sm:p-4 rounded-xl shadow-2xl border border-slate-200 text-xs sm:text-sm flex flex-col gap-2 sm:gap-3 w-[210px] sm:w-64 max-w-[calc(100vw-24px)] transition-all">
