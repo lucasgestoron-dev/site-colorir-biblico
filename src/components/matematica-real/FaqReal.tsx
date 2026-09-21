@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { MissingAsset } from '../matematica/MissingAsset';
 
 interface FaqItem {
   question: string;
@@ -142,11 +141,12 @@ export function FaqReal() {
             <div className="absolute -bottom-1 left-8 w-2.5 h-2.5 bg-[#fff9db] border-b border-r border-[#fde047] transform rotate-45"></div>
           </div>
 
-          {/* Character Slot */}
-          <div className="w-[140px] h-[125px] flex items-center justify-center">
-            <MissingAsset
-              label="faq-character.png"
-              className="!min-h-0 !p-1 !text-[9px]"
+          {/* Character */}
+          <div className="w-[145px] h-[130px] flex items-center justify-center">
+            <img
+              src="/matematica/assets/pricing/pricing-left-character.png"
+              alt="Personagem com dúvidas"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
