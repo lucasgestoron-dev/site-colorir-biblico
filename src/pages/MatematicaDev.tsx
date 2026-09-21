@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { HeroReal } from "../components/matematica-real/HeroReal";
 import { ActivitiesReal } from "../components/matematica-real/ActivitiesReal";
+import { HowItWorksReal } from "../components/matematica-real/HowItWorksReal";
 
 export default function MatematicaDev() {
   const [opacity, setOpacity] = useState(0.5);
@@ -71,6 +72,23 @@ export default function MatematicaDev() {
             </div>
           )}
           <ActivitiesReal />
+        </div>
+
+        {/* 3. HOW IT WORKS SECTION WITH OVERLAY */}
+        <div className="relative w-full">
+          {showOverlay && (
+            <div 
+              className="absolute top-0 left-0 w-full h-[380px] z-40 pointer-events-none"
+              style={{ opacity }}
+            >
+              <img 
+                src="/matematica/reference-skin/03-how-it-works@2x.png" 
+                alt="Reference How It Works" 
+                className="w-full h-[380px] block object-contain" 
+              />
+            </div>
+          )}
+          <HowItWorksReal />
         </div>
         
         {/* Placeholder for empty space below */}
