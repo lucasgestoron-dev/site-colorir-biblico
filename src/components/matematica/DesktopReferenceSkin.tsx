@@ -13,8 +13,8 @@ export function DesktopReferenceSkin() {
   ];
 
   return (
-    <div className="w-full bg-white flex flex-col items-center">
-      <div className="w-full relative mx-auto" style={{ maxWidth: '100%' }}>
+    <div className="w-full bg-slate-100 flex flex-col items-center">
+      <div className="w-full relative mx-auto" style={{ maxWidth: '1480px' }}>
         
         {/* 01 HERO */}
         <div className="relative w-full">
