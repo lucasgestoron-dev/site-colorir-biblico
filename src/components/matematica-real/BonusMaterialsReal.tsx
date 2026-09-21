@@ -1,5 +1,4 @@
 import React from 'react';
-import { MissingAsset } from '../matematica/MissingAsset';
 
 const bonusCards = [
   {
@@ -54,11 +53,12 @@ export function BonusMaterialsReal() {
             key={idx}
             className="bg-white rounded-[18px] p-2.5 shadow-[0_4px_14px_rgba(0,0,0,0.06)] border border-amber-100/80 flex flex-col items-center justify-between text-center"
           >
-            {/* Thumbnail Asset Slot */}
-            <div className="w-full h-[120px] rounded-[12px] overflow-hidden bg-slate-50 flex items-center justify-center">
-              <MissingAsset
-                label={card.icon}
-                className="!min-h-0 !p-1 !text-[10px]"
+            {/* Thumbnail Asset */}
+            <div className="w-full h-[120px] rounded-[12px] overflow-hidden flex items-center justify-center">
+              <img
+                src={`/matematica/assets/bonuses/${card.icon}`}
+                alt={`${card.line1} ${card.line2}`}
+                className="w-full h-full object-contain"
               />
             </div>
 

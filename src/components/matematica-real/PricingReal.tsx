@@ -1,5 +1,4 @@
 import React from 'react';
-import { MissingAsset } from '../matematica/MissingAsset';
 
 export function PricingReal() {
   return (
@@ -21,18 +20,20 @@ export function PricingReal() {
         {/* BLOCK A: Character & Speech Bubble */}
         <div className="w-[230px] h-full flex flex-col items-center justify-center pt-2">
           {/* Speech Bubble / Badge */}
-          <div className="w-[190px] h-[75px] mb-3 flex items-center justify-center">
-            <MissingAsset
-              label="pricing-left-badge.png"
-              className="!min-h-0 !p-1 !text-[9px]"
+          <div className="w-[200px] h-[85px] mb-2 flex items-center justify-center">
+            <img
+              src="/matematica/assets/pricing/pricing-left-badge.png"
+              alt="Investir na educação hoje, constrói um futuro extraordinário!"
+              className="w-full h-full object-contain"
             />
           </div>
 
-          {/* Character Asset Slot */}
-          <div className="w-[180px] h-[220px] flex items-center justify-center">
-            <MissingAsset
-              label="pricing-left-character.png"
-              className="!min-h-0 !p-1 !text-xs"
+          {/* Character Asset */}
+          <div className="w-[180px] h-[230px] flex items-center justify-center">
+            <img
+              src="/matematica/assets/pricing/pricing-left-character.png"
+              alt="Personagem"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
@@ -48,11 +49,12 @@ export function PricingReal() {
               </div>
               
               <div className="flex items-center gap-3">
-                {/* Product Cover Slot */}
-                <div className="w-[125px] h-[175px] rounded-[10px] overflow-hidden bg-slate-50 flex-shrink-0 flex items-center justify-center">
-                  <MissingAsset
-                    label="pricing-essential-cover.png"
-                    className="!min-h-0 !p-1 !text-[9px]"
+                {/* Product Cover */}
+                <div className="w-[125px] h-[175px] rounded-[10px] overflow-hidden flex-shrink-0 flex items-center justify-center">
+                  <img
+                    src="/matematica/assets/pricing/pricing-essential-cover.png"
+                    alt="Plano Essencial"
+                    className="w-full h-full object-contain"
                   />
                 </div>
 
@@ -109,11 +111,12 @@ export function PricingReal() {
               </div>
               
               <div className="flex items-center gap-3">
-                {/* Product Cover Slot */}
-                <div className="w-[130px] h-[180px] rounded-[10px] overflow-hidden bg-sky-950/60 flex-shrink-0 flex items-center justify-center">
-                  <MissingAsset
-                    label="pricing-complete-cover.png"
-                    className="!min-h-0 !p-1 !text-[9px]"
+                {/* Product Cover */}
+                <div className="w-[130px] h-[180px] rounded-[10px] overflow-hidden flex-shrink-0 flex items-center justify-center">
+                  <img
+                    src="/matematica/assets/pricing/pricing-complete-cover.png"
+                    alt="Plano Completo"
+                    className="w-full h-full object-contain"
                   />
                 </div>
 
@@ -172,10 +175,11 @@ export function PricingReal() {
           
           {/* Trust item 1 */}
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center">
-              <MissingAsset
-                label="pricing-secure-icon.png"
-                className="!min-h-0 !p-0.5 !text-[8px]"
+            <div className="w-11 h-11 overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <img
+                src="/matematica/assets/pricing/pricing-secure-icon.png"
+                alt="Compra segura"
+                className="w-full h-full object-contain"
               />
             </div>
             <span className="font-extrabold text-[#0d2b56] text-[14px]">Compra segura</span>
@@ -183,10 +187,11 @@ export function PricingReal() {
 
           {/* Trust item 2 */}
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center">
-              <MissingAsset
-                label="pricing-access-icon.png"
-                className="!min-h-0 !p-0.5 !text-[8px]"
+            <div className="w-11 h-11 overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <img
+                src="/matematica/assets/pricing/pricing-access-icon.png"
+                alt="Acesso imediato"
+                className="w-full h-full object-contain"
               />
             </div>
             <span className="font-extrabold text-[#0d2b56] text-[14px]">Acesso imediato</span>
@@ -194,10 +199,11 @@ export function PricingReal() {
 
           {/* Trust item 3 */}
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center">
-              <MissingAsset
-                label="pricing-guarantee-icon.png"
-                className="!min-h-0 !p-0.5 !text-[8px]"
+            <div className="w-11 h-11 overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <img
+                src="/matematica/assets/pricing/pricing-guarantee-icon.png"
+                alt="7 dias de garantia"
+                className="w-full h-full object-contain"
               />
             </div>
             <span className="font-extrabold text-[#0d2b56] text-[14px]">7 dias de garantia</span>

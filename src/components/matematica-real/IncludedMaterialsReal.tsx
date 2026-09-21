@@ -1,5 +1,4 @@
 import React from 'react';
-import { MissingAsset } from '../matematica/MissingAsset';
 
 const includedCards = [
   {
@@ -55,11 +54,12 @@ export function IncludedMaterialsReal() {
             key={idx}
             className="bg-white rounded-[18px] p-3 shadow-[0_4px_14px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col items-center justify-center text-center"
           >
-            {/* Icon Slot */}
+            {/* Icon */}
             <div className="w-[58px] h-[58px] mb-2 flex items-center justify-center">
-              <MissingAsset
-                label={card.icon}
-                className="!min-h-0 !p-0.5 !text-[9px]"
+              <img
+                src={`/matematica/assets/included/${card.icon}`}
+                alt={card.title}
+                className="w-full h-full object-contain"
               />
             </div>
 

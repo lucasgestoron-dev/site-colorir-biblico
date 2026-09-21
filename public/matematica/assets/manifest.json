@@ -1,0 +1,29 @@
+{
+  "destination_root": "public/matematica/assets",
+  "notes": "Assets separados/decompostos. Não transformar as seções em imagem única.",
+  "included": [
+    "included-pdf-icon.png",
+    "included-organized-icon.png",
+    "included-answer-key-icon.png",
+    "included-instructions-icon.png",
+    "included-access-icon.png",
+    "included-print-icon.png"
+  ],
+  "bonuses": [
+    "bonus-tabuada-cover.png",
+    "bonus-probleminhas-cover.png",
+    "bonus-progresso-cover.png",
+    "bonus-recompensas-cover.png",
+    "bonus-certificado-cover.png",
+    "bonus-guia-cover.png"
+  ],
+  "pricing": [
+    "pricing-left-badge.png",
+    "pricing-left-character.png",
+    "pricing-essential-cover.png",
+    "pricing-complete-cover.png",
+    "pricing-secure-icon.png",
+    "pricing-access-icon.png",
+    "pricing-guarantee-icon.png"
+  ]
+}
