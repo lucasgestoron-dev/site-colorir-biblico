@@ -1,0 +1,10 @@
+{
+  "destination": "public/matematica/assets/how-it-works/how-it-works-approved-exact.png",
+  "source": "user-approved generated image",
+  "dimensions": [
+    1804,
+    554
+  ],
+  "instruction": "Use this exact image as the visual content of the How It Works section. Do not regenerate, redraw, recolor, or replace icons/fonts.",
+  "note": "Only the non-section transparent/development area was cropped away."
+}

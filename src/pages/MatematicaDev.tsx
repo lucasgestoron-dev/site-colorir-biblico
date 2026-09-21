@@ -78,13 +78,13 @@ export default function MatematicaDev() {
         <div className="relative w-full">
           {showOverlay && (
             <div 
-              className="absolute top-0 left-0 w-full h-[380px] z-40 pointer-events-none"
+              className="absolute inset-0 w-full z-40 pointer-events-none"
               style={{ opacity }}
             >
               <img 
                 src="/matematica/reference-skin/03-how-it-works@2x.png" 
                 alt="Reference How It Works" 
-                className="w-full h-[380px] block object-contain" 
+                className="w-full h-full block object-contain" 
               />
             </div>
           )}
