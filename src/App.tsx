@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Matematica from "./pages/Matematica";
+import MatematicaDev from "./pages/MatematicaDev";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           {/* Rota Específica (Futuro padrão) */}
           <Route path="/biblicos" element={<Index />} />
           <Route path="/matematica" element={<Matematica />} />
+          <Route path="/matematica-dev" element={<MatematicaDev />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
