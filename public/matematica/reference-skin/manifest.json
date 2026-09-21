@@ -1,0 +1,117 @@
+{
+  "source": "ChatGPT Image 17 de set. de 2026, 23_37_01.png",
+  "source_size": [
+    740,
+    2048
+  ],
+  "sections": [
+    {
+      "name": "01-hero",
+      "y1": 0,
+      "y2": 363,
+      "width": 740,
+      "height": 363,
+      "file": "01-hero.png",
+      "file_2x": "01-hero@2x.png"
+    },
+    {
+      "name": "02-activities",
+      "y1": 363,
+      "y2": 613,
+      "width": 740,
+      "height": 250,
+      "file": "02-activities.png",
+      "file_2x": "02-activities@2x.png"
+    },
+    {
+      "name": "03-how-it-works",
+      "y1": 613,
+      "y2": 803,
+      "width": 740,
+      "height": 190,
+      "file": "03-how-it-works.png",
+      "file_2x": "03-how-it-works@2x.png"
+    },
+    {
+      "name": "04-audience",
+      "y1": 803,
+      "y2": 937,
+      "width": 740,
+      "height": 134,
+      "file": "04-audience.png",
+      "file_2x": "04-audience@2x.png"
+    },
+    {
+      "name": "05-benefits",
+      "y1": 937,
+      "y2": 1082,
+      "width": 740,
+      "height": 145,
+      "file": "05-benefits.png",
+      "file_2x": "05-benefits@2x.png"
+    },
+    {
+      "name": "06-testimonials",
+      "y1": 1082,
+      "y2": 1237,
+      "width": 740,
+      "height": 155,
+      "file": "06-testimonials.png",
+      "file_2x": "06-testimonials@2x.png"
+    },
+    {
+      "name": "07-included",
+      "y1": 1237,
+      "y2": 1367,
+      "width": 740,
+      "height": 130,
+      "file": "07-included.png",
+      "file_2x": "07-included@2x.png"
+    },
+    {
+      "name": "08-bonuses",
+      "y1": 1367,
+      "y2": 1516,
+      "width": 740,
+      "height": 149,
+      "file": "08-bonuses.png",
+      "file_2x": "08-bonuses@2x.png"
+    },
+    {
+      "name": "09-pricing",
+      "y1": 1516,
+      "y2": 1767,
+      "width": 740,
+      "height": 251,
+      "file": "09-pricing.png",
+      "file_2x": "09-pricing@2x.png"
+    },
+    {
+      "name": "10-faq",
+      "y1": 1767,
+      "y2": 1900,
+      "width": 740,
+      "height": 133,
+      "file": "10-faq.png",
+      "file_2x": "10-faq@2x.png"
+    },
+    {
+      "name": "11-guarantee",
+      "y1": 1900,
+      "y2": 1975,
+      "width": 740,
+      "height": 75,
+      "file": "11-guarantee.png",
+      "file_2x": "11-guarantee@2x.png"
+    },
+    {
+      "name": "12-footer",
+      "y1": 1975,
+      "y2": 2048,
+      "width": 740,
+      "height": 73,
+      "file": "12-footer.png",
+      "file_2x": "12-footer@2x.png"
+    }
+  ]
+}
