@@ -15,7 +15,7 @@ export function FooterReal() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#edf6fe]/95 via-[#edf6fe]/75 to-transparent pointer-events-none" />
 
       {/* Main Content Container */}
-      <div className="w-[1380px] mx-auto flex items-center justify-between z-10 px-4 -mt-2">
+      <div className="w-[1380px] mx-auto flex items-center justify-between z-10 px-4">
         
         {/* Left: Brand Logo & Slogan */}
         <div className="flex items-center gap-4">
