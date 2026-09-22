@@ -12,29 +12,42 @@ const benefitsList = [
 export function BenefitsReal() {
   return (
     <section
-      className="w-[1480px] h-[290px] relative overflow-hidden select-none flex items-center justify-between px-[60px]"
+      className="w-[1480px] h-[290px] relative overflow-hidden select-none"
       style={{
-        background: 'linear-gradient(110deg, #087eaa 0%, #034983 63%, #052c63 100%)'
+        background: 'linear-gradient(110deg, #087eaa 0%, #045f98 45%, #063c78 100%)'
       }}
     >
-      {/* 1. LEFT BLOCK: Large white text */}
-      <div className="w-[380px] z-10">
-        <h2 className="text-white font-black text-[32px] leading-[1.08] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
+      {/* Subtle voxel accents, matching the reference without flattening the section */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-0 bottom-0 w-[96px] h-[40px] bg-[#0a6b73]/35" />
+        <div className="absolute left-[48px] bottom-0 w-[86px] h-[62px] bg-[#0b7577]/25" />
+        <div className="absolute right-[330px] top-0 w-[92px] h-[54px] bg-[#0d6759]/20" />
+        <div className="absolute right-[260px] top-[18px] w-[74px] h-[64px] bg-[#0c7752]/18" />
+
+        <div className="absolute right-0 bottom-0 w-[112px] h-[72px] bg-gradient-to-b from-[#168c47] to-[#0d673c]" />
+        <div className="absolute right-[100px] bottom-0 w-[92px] h-[52px] bg-gradient-to-b from-[#2b9f43] to-[#13703a]" />
+        <div className="absolute right-[178px] bottom-0 w-[78px] h-[88px] bg-gradient-to-b from-[#4fa92f] to-[#1d7b35]" />
+        <div className="absolute right-[238px] bottom-0 w-[68px] h-[44px] bg-gradient-to-b from-[#5cb133] to-[#257c36]" />
+        <div className="absolute right-[46px] bottom-[58px] w-[78px] h-[42px] bg-[#16924b]/80" />
+        <div className="absolute right-[155px] bottom-[72px] w-[74px] h-[46px] bg-[#429b35]/75" />
+      </div>
+
+      {/* LEFT: reference-style headline */}
+      <div className="absolute left-[78px] top-[46px] w-[470px] z-10">
+        <h2 className="text-white font-black text-[35px] leading-[1.02] tracking-tight drop-shadow-[0_3px_3px_rgba(0,25,65,0.65)]">
           Mais do que<br />
-          atividades, é<br />
-          uma nova<br />
-          forma de se<br />
-          relacionar com<br />
-          a matemática.
+          atividades, é uma nova<br />
+          forma de se relacionar<br />
+          com a matemática.
         </h2>
       </div>
 
-      {/* 2. CENTRAL BLOCK: 6 Benefits with green checks */}
-      <div className="w-[430px] z-10">
-        <ul className="flex flex-col gap-[9px]">
+      {/* CENTER: 6 benefits */}
+      <div className="absolute left-[575px] top-[43px] w-[430px] z-10">
+        <ul className="flex flex-col gap-[8px]">
           {benefitsList.map((item, idx) => (
-            <li key={idx} className="flex items-center gap-3">
-              <span className="w-[22px] h-[22px] rounded-full bg-[#18cc48] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+            <li key={idx} className="flex items-center gap-[10px]">
+              <span className="w-[22px] h-[22px] rounded-full bg-[#18cc48] text-white flex items-center justify-center flex-shrink-0 shadow-[0_2px_3px_rgba(0,0,0,0.25)]">
                 <svg
                   className="w-3.5 h-3.5"
                   fill="none"
@@ -45,7 +58,7 @@ export function BenefitsReal() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </span>
-              <span className="text-white font-bold text-[15px] leading-snug drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+              <span className="text-white font-bold text-[15px] leading-snug drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]">
                 {item}
               </span>
             </li>
@@ -53,23 +66,18 @@ export function BenefitsReal() {
         </ul>
       </div>
 
-      {/* 3. RIGHT BLOCK: stable existing asset + editable text */}
-      <div className="w-[450px] z-10 flex items-center justify-end gap-5">
-        <div className="w-[160px] h-[210px] flex-shrink-0 flex items-center justify-center">
-          <img
-            src="/matematica/assets/benefits/benefits-character.png"
-            alt=""
-            className="w-full h-full object-contain"
-          />
-        </div>
+      {/* RIGHT: validated decomposed assets */}
+      <img
+        src="/matematica/assets/benefits/benefits-character-reference.webp"
+        alt=""
+        className="absolute left-[995px] bottom-[-4px] w-[300px] h-[286px] object-contain z-10 drop-shadow-[0_8px_8px_rgba(0,20,50,0.25)]"
+      />
 
-        <div className="text-[#ffd630] font-fredoka font-black text-[20px] leading-[1.15] rotate-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-          PEQUENOS<br />
-          DESAFIOS,<br />
-          GRANDES<br />
-          CONQUISTAS!
-        </div>
-      </div>
+      <img
+        src="/matematica/assets/benefits/benefits-slogan-reference.webp"
+        alt="Pequenos desafios, grandes conquistas!"
+        className="absolute right-[24px] top-[28px] w-[205px] h-[230px] object-contain z-20"
+      />
     </section>
   );
 }
