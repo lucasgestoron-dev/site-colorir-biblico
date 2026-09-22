@@ -4,7 +4,7 @@ export function GuaranteeReal() {
   return (
     <section
       id="garantia"
-      className="w-[1480px] h-[150px] relative overflow-hidden bg-[#eef7ff] flex items-center justify-center select-none"
+      className="w-[1480px] h-[170px] relative overflow-hidden bg-[#eef7ff] flex items-start justify-center pt-[20px] select-none"
     >
       {/* Subtle background grass blocks at bottom edges */}
       <div className="absolute -bottom-2 -left-2 w-28 h-10 opacity-70 pointer-events-none flex gap-1">
