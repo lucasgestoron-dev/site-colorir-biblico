@@ -17,8 +17,22 @@ export function BenefitsReal() {
         background: 'linear-gradient(110deg, #087eaa 0%, #045f98 45%, #063c78 100%)'
       }}
     >
-      {/* Subtle voxel accents and hero-bg crop, integrated smoothly with blue base */}
+      {/* Subtle voxel accents and hero-bg full texture, integrated smoothly with blue base */}
       <div className="absolute inset-0 pointer-events-none">
+        {/* Full section subtle voxel texture */}
+        <div
+          className="absolute inset-0 w-full h-full"
+          style={{
+            backgroundImage: 'url(/matematica/assets/hero/hero-bg.jpg)',
+            backgroundPosition: 'center bottom',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.18,
+            WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.95) 100%)',
+            maskImage: 'linear-gradient(to right, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.95) 100%)'
+          }}
+        />
+
         <div className="absolute left-0 bottom-0 w-[96px] h-[40px] bg-[#0a6b73]/35" />
         <div className="absolute left-[48px] bottom-0 w-[86px] h-[62px] bg-[#0b7577]/25" />
         <div className="absolute right-[330px] top-0 w-[92px] h-[54px] bg-[#0d6759]/20" />
