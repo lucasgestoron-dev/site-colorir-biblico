@@ -38,17 +38,17 @@ export function BenefitsReal() {
         <div className="absolute right-[330px] top-0 w-[92px] h-[54px] bg-[#0d6759]/20" />
         <div className="absolute right-[260px] top-[18px] w-[74px] h-[64px] bg-[#0c7752]/18" />
 
-        {/* Hero voxel terrain crop: subtle green blocks rising at bottom-right behind character */}
+        {/* Full-width right-side emphasis with a soft blend so there is no visible vertical seam */}
         <div
-          className="absolute right-0 bottom-[-10px] w-[640px] h-[270px]"
+          className="absolute left-0 right-0 top-0 bottom-[-10px]"
           style={{
             backgroundImage: 'url(/matematica/assets/hero/hero-bg.jpg)',
-            backgroundPosition: '-210px -460px',
-            backgroundSize: '1480px 726px',
+            backgroundPosition: 'right calc(100% + 10px)',
+            backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            opacity: 0.38,
-            WebkitMaskImage: 'radial-gradient(ellipse at 80% 85%, black 30%, rgba(0,0,0,0.5) 60%, transparent 95%)',
-            maskImage: 'radial-gradient(ellipse at 80% 85%, black 30%, rgba(0,0,0,0.5) 60%, transparent 95%)'
+            opacity: 0.22,
+            WebkitMaskImage: 'linear-gradient(to right, transparent 38%, rgba(0,0,0,0.22) 52%, rgba(0,0,0,0.72) 74%, black 100%)',
+            maskImage: 'linear-gradient(to right, transparent 38%, rgba(0,0,0,0.22) 52%, rgba(0,0,0,0.72) 74%, black 100%)'
           }}
         />
 
@@ -95,7 +95,7 @@ export function BenefitsReal() {
       <img
         src="/matematica/assets/benefits/benefits-character-reference.png"
         alt=""
-        className="absolute left-[995px] bottom-[-16px] w-[300px] h-[286px] object-contain z-10 drop-shadow-[0_8px_8px_rgba(0,20,50,0.25)]"
+        className="absolute left-[995px] bottom-[-30px] w-[300px] h-[286px] object-contain z-10 drop-shadow-[0_8px_8px_rgba(0,20,50,0.25)]"
       />
 
       <img
