@@ -23,6 +23,14 @@ export function HeroReal() {
         />
       </div>
 
+      {/* Soft left-side veil: reduces background visual noise behind the copy without muting the product artwork */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background: 'linear-gradient(90deg, rgba(229,247,255,0.58) 0%, rgba(229,247,255,0.38) 22%, rgba(214,239,250,0.20) 38%, rgba(180,222,241,0.08) 52%, rgba(180,222,241,0) 66%)'
+        }}
+      />
+
       <HeaderReal />
 
       {/* LEFT VISUAL GROUP */}
