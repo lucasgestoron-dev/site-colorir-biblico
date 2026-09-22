@@ -24,7 +24,7 @@ export function BenefitsReal() {
           className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: 'url(/matematica/assets/hero/hero-bg.jpg)',
-            backgroundPosition: 'center bottom',
+            backgroundPosition: 'center calc(100% + 10px)',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             opacity: 0.18,
@@ -40,7 +40,7 @@ export function BenefitsReal() {
 
         {/* Hero voxel terrain crop: subtle green blocks rising at bottom-right behind character */}
         <div
-          className="absolute right-0 bottom-0 w-[640px] h-[270px]"
+          className="absolute right-0 bottom-[-10px] w-[640px] h-[270px]"
           style={{
             backgroundImage: 'url(/matematica/assets/hero/hero-bg.jpg)',
             backgroundPosition: '-210px -460px',
@@ -95,7 +95,7 @@ export function BenefitsReal() {
       <img
         src="/matematica/assets/benefits/benefits-character-reference.png"
         alt=""
-        className="absolute left-[995px] bottom-[-4px] w-[300px] h-[286px] object-contain z-10 drop-shadow-[0_8px_8px_rgba(0,20,50,0.25)]"
+        className="absolute left-[995px] bottom-[-16px] w-[300px] h-[286px] object-contain z-10 drop-shadow-[0_8px_8px_rgba(0,20,50,0.25)]"
       />
 
       <img
