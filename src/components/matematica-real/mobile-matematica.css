@@ -1,0 +1,154 @@
+.math-mobile-only { display: none; }
+
+@media (max-width: 760px) {
+  .math-desktop-only { display: none !important; }
+  .math-mobile-only { display: block; width: 100%; }
+
+  .mm-page {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+    background: #f8fbfd;
+    color: #0d2b56;
+    font-family: "Fredoka", sans-serif;
+  }
+
+  .mm-page *, .mm-page *::before, .mm-page *::after { box-sizing: border-box; }
+  .mm-page img { display: block; max-width: 100%; }
+  .mm-page a { text-decoration: none; }
+  .mm-section-title { margin: 0; color: #0d2b56; font-size: 27px; font-weight: 800; line-height: 1.08; text-align: center; }
+  .mm-section-subtitle { margin: 8px auto 0; max-width: 340px; color: #506e90; font-size: 15px; font-weight: 600; line-height: 1.35; text-align: center; }
+
+  .mm-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 76px 16px 28px;
+    background: #70ceff url('/matematica/assets/hero/hero-bg.jpg') 58% center / cover no-repeat;
+    isolation: isolate;
+  }
+  .mm-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(231,251,255,.88) 0%, rgba(202,240,255,.68) 35%, rgba(54,173,218,.15) 64%, rgba(2,92,39,.08) 100%);
+  }
+  .mm-header { position: absolute; inset: 0 0 auto; height: 68px; padding: 8px 14px; display: flex; align-items: center; justify-content: space-between; z-index: 10; }
+  .mm-header img { width: 132px; height: 48px; object-fit: contain; }
+  .mm-header a { min-height: 44px; padding: 0 15px; border: 1px solid #b6f7c7; border-radius: 999px; background: #18bd37; box-shadow: 0 4px 0 #108328; color: white; font-size: 11px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+  .mm-hero-copy { position: relative; z-index: 2; text-align: center; }
+  .mm-kicker { display: inline-flex; min-height: 44px; padding: 0 22px; align-items: center; justify-content: center; border: 2px solid rgba(255,255,255,.55); border-radius: 15px; background: #0f76cd; box-shadow: 0 5px 0 #07569b; color: white; font-size: 15px; font-weight: 900; letter-spacing: .02em; }
+  .mm-title-image { width: min(92%, 330px); height: auto; margin: 4px auto 2px; filter: drop-shadow(0 7px 6px rgba(0,48,110,.25)); }
+  .mm-offer { max-width: 350px; margin: 0 auto; padding: 12px 13px; border-radius: 11px; background: #0b3b75; box-shadow: 0 4px 0 #062a58; color: white; font-size: 18px; font-weight: 800; line-height: 1.12; }
+  .mm-hero-copy p { margin: 11px auto 4px; color: #07396f; font-size: 15px; font-weight: 800; }
+  .mm-product-stage { position: relative; width: min(100%, 430px); height: 378px; margin: -5px auto -8px; z-index: 1; }
+  .mm-product { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 18px 13px rgba(0,44,73,.28)); }
+  .mm-note { position: absolute; right: -7px; top: 14px; width: 126px; transform: rotate(2deg); filter: drop-shadow(0 4px 5px rgba(0,0,0,.16)); }
+  .mm-hero-facts { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; max-width: 390px; margin: 0 auto 20px; }
+  .mm-hero-facts > div { min-height: 92px; padding: 11px 5px; border: 2px solid #b6d7e8; border-radius: 14px; background: rgba(255,255,255,.94); box-shadow: 0 5px 0 rgba(14,84,123,.2); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .mm-hero-facts span { font-size: 25px; line-height: 1; margin-bottom: 5px; }
+  .mm-hero-facts strong { color: #074178; font-size: 15px; line-height: 1.15; }
+  .mm-primary-button { width: min(100%, 390px); min-height: 56px; margin: 0 auto; border: 2px solid rgba(255,255,255,.85); border-radius: 999px; background: #18bd37; box-shadow: 0 5px 0 #108328, 0 10px 20px rgba(2,112,43,.22); color: white; font-size: 16px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+  .mm-trust-row { margin-top: 15px; color: white; font-size: 11px; font-weight: 800; text-shadow: 0 1px 3px #04572b; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 14px; }
+
+  .mm-activities { padding: 34px 0 38px; background: #eef7fd; }
+  .mm-activities > .mm-section-title, .mm-activities > .mm-section-subtitle { padding-inline: 18px; }
+  .mm-activity-track { margin-top: 24px; padding: 0 18px 16px; display: flex; gap: 14px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .mm-activity-track::-webkit-scrollbar { display: none; }
+  .mm-activity-card { flex: 0 0 min(76vw, 292px); scroll-snap-align: center; text-align: center; }
+  .mm-activity-card > span { display: inline-block; margin-bottom: 9px; padding: 5px 11px; border: 1px solid #b8dcf6; border-radius: 999px; background: #d7ebfc; color: #0d64ad; font-size: 11px; font-weight: 900; }
+  .mm-activity-card img { width: 100%; height: auto; padding: 7px; border: 1px solid #d8e5ed; border-radius: 13px; background: white; box-shadow: 0 7px 18px rgba(15,43,86,.1); }
+
+  .mm-how { padding-bottom: 36px; background: white; }
+  .mm-how-photo { width: 100%; height: 255px; background-image: url('/matematica/assets/how-it-works/how-it-works-approved-exact.png'); background-position: left center; background-size: 273% auto; background-repeat: no-repeat; }
+  .mm-how-content { padding: 28px 16px 0; }
+  .mm-step-grid { margin-top: 22px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 11px; }
+  .mm-step-grid article { position: relative; min-height: 206px; padding: 30px 11px 14px; border: 1px solid #dfebf4; border-radius: 16px; background: white; box-shadow: 0 6px 17px rgba(15,43,86,.08); display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .mm-step-grid b { position: absolute; left: 10px; top: 10px; width: 31px; height: 31px; border-radius: 50%; background: #18bd37; color: white; font-size: 16px; display: grid; place-items: center; }
+  .mm-step-grid img { width: 78px; height: 78px; margin: 4px auto 7px; object-fit: contain; }
+  .mm-step-grid strong { color: #0d2b56; font-size: 16px; line-height: 1.1; }
+  .mm-step-grid span { margin-top: 5px; color: #57749a; font-size: 14px; line-height: 1.25; }
+
+  .mm-audience, .mm-included, .mm-bonuses, .mm-pricing, .mm-faq { padding: 34px 16px 38px; }
+  .mm-audience { background: #fffdf6; }
+  .mm-two-column-grid { margin-top: 22px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 11px; }
+  .mm-small-card { min-height: 150px; padding: 13px 8px; border: 1px solid #edf0f3; border-radius: 17px; background: white; box-shadow: 0 5px 15px rgba(0,0,0,.06); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .mm-small-card img { width: 72px; height: 72px; margin-bottom: 8px; object-fit: contain; }
+  .mm-small-card strong { color: #0d2b56; font-size: 14px; line-height: 1.25; }
+  .mm-small-card span { margin-top: 3px; color: #506e90; font-size: 13px; font-weight: 700; }
+
+  .mm-benefits { position: relative; overflow: hidden; padding: 38px 18px 0; background: linear-gradient(145deg,#087eaa 0%,#045f98 50%,#063c78 100%); color: white; }
+  .mm-benefits::before { content:""; position:absolute; inset:0; background: url('/matematica/assets/hero/hero-bg.jpg') center bottom / cover no-repeat; opacity:.18; }
+  .mm-benefits > * { position: relative; z-index: 1; }
+  .mm-benefits .mm-section-title { color: white; text-align: left; text-shadow: 0 3px 3px rgba(0,25,65,.55); }
+  .mm-benefits ul { margin: 24px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .mm-benefits li { font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+  .mm-benefits li i, .mm-plan-card li i { width: 23px; height: 23px; border-radius: 50%; background: #18cc48; color: white; font-style: normal; flex: 0 0 auto; display: grid; place-items: center; }
+  .mm-benefit-art { height: 265px; margin: 0 -12px; display: flex; align-items: end; justify-content: center; }
+  .mm-benefit-art img:first-child { width: 58%; max-height: 255px; object-fit: contain; }
+  .mm-benefit-art img:last-child { width: 40%; max-height: 210px; object-fit: contain; }
+
+  .mm-included { background: #fafbfc; }
+  .mm-bonuses { background: #fff9eb; }
+  .mm-bonuses em { color: #e68a00; font-style: normal; }
+  .mm-bonus-card { min-height: 205px; padding: 10px; border: 1px solid #f7e5bb; border-radius: 17px; background: white; box-shadow: 0 5px 15px rgba(0,0,0,.06); display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-align: center; }
+  .mm-bonus-card img { width: 100%; height: 143px; object-fit: contain; }
+  .mm-bonus-card strong { padding-bottom: 6px; color: #0d2b56; font-size: 14px; line-height: 1.2; }
+
+  .mm-pricing { background: #edf7fe; }
+  .mm-pricing-message { width: 250px; margin: 25px auto -10px; padding: 14px 14px 18px; border: 2px solid #78cadd; border-radius: 44% 50% 46% 52%; background: #ecfbff; color: #0d2b56; font-size: 17px; font-weight: 900; line-height: 1.1; text-align: center; transform: rotate(-3deg); }
+  .mm-pricing-character { width: 150px; height: 185px; margin: 0 auto -18px; object-fit: contain; }
+  .mm-plan-card { position: relative; margin: 24px auto 0; padding: 22px 18px 18px; border-radius: 23px; box-shadow: 0 9px 25px rgba(0,0,0,.1); }
+  .mm-plan-card h3 { margin: 0 0 18px; font-size: 20px; font-weight: 900; text-align: center; }
+  .mm-plan-content { display: flex; align-items: center; gap: 14px; }
+  .mm-plan-content > img { width: 39%; max-width: 138px; height: 190px; object-fit: contain; }
+  .mm-plan-card ul { flex: 1; margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+  .mm-plan-card li { font-size: 14px; font-weight: 700; line-height: 1.18; display: flex; align-items: flex-start; gap: 7px; }
+  .mm-plan-card li i { width: 18px; height: 18px; font-size: 12px; }
+  .mm-plan-card .mm-price { margin: 17px 0 10px; padding-top: 13px; border-top: 1px solid rgba(120,150,180,.2); font-size: 31px; font-weight: 900; text-align: center; }
+  .mm-plan-card > a { min-height: 52px; border-radius: 999px; background: #18bd37; box-shadow: 0 4px 0 #108328; color: white; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center; text-align: center; }
+  .mm-plan-essential { background: white; border: 1px solid #dce8f0; color: #0d2b56; }
+  .mm-plan-complete { margin-top: 34px; background: linear-gradient(#022f5c,#011c38); border: 2px solid #1c84d6; color: white; box-shadow: 0 12px 30px rgba(2,47,92,.3); }
+  .mm-plan-complete li { color: #e0edfd; }
+  .mm-plan-complete .mm-price { color: #34d399; border-top-color: rgba(50,130,190,.35); }
+  .mm-popular { position: absolute; left: 50%; top: -16px; min-width: 150px; min-height: 32px; padding: 0 16px; border-radius: 999px; background: #18bd37; color: white; font-size: 12px; font-weight: 900; display: flex; align-items: center; justify-content: center; transform: translateX(-50%); }
+  .mm-pricing-trust { margin-top: 26px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+  .mm-pricing-trust div { min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+  .mm-pricing-trust img { width: 42px; height: 42px; object-fit: contain; }
+  .mm-pricing-trust strong { font-size: 12px; }
+
+  .mm-faq { background: #fffdf8; }
+  .mm-faq-list { margin-top: 23px; display: grid; gap: 10px; }
+  .mm-faq-list article { overflow: hidden; border: 1px solid #edf0f2; border-radius: 15px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,.04); }
+  .mm-faq-list button { width: 100%; min-height: 52px; padding: 10px 15px; border: 0; background: transparent; color: #0d2b56; font-family: inherit; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: space-between; text-align: left; }
+  .mm-faq-list button b { font-size: 22px; transition: transform .2s; }
+  .mm-faq-list article.open button b { transform: rotate(180deg); }
+  .mm-faq-list p { margin: 0; padding: 0 15px 16px; border-top: 1px solid #f2f4f5; color: #4a6785; font-size: 14px; font-weight: 600; line-height: 1.45; }
+  .mm-faq-character { height: 190px; margin-top: 18px; display: flex; align-items: end; justify-content: center; }
+  .mm-faq-character span { align-self: start; margin-top: 24px; padding: 12px; border: 1px solid #fde047; border-radius: 14px; background: #fff9db; font-size: 11px; font-weight: 900; text-align: center; transform: rotate(-2deg); }
+  .mm-faq-character img { width: 140px; height: 178px; object-fit: contain; }
+
+  .mm-guarantee { position: relative; padding: 30px 18px 34px; background: #eef7ff; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .mm-shield { width: 77px; height: 88px; padding-top: 11px; clip-path: polygon(50% 0,94% 16%,87% 67%,50% 100%,13% 67%,6% 16%); background: linear-gradient(135deg,#1e88e5,#0d47a1); border: 4px solid #64b5f6; color: white; font-family: Impact, sans-serif; font-size: 48px; line-height: 1; filter: drop-shadow(0 5px 7px rgba(0,102,255,.25)); }
+  .mm-guarantee h3 { margin: 12px 0 0; font-size: 25px; font-weight: 900; }
+  .mm-guarantee > strong { font-size: 17px; }
+  .mm-guarantee p { max-width: 350px; margin: 12px auto 18px; color: #3b587a; font-size: 15px; font-weight: 600; line-height: 1.4; }
+  .mm-guarantee a { width: min(100%,350px); min-height: 54px; border-radius: 999px; background: #18bd37; box-shadow: 0 4px 0 #108328; color: white; font-size: 14px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+
+  .mm-footer { min-height: 310px; padding: 44px 18px 24px; background: linear-gradient(180deg,rgba(237,246,254,.96),rgba(237,246,254,.64),rgba(237,246,254,.22)), url('/matematica/assets/hero/hero-bg.jpg') center 82% / auto 100% no-repeat; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .mm-footer > img { width: 150px; height: 60px; object-fit: contain; }
+  .mm-footer > strong { margin-top: 10px; font-size: 16px; }
+  .mm-footer > span { margin-top: 4px; color: #3b5b82; font-size: 13px; font-weight: 700; }
+  .mm-footer nav { margin-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 11px; }
+  .mm-footer nav a { min-height: 30px; color: #0d2b56; font-size: 14px; font-weight: 800; display: flex; align-items: center; }
+  .mm-footer small { margin-top: 18px; color: #48688e; font-size: 11px; font-weight: 700; }
+}
+
+@media (max-width: 365px) {
+  .mm-header img { width: 118px; }
+  .mm-header a { padding-inline: 11px; font-size: 10px; }
+  .mm-product-stage { height: 350px; }
+  .mm-note { width: 112px; }
+  .mm-plan-card { padding-inline: 14px; }
+  .mm-plan-card li { font-size: 13px; }
+}

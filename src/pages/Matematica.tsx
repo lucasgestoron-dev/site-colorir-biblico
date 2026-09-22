@@ -11,6 +11,8 @@ import { FaqReal } from "../components/matematica-real/FaqReal";
 import { GuaranteeReal } from "../components/matematica-real/GuaranteeReal";
 import { FooterReal } from "../components/matematica-real/FooterReal";
 import { ResponsiveCanvas } from "../components/matematica-real/ResponsiveCanvas";
+import { MobileMatematica } from "../components/matematica-real/MobileMatematica";
+import "../components/matematica-real/mobile-matematica.css";
 
 export default function Matematica() {
   useEffect(() => {
@@ -35,8 +37,9 @@ export default function Matematica() {
   }, []);
 
   return (
-    <div className="matematica-real w-full min-h-screen bg-[#f8f9fa] relative flex flex-col items-center overflow-x-hidden">
-      <div className="w-full relative mx-auto" style={{ maxWidth: '1480px' }}>
+    <>
+      <div className="math-desktop-only matematica-real w-full min-h-screen bg-[#f8f9fa] relative flex flex-col items-center overflow-x-hidden">
+        <div className="w-full relative mx-auto" style={{ maxWidth: '1480px' }}>
         
         {/* 1. HERO SECTION */}
         <ResponsiveCanvas designWidth={1480} designHeight={726}>
@@ -95,7 +98,12 @@ export default function Matematica() {
           <FooterReal />
         </ResponsiveCanvas>
 
+        </div>
       </div>
-    </div>
+
+      <div className="math-mobile-only">
+        <MobileMatematica />
+      </div>
+    </>
   );
 }
