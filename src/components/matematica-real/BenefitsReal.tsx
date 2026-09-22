@@ -17,31 +17,19 @@ export function BenefitsReal() {
         background: 'linear-gradient(110deg, #087eaa 0%, #045f98 45%, #063c78 100%)'
       }}
     >
-      {/* Subtle voxel accents and hero-bg full texture, integrated smoothly with blue base */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Full section subtle voxel texture */}
-        <div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            backgroundImage: 'url(/matematica/assets/hero/hero-bg.jpg)',
-            backgroundPosition: 'center calc(100% + 10px)',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.18,
-            WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.95) 100%)',
-            maskImage: 'linear-gradient(to right, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.95) 100%)'
-          }}
-        />
-
-        <div className="absolute left-0 bottom-0 w-[96px] h-[40px] bg-[#0a6b73]/35" />
-        <div className="absolute left-[48px] bottom-0 w-[86px] h-[62px] bg-[#0b7577]/25" />
-        <div className="absolute right-[330px] top-0 w-[92px] h-[54px] bg-[#0d6759]/20" />
-        <div className="absolute right-[260px] top-[18px] w-[74px] h-[64px] bg-[#0c7752]/18" />
-
-        <div className="absolute right-0 bottom-0 w-[112px] h-[72px] bg-gradient-to-b from-[#168c47] to-[#0d673c] opacity-60" />
-        <div className="absolute right-[100px] bottom-0 w-[92px] h-[52px] bg-gradient-to-b from-[#2b9f43] to-[#13703a] opacity-60" />
-        <div className="absolute right-[178px] bottom-0 w-[78px] h-[88px] bg-gradient-to-b from-[#4fa92f] to-[#1d7b35] opacity-60" />
-      </div>
+      {/* Single subtle voxel texture across the section */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'url(/matematica/assets/hero/hero-bg.jpg)',
+          backgroundPosition: 'center calc(100% + 10px)',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.18,
+          WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.95) 100%)',
+          maskImage: 'linear-gradient(to right, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.95) 100%)'
+        }}
+      />
 
       {/* LEFT: reference-style headline */}
       <div className="absolute left-[78px] top-[46px] w-[470px] z-10">
