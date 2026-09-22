@@ -12,25 +12,36 @@ const benefitsList = [
 export function BenefitsReal() {
   return (
     <section
-      className="w-[1480px] h-[290px] relative overflow-hidden select-none flex items-center justify-between px-[60px]"
+      className="w-[1480px] h-[290px] relative overflow-hidden select-none flex items-center px-[60px]"
       style={{
         background: 'linear-gradient(110deg, #087eaa 0%, #034983 63%, #052c63 100%)'
       }}
     >
-      {/* 1. LEFT BLOCK: Large white text */}
-      <div className="w-[380px] z-10">
-        <h2 className="text-white font-black text-[32px] leading-[1.08] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
+      {/* subtle voxel scenery accent, cropped from an existing project asset */}
+      <div
+        className="absolute right-0 bottom-0 w-[560px] h-[170px] opacity-[0.28] pointer-events-none"
+        style={{
+          backgroundImage: 'url(/matematica/assets/hero/hero-bg.jpg)',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: '900px auto',
+          backgroundPosition: 'right bottom',
+          WebkitMaskImage: 'linear-gradient(to left, black 58%, transparent 100%)',
+          maskImage: 'linear-gradient(to left, black 58%, transparent 100%)'
+        }}
+      />
+
+      {/* 1. LEFT BLOCK */}
+      <div className="w-[410px] z-10">
+        <h2 className="text-white font-black text-[34px] leading-[1.03] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
           Mais do que<br />
-          atividades, é<br />
-          uma nova<br />
-          forma de se<br />
-          relacionar com<br />
-          a matemática.
+          atividades, é uma nova<br />
+          forma de se relacionar<br />
+          com a matemática.
         </h2>
       </div>
 
-      {/* 2. CENTRAL BLOCK: 6 Benefits with green checks */}
-      <div className="w-[430px] z-10">
+      {/* 2. CENTRAL BLOCK */}
+      <div className="w-[420px] z-10">
         <ul className="flex flex-col gap-[9px]">
           {benefitsList.map((item, idx) => (
             <li key={idx} className="flex items-center gap-3">
@@ -53,24 +64,19 @@ export function BenefitsReal() {
         </ul>
       </div>
 
-      {/* 3. RIGHT BLOCK: Slot for benefits-character.png + Text */}
-      <div className="w-[450px] z-10 flex items-center justify-end gap-5">
-        {/* Character Slot */}
-        <div className="w-[160px] h-[210px] flex-shrink-0 flex items-center justify-center">
-          <img
-            src="/matematica/assets/benefits/benefits-character.png"
-            alt=""
-            className="w-full h-full object-contain"
-          />
-        </div>
+      {/* 3. RIGHT BLOCK: decomposed character + lettering */}
+      <div className="w-[510px] h-full z-10 relative flex items-center justify-end">
+        <img
+          src="/matematica/assets/benefits/benefits-character-reference.webp"
+          alt=""
+          className="absolute left-[5px] bottom-[-6px] w-[275px] h-[278px] object-contain"
+        />
 
-        {/* Callout Text */}
-        <div className="text-[#ffd630] font-fredoka font-black text-[20px] leading-[1.15] rotate-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-          PEQUENOS<br />
-          DESAFIOS,<br />
-          GRANDES<br />
-          CONQUISTAS!
-        </div>
+        <img
+          src="/matematica/assets/benefits/benefits-slogan-reference.webp"
+          alt="Pequenos desafios, grandes conquistas!"
+          className="absolute right-[-4px] top-[34px] w-[230px] h-[210px] object-contain"
+        />
       </div>
     </section>
   );
