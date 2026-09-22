@@ -68,13 +68,13 @@ export function BenefitsReal() {
 
       {/* RIGHT: validated decomposed assets */}
       <img
-        src="/matematica/assets/benefits/benefits-character-reference.webp"
+        src="/matematica/assets/benefits/benefits-character-reference.png"
         alt=""
         className="absolute left-[995px] bottom-[-4px] w-[300px] h-[286px] object-contain z-10 drop-shadow-[0_8px_8px_rgba(0,20,50,0.25)]"
       />
 
       <img
-        src="/matematica/assets/benefits/benefits-slogan-reference.webp"
+        src="/matematica/assets/benefits/benefits-slogan-reference.png"
         alt="Pequenos desafios, grandes conquistas!"
         className="absolute right-[24px] top-[28px] w-[205px] h-[230px] object-contain z-20"
       />
