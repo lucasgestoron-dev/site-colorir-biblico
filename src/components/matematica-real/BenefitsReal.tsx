@@ -17,19 +17,30 @@ export function BenefitsReal() {
         background: 'linear-gradient(110deg, #087eaa 0%, #045f98 45%, #063c78 100%)'
       }}
     >
-      {/* Subtle voxel accents, matching the reference without flattening the section */}
+      {/* Subtle voxel accents and hero-bg crop, integrated smoothly with blue base */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-0 bottom-0 w-[96px] h-[40px] bg-[#0a6b73]/35" />
         <div className="absolute left-[48px] bottom-0 w-[86px] h-[62px] bg-[#0b7577]/25" />
         <div className="absolute right-[330px] top-0 w-[92px] h-[54px] bg-[#0d6759]/20" />
         <div className="absolute right-[260px] top-[18px] w-[74px] h-[64px] bg-[#0c7752]/18" />
 
-        <div className="absolute right-0 bottom-0 w-[112px] h-[72px] bg-gradient-to-b from-[#168c47] to-[#0d673c]" />
-        <div className="absolute right-[100px] bottom-0 w-[92px] h-[52px] bg-gradient-to-b from-[#2b9f43] to-[#13703a]" />
-        <div className="absolute right-[178px] bottom-0 w-[78px] h-[88px] bg-gradient-to-b from-[#4fa92f] to-[#1d7b35]" />
-        <div className="absolute right-[238px] bottom-0 w-[68px] h-[44px] bg-gradient-to-b from-[#5cb133] to-[#257c36]" />
-        <div className="absolute right-[46px] bottom-[58px] w-[78px] h-[42px] bg-[#16924b]/80" />
-        <div className="absolute right-[155px] bottom-[72px] w-[74px] h-[46px] bg-[#429b35]/75" />
+        {/* Hero voxel terrain crop: subtle green blocks rising at bottom-right behind character */}
+        <div
+          className="absolute right-0 bottom-0 w-[640px] h-[270px]"
+          style={{
+            backgroundImage: 'url(/matematica/assets/hero/hero-bg.jpg)',
+            backgroundPosition: '-210px -460px',
+            backgroundSize: '1480px 726px',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.38,
+            WebkitMaskImage: 'radial-gradient(ellipse at 80% 85%, black 30%, rgba(0,0,0,0.5) 60%, transparent 95%)',
+            maskImage: 'radial-gradient(ellipse at 80% 85%, black 30%, rgba(0,0,0,0.5) 60%, transparent 95%)'
+          }}
+        />
+
+        <div className="absolute right-0 bottom-0 w-[112px] h-[72px] bg-gradient-to-b from-[#168c47] to-[#0d673c] opacity-60" />
+        <div className="absolute right-[100px] bottom-0 w-[92px] h-[52px] bg-gradient-to-b from-[#2b9f43] to-[#13703a] opacity-60" />
+        <div className="absolute right-[178px] bottom-0 w-[78px] h-[88px] bg-gradient-to-b from-[#4fa92f] to-[#1d7b35] opacity-60" />
       </div>
 
       {/* LEFT: reference-style headline */}
