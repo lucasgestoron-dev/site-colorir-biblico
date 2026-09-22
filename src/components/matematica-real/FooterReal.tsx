@@ -11,8 +11,9 @@ export function FooterReal() {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Light sky tint overlay to ensure text contrast and match reference */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#edf6fe]/95 via-[#edf6fe]/75 to-transparent pointer-events-none" />
+      {/* Seamless fade from the Guarantee background into the footer artwork */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#eef7ff] via-[#eef7ff]/78 to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-[42px] bg-gradient-to-b from-[#eef7ff] via-[#eef7ff]/92 to-transparent pointer-events-none" />
 
       {/* Main Content Container */}
       <div className="w-[1380px] mx-auto flex items-center justify-between z-10 px-4">
