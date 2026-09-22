@@ -6,18 +6,6 @@ export function GuaranteeReal() {
       id="garantia"
       className="w-[1480px] h-[170px] relative overflow-hidden bg-[#eef7ff] flex items-start justify-center pt-[20px] select-none"
     >
-      {/* Subtle background grass blocks at bottom edges */}
-      <div className="absolute -bottom-2 -left-2 w-28 h-10 opacity-70 pointer-events-none flex gap-1">
-        <div className="w-8 h-8 bg-[#5b9e28] rounded-t-sm border-t-2 border-[#76c835] shadow-inner" />
-        <div className="w-8 h-10 bg-[#4e8a20] rounded-t-sm border-t-2 border-[#6ab82e] shadow-inner" />
-        <div className="w-8 h-6 bg-[#5b9e28] rounded-t-sm border-t-2 border-[#76c835] shadow-inner mt-4" />
-      </div>
-      <div className="absolute -bottom-2 -right-2 w-28 h-10 opacity-70 pointer-events-none flex gap-1 justify-end">
-        <div className="w-8 h-6 bg-[#5b9e28] rounded-t-sm border-t-2 border-[#76c835] shadow-inner mt-4" />
-        <div className="w-8 h-10 bg-[#4e8a20] rounded-t-sm border-t-2 border-[#6ab82e] shadow-inner" />
-        <div className="w-8 h-8 bg-[#5b9e28] rounded-t-sm border-t-2 border-[#76c835] shadow-inner" />
-      </div>
-
       {/* Main Pill Container */}
       <div className="w-[1380px] h-[110px] bg-white/95 backdrop-blur-md rounded-full px-8 py-3 shadow-[0_8px_24px_rgba(13,43,86,0.06)] border border-sky-100 flex items-center justify-between z-10">
         
