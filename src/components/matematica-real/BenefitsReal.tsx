@@ -38,20 +38,6 @@ export function BenefitsReal() {
         <div className="absolute right-[330px] top-0 w-[92px] h-[54px] bg-[#0d6759]/20" />
         <div className="absolute right-[260px] top-[18px] w-[74px] h-[64px] bg-[#0c7752]/18" />
 
-        {/* Full-width right-side emphasis with a soft blend so there is no visible vertical seam */}
-        <div
-          className="absolute left-0 right-0 top-0 bottom-[-10px]"
-          style={{
-            backgroundImage: 'url(/matematica/assets/hero/hero-bg.jpg)',
-            backgroundPosition: 'right calc(100% + 10px)',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.22,
-            WebkitMaskImage: 'linear-gradient(to right, transparent 38%, rgba(0,0,0,0.22) 52%, rgba(0,0,0,0.72) 74%, black 100%)',
-            maskImage: 'linear-gradient(to right, transparent 38%, rgba(0,0,0,0.22) 52%, rgba(0,0,0,0.72) 74%, black 100%)'
-          }}
-        />
-
         <div className="absolute right-0 bottom-0 w-[112px] h-[72px] bg-gradient-to-b from-[#168c47] to-[#0d673c] opacity-60" />
         <div className="absolute right-[100px] bottom-0 w-[92px] h-[52px] bg-gradient-to-b from-[#2b9f43] to-[#13703a] opacity-60" />
         <div className="absolute right-[178px] bottom-0 w-[78px] h-[88px] bg-gradient-to-b from-[#4fa92f] to-[#1d7b35] opacity-60" />
